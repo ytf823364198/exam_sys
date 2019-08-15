@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>[[${application.const.PROJECT_NAME}]]([[${application.const.PROJECT_VERSON}]])</title>
+        <link th:href="@{/assets/plugins/sweetalert/dist/sweetalert.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/bootstrap.min.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/core.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/icons.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/components.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/pages.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/menu.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/responsive.css}" rel="stylesheet" type="text/css">
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js}"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js}"></script>
+        <![endif]-->
+     	<!-- jQuery  -->
+        <script th:src="@{/assets/js/jquery.min.js}"></script>
+        <script th:src="@{/assets/js/bootstrap.min.js}"></script>	
+		<script type="text/javascript" th:src="@{/plugins/layer/layer.js}"></script>
+		<script type="text/javascript" th:inline="javascript"> 
+		 	var webroot = "[(@{/})]";
+		</script>
+    </head>
+    
+    <body>
+		<!--  content -->
+		<div class="content">
+			<div class="container" id="container">
+				<div class="row">
+					<div class="col-sm-12">
+						<form class="form-horizontal" id="creatorForm" name="creatorForm" role="form" th:action="@{/user/add}"  method="post" >    
+							<input type="hidden" name="SesToken" th:value="${session.SesToken }"/>
+							<div class="panel panel-default m-t-10">
+								<div class="panel-body">
+									<div class="form-group">
+										<label class="col-md-2 control-label"><font color="red">*</font> 账号</label>
+										<div class="col-md-10">
+											<input id="username" name="username" maxlength="8"   required="" class="form-control"  type="text">
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-md-2 control-label"><font color="red">*</font> 姓名</label>
+										<div class="col-md-10">
+											<input id="realname" name="realname" maxlength="16"  required="" class="form-control"  type="text">
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-md-2 control-label"><font color="red">*</font> 联系电话</label>
+										<div class="col-md-10">
+											<input id="telphone" name="telphone" maxlength="12"  required="" class="form-control"  type="text">
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-md-2 control-label"><font color="red">*</font> 手机</label>
+										<div class="col-md-10">
+											<input id="mobile" name="mobile" maxlength="11"  required="" class="form-control"  type="text">
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-md-2 control-label"><font color="red">*</font> 邮件</label>
+										<div class="col-md-10">
+											<input id="email" name="email" maxlength="32"  required="" class="form-control"  type="text">
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-md-2 control-label"><font color="red">*</font> 密码</label>
+										<div class="col-md-10">
+											<input id="password" name="password" maxlength="16"  required="" class="form-control"  type="text">
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-md-2 control-label"><font color="red">*</font> 推送邮件</label>
+										<div class="col-md-10">
+											<select id="putmail" name="putmail" class="form-control" required="">
+												<option value="">=请选择=</option>
+												<option th:value="${data.key}" th:each="data : ${putmails}" >[[${data.value} ]]</option>
+											</select>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-md-2 control-label"><font color="red">*</font> 推送短信</label>
+										<div class="col-md-10">
+											<select id="putms" name="putms" class="form-control" required="">
+												<option value="">=请选择=</option>
+												<option th:value="${data.key}" th:each="data : ${putmss}" >[[${data.value} ]]</option>
+											</select>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-md-2 control-label"><font color="red">*</font> 状态</label>
+										<div class="col-md-10">
+											<select id="status" name="status" class="form-control" required="">
+												<option value="">=请选择=</option>
+												<option th:value="${data.key}" th:each="data : ${statuss}" >[[${data.value} ]]</option>
+											</select>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-md-2 control-label"><font color="red">*</font> 类别</label>
+										<div class="col-md-10">
+											<select id="type" name="type" class="form-control" required="">
+												<option value="">=请选择=</option>
+												<option th:value="${data.key}" th:each="data : ${types}" >[[${data.value} ]]</option>
+											</select>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-md-2 control-label"><font color="red">*</font> 角色</label>
+										<div class="col-md-10" >
+										    <div style="border:1px rgb(235, 204, 209) solid;padding:8px 4px 10px 10px;border-radius: 3px;" >
+											    <div class="checkbox checkbox-primary"  th:each="data,dataStatus:${roles }"  style="float:left;width:200px;">
+	                                                <input name="roleid"   th:value="${data.id}" th:id="'role-'+${data.id}"  type="checkbox">
+	                                                <label th:for="'role-'+${data.id}">[[${data.rolename}]]</label>
+	                                            </div>
+	                                            <div style="clear: both;"></div>
+										    </div>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-md-2 control-label"><font color="red">*</font> 部门</label>
+										<div class="col-md-10" >
+										    <div style="border:1px rgb(235, 204, 209) solid;padding:8px 4px 10px 10px;border-radius: 3px;" >
+											    <div class="checkbox checkbox-primary"  th:each="data,dataStatus:${porgans }"  style="float:left;width:200px;">
+	                                                <input name="organid"   th:value="${data.id}" th:id="'organ-'+${data.id}"  type="checkbox">
+	                                                <label th:for="'organ-'+${data.id}">[[${data.organname}]]</label>
+	                                            </div>
+	                                            <div style="clear: both;"></div>
+										    </div>
+										</div>
+									</div>
+									
+									<div class="form-group">
+										<label class="col-sm-2 control-label"></label>
+										<div class="col-sm-10">
+											<button type="button" id="btn-submit" class="btn  btn-primary waves-effect waves-light"><i class="md md-add "> </i>保 存</button>
+										</div>
+									</div>
+ 								</div> <!-- panel-body -->
+							</div> <!-- panel -->
+						</form>
+					</div> <!-- col -->
+				</div> <!-- row -->
+			</div> <!-- container -->
+		</div> <!-- content -->
+		<script type="text/javascript" th:inline="javascript"> 
+			$('#btn-submit').on('click', function(){
+				$("#username").val($.trim( $("#username").val() ));
+				if( $("#username").val() == "" ){
+					layer.msg("错误：账号不能为空!",function(){
+						$("#username").focus();
+					});
+					return false;
+				}
+				
+				$("#realname").val($.trim( $("#realname").val() ));
+				if( $("#realname").val() == "" ){
+					layer.msg("错误：姓名不能为空!",function(){
+						$("#realname").focus();
+					});
+					return false;
+				}
+				
+				$("#telphone").val($.trim( $("#telphone").val() ));
+				if( $("#telphone").val() == "" ){
+					layer.msg("错误：联系电话不能为空!",function(){
+						$("#telphone").focus();
+					});
+					return false;
+				}
+				
+				$("#mobile").val($.trim( $("#mobile").val() ));
+				if( $("#mobile").val() == "" ){
+					layer.msg("错误：手机不能为空!",function(){
+						$("#mobile").focus();
+					});
+					return false;
+				}
+				
+				$("#email").val($.trim( $("#email").val() ));
+				if( $("#email").val() == "" ){
+					layer.msg("错误：邮件不能为空!",function(){
+						$("#email").focus();
+					});
+					return false;
+				}
+				
+				$("#password").val($.trim( $("#password").val() ));
+				if( $("#password").val() == "" ){
+					layer.msg("错误：密码不能为空!",function(){
+						$("#password").focus();
+					});
+					return false;
+				}
+				
+				if( $("#putmail").val() == "" ){
+					layer.msg("错误：推送邮件不能为空!",function(){
+						$("#putmail").focus();
+					});
+					return false;
+				}
+				
+				if( $("#putms").val() == "" ){
+					layer.msg("错误：推送短信不能为空!",function(){
+						$("#putms").focus();
+					});
+					return false;
+				}
+				if( $("#status").val() == "" ){
+					layer.msg("错误：状态不能为空!",function(){
+						$("#status").focus();
+					});
+					return false;
+				}
+
+				if( $("#type").val() == "" ){
+					layer.msg("错误：类别不能为空!",function(){
+						$("#type").focus();
+					});
+					return false;
+				}
+				
+				var roleidChecked = false;
+				$("input[type='checkbox'][name='roleid']:checked").each(function (index, item) {
+					roleidChecked = true;
+				});
+				if(roleidChecked == false){
+				    layer.msg("错误,请选择角色!",function(){});
+					return false; 
+				}
+				
+				var organidChecked = false;
+				$("input[type='checkbox'][name='organid']:checked").each(function (index, item) {
+					organidChecked = true;
+				});
+				if(organidChecked == false){
+					layer.msg("错误,请选择部门!",function(){});
+					return false; 
+				}
+				
+				submitForm();	
+			});
+
+			function submitForm(){
+				$("#btn-submit").addClass("disabled");
+				$("#btn-submit").attr("disabled","disabled");
+				$.post(document.creatorForm.action, $("#creatorForm").serialize(), function(data) {
+					if(data.status == "ok"){
+						layer.msg("添加成功!", {icon: 6},function(){
+							parent.location.href="[(@{/user/list})]";
+						});
+					}else{
+						$("#btn-submit").removeClass("disabled");
+						$("#btn-submit").removeAttr("disabled");
+						layer.msg('添加失败:' + data.msg ,function(){
+     	        			 
+						});
+					}
+				});	
+			}
+		</script>
+	</body>
+</html>

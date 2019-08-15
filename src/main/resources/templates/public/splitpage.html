@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+	    <meta charset="UTF-8">
+	    <title>分页</title>
+	</head>
+
+	<body>
+	
+		<form class="form-horizontal" id="splitpageform" name="splitpageform" role="form" th:action="@{${formAction}}" onSubmit="return splitpage('toward')"  method="post" > 
+			<input type="hidden" id="curpage" name="curpage" th:value="${pageModel.curpage}"/>
+			<input type="hidden" id="pagesize" name="pagesize"  th:value="${pageModel.pagesize}"/>
+			<input type="hidden" th:name="${data.key}" th:value="${data.value}" th:if="${pageModel.search != null  }"  th:each="data,dataStatus:${pageModel.search }" />
+
+			<div class="row">
+				<div class="col-sm-8">
+					<div class="dataTables_info" style="padding-top: 16px;" role="status" aria-live="polite">
+					第 <mark> [['&nbsp'+ ${pageModel.curpage + '&nbsp'} ]] </mark> &nbsp页 / 共 <mark> [['&nbsp'+${pageModel.pagesize}+'&nbsp']] </mark> &nbsp页 , 
+					总记录数 <mark> [['&nbsp' + ${pageModel.count} +'&nbsp']] </mark> &nbsp, 
+					
+					<span th:if="${pageModel.quantity != null }">数量 <mark> [['&nbsp' + ${pageModel.quantity} +'&nbsp']] </mark> &nbsp, </span>
+					<span th:if="${pageModel.total != null }">总金额 <mark> [['&nbsp' + ${pageModel.total} +'&nbsp']] </mark> &nbsp, </span>
+					
+					
+					每页显示 <input type="text"  style="width:20pt;border:1px #CECECE solid;"  onpaste="return false" id="pagecount" name="pagecount" maxlength="3" onkeyup="this.value=this.value.replace(/\D/g,'')" th:value="${pageModel.pagecount}"/> 条,
+					第 <input type="text"  style="width:25pt;border:1px #CECECE solid;" onpaste="return false" id="curpage2" name="curpage2" maxlength="8"  onkeyup="this.value=this.value.replace(/\D/g,'')"/> 页 
+						 <button type="submit" class="btn btn-default waves-effect waves-light btn-xs" style="padding:2px 6px 2px 6px;">&nbsp确 定&nbsp</button>						
+					</div>
+					
+				</div>
+				<div class="col-sm-4">
+					<div class="dataTables_paginate paging_simple_numbers" >
+						<ul class="pagination" style="margin-top: 16px;">
+						
+							<li th:class="${pageModel.curpage == 1 } ? 'paginate_button  disabled' : 'paginate_button'  " >
+								<a href="#" id="split-page-frist">首页</a>
+							</li>
+							<li th:class="${pageModel.curpage == 1 } ? 'paginate_button  disabled' : 'paginate_button' " >
+								<a href="#" id="split-page-last">上一页</a>
+							</li>
+							<li th:class="${pageModel.curpage == pageModel.pagesize } ? 'paginate_button  disabled' : 'paginate_button' " >
+								<a href="#" id="split-page-next">下一页</a>
+							</li>
+							<li th:class="${pageModel.curpage == pageModel.pagesize } ? 'paginate_button  disabled' : 'paginate_button' " >
+								<a href="#" id="split-page-end">尾页</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			
+			
+			<script type="text/javascript" th:inline="javascript">
+			
+			$(function(){
+             	[# th:each="search : ${pageModel.search}"  th:if="${pageModel.search != null  }" ]
+     				$("#search-[(${search.key})]").val("[(${search.value})]"); 
+     			[/]
+            });
+			
+			 $('#split-page-frist').on('click', function(){
+				if( splitpage("frist")){
+					document.splitpageform.submit();
+				}
+			 });
+			 $('#split-page-last').on('click', function(){
+				 if( splitpage("last")){
+					document.splitpageform.submit();
+				 }
+			 });
+			 $('#split-page-next').on('click', function(){
+				 if( splitpage("next")){
+					document.splitpageform.submit();
+				 }
+			 });
+			 $('#split-page-end').on('click', function(){
+				 if( splitpage("end")){
+					document.splitpageform.submit();
+				 }
+			 });
+			
+			
+			//分页
+			function splitpage(forword){
+
+			  var curpage = parseInt(document.getElementById("curpage").value);
+			  var pagesize = parseInt(document.getElementById("pagesize").value);
+			  var curpage2 = document.getElementById("curpage2").value;
+			  var pagecount = document.getElementById("pagecount").value;
+			  if(pagesize == 0){
+					return false;
+			  }
+			  if(pagecount==""){
+				  layer.msg("每页显示的记录数不能为空",function(){
+					  $("#pagecount").focus();  
+				  });
+				  return false;
+			  }
+			  if(forword=='toward'){
+				   	if(curpage2 != ""){
+				     	document.getElementById("curpage").value = parseInt(curpage2);
+				    }
+			  }else if(forword == 'frist'){
+				     if(curpage == 1){
+				    	layer.msg("已经是首页了");
+				        return false;
+				     }
+				     document.getElementById("curpage").value='1';
+			  }else if(forword=='last'){
+				     if(curpage==1){
+				    	layer.msg("已经是首页了");
+				        return false;
+				     }
+				     document.getElementById("curpage").value=curpage-1;
+			  }else if(forword=='next'){
+				     if(curpage==pagesize){
+				    	layer.msg("已经是尾页了");
+				        return false;
+				     }
+				     document.getElementById("curpage").value=curpage+1;
+			  }else if(forword=='end'){
+				     if(curpage==pagesize){
+				    	layer.msg("已经是尾页了");
+				        return false;
+				     }
+				     document.getElementById("curpage").value=pagesize;
+			  }
+			  return true;
+			}
+			
+			</script>
+
+	   </form>
+
+	</body>
+
+</html>

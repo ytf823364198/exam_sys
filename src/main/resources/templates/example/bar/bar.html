@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>[[${application.const.PROJECT_NAME}]]([[${application.const.PROJECT_VERSON}]])</title>
+        <link th:href="@{/assets/plugins/sweetalert/dist/sweetalert.css}" rel="stylesheet" type="text/css">
+
+        <link th:href="@{/assets/css/bootstrap.min.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/core.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/icons.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/components.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/responsive.css}" rel="stylesheet" type="text/css">
+
+
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js}"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js}"></script>
+        <![endif]-->
+        
+        
+     <!-- jQuery  -->
+        <script th:src="@{/assets/js/jquery.min.js}"></script>
+        <script th:src="@{/assets/js/bootstrap.min.js}"></script>
+		<script type="text/javascript" th:src="@{/plugins/layer/layer.js}"></script>
+       
+        
+    </head>
+
+
+    <body>
+        
+
+   <!-- Start content -->
+          <div class="content">
+              <div class="container" id="container">
+                  <!-- Page-Title -->
+                  <div class="row">
+                      <div class="col-sm-12">
+                          <h4 class="breadcrumb pull-left">条码</h4>
+                          <ol class="breadcrumb pull-right">
+                              <li><a href="#">条码</a></li>
+                              <li class="active">实列</li>
+                          </ol>
+                      </div>
+                  </div>
+              
+               <div class="row">
+                            <div class="col-md-12">
+                                <div class="panel panel-color panel-info">
+                                    
+                                    <div class="panel-body">
+                                    
+										   <table class="table table-bordered table-striped" >
+												    <tr>
+														<td style="text-align: center;width:50%">输入值</td>
+														<td style="text-align: center;">条码</td>
+												   </tr>
+												   <tr>
+												   		<td style="height:320px;">
+												   		
+															<form class="form-horizontal" id="creatorForm" name="creatorForm" role="form"  method="post" >    
+								                                                        
+								                                            <div class="form-group">
+								                                                <label class="col-md-2 control-label">输入编码值</label>
+								                                                <div class="col-md-10">
+								                                                    <input id="code" name="code"  class="form-control" value="12345678"  type="text">
+								                                                </div>
+								                                            </div>
+								                                            
+								                                            
+								                                            <div class="form-group  m-b-0">
+								                                                <div class="col-sm-offset-2 col-sm-10">
+								                                                  <button id="btn-qr" type="button" class="btn btn-primary waves-effect waves-light" >
+								                                                  		<i class="fa ion-image "> </i>  生成 ( Code128 )条码
+								                                                  </button>
+								                                                </div>
+								                                                
+								                                            </div>
+								                                           
+								                            </form>
+												   		
+												   		</td>
+												   		
+												   		<td>
+												   		    <div id="img-qr">
+												   		    	<p><img th:src="@{/bar/bar?code=12345678}" /></p>
+												   		    	<p><img th:src="@{/bar/bar?isFont=n&code=12345678}" /></p>
+												   		    </div>
+												   		
+												   		</td>
+												   </tr>
+												   
+											</table>
+
+                                    </div> <!-- Panel-body -->
+                                    
+                                </div> <!-- Panel -->
+                            </div> <!-- col-->
+                            
+                        </div> <!-- End row -->
+              </div> <!-- end container -->
+          </div> <!-- content -->
+
+   
+         <script type="text/javascript" th:inline="javascript"> 
+
+	        $('#btn-qr').on('click', function(){
+	        	  if( $("#code").val() == ""  ){
+	        		  layer.msg('请输入编码值',function(){
+	        			  $("#code").focus();
+	        		  });
+	        		  return false;
+	        	  }
+	        	  
+	        	  $("#img-qr").html("");
+	        	  
+	        	  $("#img-qr").append('<p><img src="[(@{/bar/bar?code=})]'+ $("#code").val()  +'" /></p>');
+	        	  $("#img-qr").append('<p><img src="[(@{/bar/bar?isFont=n&code=})]'+ $("#code").val()  +'" /></p>');
+	        	  
+	        });
+         </script>
+      
+    
+    </body>
+</html>

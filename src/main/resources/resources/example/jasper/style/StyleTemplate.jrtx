@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE jasperTemplate PUBLIC "-//JasperReports//DTD Template//EN" "http://jasperreports.sourceforge.net/dtds/jaspertemplate.dtd">
+
+<jasperTemplate>
+	<style name="Title" mode="Opaque" forecolor="#000000" backcolor="#CCCCCC" fill="Solid" scaleImage="RetainShape" isBlankWhenNull="true" fontSize="18" isBold="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true">
+		<pen lineWidth="0.25"/>
+	</style>
+	<style name="column" mode="Transparent" pattern="" isBlankWhenNull="true" fontSize="10" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+</jasperTemplate>

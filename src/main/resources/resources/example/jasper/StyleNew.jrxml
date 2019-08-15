@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="StyleNew" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="77c1b055-12ae-4da8-9042-71669340eb08">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="style1" hAlign="Left" vAlign="Middle" pattern="" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true">
+		<box topPadding="0" leftPadding="4" rightPadding="4">
+			<pen lineWidth="0.25"/>
+			<topPen lineWidth="0.25"/>
+			<leftPen lineWidth="0.25"/>
+			<bottomPen lineWidth="0.25"/>
+			<rightPen lineWidth="0.25"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{NO} % 2 == 0]]></conditionExpression>
+			<style mode="Opaque" forecolor="#000000" backcolor="#CCCCCC"/>
+		</conditionalStyle>
+	</style>
+	<style name="style2" style="style1">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{NAME}.length() >=7]]></conditionExpression>
+			<style fontSize="5"/>
+		</conditionalStyle>
+	</style>
+	<queryString>
+		<![CDATA[select * from goods ]]>
+	</queryString>
+	<field name="ID" class="java.lang.String"/>
+	<field name="CODE" class="java.lang.String"/>
+	<field name="NAME" class="java.lang.String"/>
+	<field name="BRAND" class="java.lang.String"/>
+	<field name="MODEL" class="java.lang.String"/>
+	<field name="SPEC" class="java.lang.String"/>
+	<field name="UNIT" class="java.lang.String"/>
+	<field name="QUANTITY" class="java.math.BigDecimal"/>
+	<field name="PRICE" class="java.math.BigDecimal"/>
+	<field name="TOTAL" class="java.math.BigDecimal"/>
+	<field name="PRODUCTDATE" class="java.sql.Timestamp"/>
+	<field name="NORM" class="oracle.sql.CLOB"/>
+	<field name="ENTERID" class="java.lang.String"/>
+	<field name="RANGE" class="java.lang.String"/>
+	<variable name="NO" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$F{ID}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="37" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="34" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="4b9c621a-b4fc-43a4-ac13-c253d952c1f7" style="style1" x="53" y="14" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[CODE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="42768829-2235-4d47-a123-28f9fe400a00" style="style1" x="153" y="14" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a0e535c4-4e39-4721-bd5c-4c1659f245da" style="style1" x="253" y="14" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[QUANTITY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ed9a8313-bc79-40c6-bf44-05d6650e63f7" style="style1" x="453" y="14" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[PRODUCTDATE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="dd06b3be-7790-433a-a163-0f5cf7809309" style="style1" x="353" y="14" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[TOTAL]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement uuid="d0618144-043b-49a3-83ab-7390f58f8a02" style="style1" x="53" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{CODE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="8b03f438-2c96-498e-96ab-e748363753fa" style="style2" x="153" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{NAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="0752722d-264c-4775-994c-1f735c5c65f9" style="style1" x="253" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{QUANTITY}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="278bab77-13c1-46de-8289-8cd332032f9e" style="style1" x="453" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{PRODUCTDATE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="2d546999-cd52-4eae-a16f-939c4f934149" style="style1" x="353" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{TOTAL}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="3c4f9e3b-2165-434a-9bf8-33fc39ba04fe" style="style1" x="0" y="0" width="53" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$V{NO}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

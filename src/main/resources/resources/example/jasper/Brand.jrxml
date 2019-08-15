@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Brand" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="839425df-3e2f-4ca0-b200-95b33063b69e">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="127"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="d59d1b2b-cbef-499f-b65e-f71dab9cb1b4" x="17" y="25" width="355" height="22"/>
+				<textElement>
+					<font size="14" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Title（标题），只在整个报表的第一页显示]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="439dd563-8d45-4bb3-94bd-34b030bde463" x="17" y="5" width="309" height="20"/>
+				<textElement>
+					<font size="14" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Page Header（页头），在每张报表页显示]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="05121350-b12d-47c8-a63c-d37710d41736" x="17" y="19" width="437" height="20"/>
+				<textElement>
+					<font size="14" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Column  Header（列头），在每张报表页显示，相当于表头]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="2a3bf594-4b12-41c9-9afa-8b132389aab7" x="17" y="17" width="437" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="14" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Detail（详细信息），在每张报表页显示，报表的具体内容]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="58267a06-0ca3-41df-9802-79af4a964fd6" x="17" y="14" width="437" height="20"/>
+				<textElement>
+					<font size="14" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Column  Header（列脚），在每张报表页显示，相当于表尾]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="b159c26f-cbe3-44c1-898e-ad5d21f7a878" x="17" y="19" width="309" height="20"/>
+				<textElement>
+					<font size="14" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Page Footer（页脚），在每张报表页显示]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="2d23fd3b-13a5-4c20-97c8-5f99b8f8765b" x="17" y="12" width="538" height="20"/>
+				<textElement>
+					<font size="14" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Summary（统计），在整个报表的最后一页显示，在Detail栏的后面]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

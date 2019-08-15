@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>[[${application.const.PROJECT_NAME}]]([[${application.const.PROJECT_VERSON}]])</title>
+        <link th:href="@{/assets/plugins/sweetalert/dist/sweetalert.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/bootstrap.min.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/core.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/icons.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/components.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/pages.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/menu.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/responsive.css}" rel="stylesheet" type="text/css">
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js}"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js}"></script>
+        <![endif]-->
+     	<!-- jQuery  -->
+        <script th:src="@{/assets/js/jquery.min.js}"></script>
+        <script th:src="@{/assets/js/bootstrap.min.js}"></script>
+		<script type="text/javascript" th:src="@{/plugins/layer/layer.js}"></script>
+		<script type="text/javascript" th:src="@{/plugins/laydate/laydate.js}"></script>
+		<script type="text/javascript" th:src="@{/utils/number.js}"></script>
+		
+		<script type="text/javascript" th:inline="javascript"> 
+		 	var webroot = "[(@{/})]";
+			laydate.render({
+				  elem: '#leavedate'
+			});
+		</script>
+    </head>
+    
+    <body>
+   <!-- Start content -->
+          <div class="content">
+              <div class="container" id="container">
+                   <div class="row">
+                            <div class="col-sm-12">
+                             <form class="form-horizontal" id="creatorForm" name="creatorForm" role="form" th:action="@{/leave/add}"  method="post" >    
+                                <input type="hidden" name="SesToken" th:value="${session.SesToken }"/>
+                                <div class="panel panel-color panel-info m-t-10">
+                                    <div class="panel-body">
+                                                                       
+                                            <div class="form-group">
+                                                <label class="col-md-2 control-label">请假天数</label>
+                                                <div class="col-md-10">
+                                                    <input id="day" name="day"  maxlength="3" onkeyup="javascript:checkInt(this)" onpaste="return false" value="" required="" class="form-control"  placeholder="只能填写整数"  type="text">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-2 control-label">请假日期</label>
+                                                <div class="col-md-10">
+                                                    <input id="leavedate" name="leavedate"   onpaste="return false" readonly value="" required="" class="form-control"   type="text">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-2 control-label">电话</label>
+                                                <div class="col-md-10">
+                                                    <input id="telphone" name="telphone" maxlength="12"  required="" class="form-control"  type="text">
+                                                </div>
+                                            </div>
+                                            
+                                             <div class="form-group">
+                                                <label class="col-md-2 control-label">邮件</label>
+                                                <div class="col-md-10">
+                                                    <input id="email" name="email" maxlength="32"   required="" class="form-control"  type="text">
+                                                </div>
+                                            </div>
+                                             <div class="form-group">
+                                                <label class="col-md-2 control-label">年龄</label>
+                                                <div class="col-md-10">
+                                                    <input id="age" name="age"  maxlength="3"  onkeyup="javascript:checkInt(this)" onpaste="return false" required="" class="form-control"  type="text">
+                                                </div>
+                                            </div>
+                                             <div class="form-group">
+                                                <label class="col-md-2 control-label">扣除薪水</label>
+                                                <div class="col-md-10">
+                                                    <input id="money" name="money"   maxlength="9" onkeyup="javascript:checkDouble(this)" onpaste="return false" required="" class="form-control"  type="text">
+                                                </div>
+                                            </div>
+                                            
+                                            
+                                             <div class="form-group">
+                                                <label class="col-md-2 control-label">性别</label>
+                                                <div class="col-md-10">
+                                                    <select id="sex" name="sex" class="form-control" required="">
+                                                    	<option value="0">=请选择=</option>
+                                                    	<option th:value="${sex.key}" th:each="sex : ${sexs}" >[[${sex.value} ]]</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                             <div class="form-group">
+                                                <label class="col-md-2 control-label">备注说明</label>
+                                                <div class="col-md-10">
+                                                    <textarea  id="remark" name="remark" class="form-control" style="height:120px;" placeholder="最多只能输入128个字"></textarea>
+                                                </div>
+                                            </div>
+                           				  <div class="form-group">
+                                                <label class="col-sm-2 control-label"></label>
+                                                <div class="col-sm-10">
+                                                    <button type="button" id="btn-submit" class="btn  btn-primary waves-effect waves-light"><i class="md md-add "> </i>保存申请单</button>
+                                                </div>
+                                          </div>
+ 
+                                    </div> <!-- panel-body -->
+                                </div> <!-- panel -->
+                            
+                            
+                            </form>
+                            
+                           </div> <!-- col -->
+                       </div>
+                         
+                  
+              </div> <!-- end container -->
+          </div> <!-- content -->
+
+		<script type="text/javascript" th:inline="javascript"> 
+		
+         $('#btn-submit').on('click', function(){
+        	 $("#day").val($.trim( $("#day").val() ));
+     		if( $("#day").val() == "" ){
+     			layer.msg("错误：请假天数不能为空!",function(){
+     				$("#day").focus();
+     			});
+     			return false;
+     		}
+     		
+     		$("#leavedate").val($.trim( $("#leavedate").val() ));
+     		if( $("#leavedate").val() == "" ){
+     			layer.msg("错误：请假日期不能为空!",function(){
+     				$("#leavedate").focus();
+     			});
+     			return false;
+     		}
+     		
+     		$("#telphone").val($.trim( $("#telphone").val() ));
+     		if( $("#telphone").val() == "" ){
+     			layer.msg("错误：电话不能为空!",function(){
+     				$("#telphone").focus();
+     			});
+     			return false;
+     		}
+     		
+     		$("#email").val($.trim( $("#email").val() ));
+     		if( $("#email").val() == "" ){
+     			layer.msg("错误：邮件不能为空!",function(){
+     				$("#email").focus();
+     			});
+     			return false;
+     		}
+     		
+     		$("#age").val($.trim( $("#age").val() ));
+     		if( $("#age").val() == "" ){
+     			layer.msg("错误：年龄不能为空!",function(){
+     				$("#age").focus();
+     			});
+     			return false;
+     		}
+     		
+     		$("#money").val($.trim( $("#money").val() ));
+     		if( $("#money").val() == "" ){
+     			layer.msg("错误：扣除薪水不能为空!",function(){
+     				$("#money").focus();
+     			});
+     			return false;
+     		}
+
+     		if( $("#sex").val() == "" ){
+     			layer.msg("错误：性别不能为空!",function(){
+     				$("#sex").focus();
+     			});
+     			return false;
+     		}
+        	submitForm();
+         });
+         
+         
+     	function submitForm(){
+     			 $("#btn-submit").addClass("disabled");
+     			 $('#btn-submit').attr("disabled","disabled"); 
+     			 $.post(document.creatorForm.action, $("#creatorForm").serialize(), function(data) {
+     				 if(data.status == "ok"){
+     					 layer.msg("添加成功!", {icon: 6},function(){
+     						parent.location.href="[(@{/leave/listUnCommit})]";
+     					 });
+     				 }else if(data.status == "error"){
+     					 $("#btn-submit").removeClass("disabled");
+    					 $('#btn-submit').removeAttr('disabled');
+     					 layer.msg('添加失败:' + data.msg ,function(){
+     	        			 
+     	        		 });
+     				 }
+     			 });	
+     	}
+         
+         
+        </script>
+    </body>
+</html>

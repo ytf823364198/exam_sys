@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>[[${application.const.PROJECT_NAME}]]([[${application.const.PROJECT_VERSON}]])</title>
+        <link th:href="@{/assets/plugins/sweetalert/dist/sweetalert.css}" rel="stylesheet" type="text/css">
+
+        <link th:href="@{/assets/css/bootstrap.min.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/core.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/icons.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/components.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/responsive.css}" rel="stylesheet" type="text/css">
+        
+        <script charset="utf-8" th:src="@{/webjars/oyb-kindeditor/4.1.10/kindeditor.js}"></script>
+		<script charset="utf-8" th:src="@{/webjars/oyb-kindeditor/4.1.10/kindeditor/lang/zh_CN.js}"></script>
+		<script charset="utf-8" th:src="@{/webjars/oyb-kindeditor/4.1.10/kindeditor/plugins/code/prettify.js}"></script>
+
+
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js}"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js}"></script>
+        <![endif]-->
+        
+        
+     <!-- jQuery  -->
+        <script th:src="@{/assets/js/jquery.min.js}"></script>
+        <script th:src="@{/assets/js/bootstrap.min.js}"></script>
+		<script type="text/javascript" th:src="@{/plugins/layer/layer.js}"></script>
+       
+        <script type="text/javascript" th:inline="javascript"> 
+
+			var editor;
+			KindEditor.ready(function(K) {
+				editor = K.create('textarea[name="content"]', {
+					cssPath : '[(@{/webjars/oyb-kindeditor/4.1.10/kindeditor/plugins/code/prettify.css})]',
+					uploadJson : '[(@{/attach/editor})]',
+					items : [
+						'source', 'preview', 
+						'plainpaste', 'wordpaste', '|', 'justifyleft', 'justifycenter', 'justifyright',
+						'justifyfull', '|','insertorderedlist', 'insertunorderedlist', 
+						'formatblock', 'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold',
+						'italic', 'underline', 'strikethrough', 'lineheight', '|', 'image',
+						'insertfile', 'table', 'link', 'unlink', 'clearhtml', 'quickformat'
+					],
+					urlType:'domain'
+				});
+			});
+			
+			
+			$(function(){
+				if("[(${title})]" != "" ){
+					 layer.msg("添加成功!", {icon: 6});
+				}
+			});
+				
+			function submitForm(){
+					$("#title").val( $.trim( $("#title").val() ) );
+					
+					if($("#title").val()  == "" ){
+						layer.msg("请填写标题",function(){
+							$("#title").focus();
+						});
+						return false;
+					}
+					
+					if(editor.count('text') < 1 ){
+						layer.msg("错误：请填写内容!");
+			 			return false;
+			 		}
+					return true;
+			}
+		
+		</script>
+        
+        
+    </head>
+
+
+    <body>
+        
+
+   <!-- Start content -->
+          <div class="content">
+              <div class="container" id="container">
+                  <!-- Page-Title -->
+                  <div class="row">
+                      <div class="col-sm-12">
+                          <h4 class="breadcrumb pull-left">kindeditor</h4>
+                          <ol class="breadcrumb pull-right">
+                              <li><a href="#">kindeditor</a></li>
+                              <li class="active">实列</li>
+                          </ol>
+                      </div>
+                  </div>
+
+                  <div class="row">
+                            <div class="col-sm-12">
+                            
+                             <form class="form-horizontal" id="creatorForm" name="creatorForm" role="form" onSubmit="return submitForm();" th:action="@{/example/editor}"  method="post" >    
+                                <input type="hidden" name="SesToken" th:value="${session.SesToken }"/>
+                                <div class="panel panel-color panel-info m-t-10">
+                                    <div class="panel-body">
+                                    		
+                                    		 <div class="form-group">
+                                                <label class="col-md-2 control-label">标题</label>
+                                                <div class="col-md-10">
+                                                   <input id="title" name="title"  class="form-control" th:value="${title}" placeholder="请输入标题" type="text">
+                                                </div>
+                                            </div>
+                                                                       
+                                            <div class="form-group">
+                                                <label class="col-md-2 control-label">文本值</label>
+                                                <div class="col-md-10">
+                                                    <textarea style="width:100%;height:400px;" id="content" name="content"    class="form-control" >[[${content}]]</textarea>
+                                                </div>
+                                            </div>
+                                            
+                             				<div class="form-group  m-b-0">
+                                                <div class="col-sm-offset-2 col-sm-10">
+                                                  <button type="submit" class="btn btn-primary waves-effect waves-light" >
+                                                  		<i class="fa  fa-file-code-o "> </i>  提交表单
+                                                  </button>
+                                                </div> 
+                                            </div>
+                                        
+                                    </div> <!-- panel-body -->
+                                </div> <!-- panel -->
+                            
+                            </form>
+                            
+                            </div> <!-- col -->
+                        </div>
+              
+             
+              </div> <!-- end container -->
+          </div> <!-- content -->
+
+    
+    </body>
+</html>

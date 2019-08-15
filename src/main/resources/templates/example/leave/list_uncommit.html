@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>[[${application.const.PROJECT_NAME}]]([[${application.const.PROJECT_VERSON}]])</title>
+        <!-- Plugin Css-->
+        <link rel="stylesheet" th:href="@{/assets/plugins/magnific-popup/dist/magnific-popup.css}">
+        <link rel="stylesheet" th:href="@{/assets/plugins/jquery-datatables-editable/datatables.css}">
+
+        <link th:href="@{/assets/css/bootstrap.min.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/core.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/icons.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/components.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/pages.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/menu.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/responsive.css}" rel="stylesheet" type="text/css">
+        <script th:src="@{/assets/js/modernizr.min.js}"></script>
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js}"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js}"></script>
+        <![endif]-->
+
+        <!-- jQuery  -->
+        <script th:src="@{/assets/js/jquery.min.js}"></script>
+        <script th:src="@{/assets/js/bootstrap.min.js}"></script>
+		<script type="text/javascript" th:src="@{/plugins/layer/layer.js}"></script>
+		<script type="text/javascript" th:src="@{/utils/number.js}"></script>
+        <script type="text/javascript" th:inline="javascript"> 
+        	var webroot = "[(@{/})]";
+        </script>
+    </head>
+    <body>
+        
+
+   		  <!-- Start content -->
+          <div class="content">
+              <div class="container" id="container">
+                  <!-- Page-Title -->
+                  <div class="row">
+                      <div class="col-sm-12">
+                          <h4 class="breadcrumb pull-left">申请（启动流程）</h4>
+                          <ol class="breadcrumb pull-right">
+                              <li><a href="#">工作流</a></li>
+                              <li class="active">实列</li>
+                          </ol>
+                      </div>
+                  </div>
+              
+              <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-color panel-info" style="margin-bottom:4px;">
+                                <div class="panel-body">
+                                   		<form class="form-inline" th:action="@{/leave/listUnCommit}" role="form"  method="post">
+                                           
+                                             <div class="form-group">
+                                                <label style="width:80px;text-align:right">性别</label>
+                                                <select id="search-sex" name="sex" class="form-control" style="width:201px;">
+                                                   	 <option value="">=请选择=</option>
+                                                   	 <option th:value="${sex.key}" th:each="sex : ${sexs}" >[[${sex.value} ]]</option>
+                                                 </select>
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                <label style="width:80px;text-align:right">年龄</label>
+                                                <input class="form-control" style="width:98px;" id="search-agege" name="agege" onkeyup="javascript:checkInt(this)" onpaste="return false"  />-<input class="form-control" style="width:98px;" id="search-agele" name="agele" onkeyup="javascript:checkInt(this)" onpaste="return false" />
+                                            </div>
+  
+                                            <button type="submit" class="btn btn-info waves-effect waves-light m-l-10"><i class="ion-search "> </i> 搜索</button>
+                                        </form>
+                                </div>
+                        </div>
+                    </div>                
+               </div> 
+              
+              
+               <div class="row">
+                            <div class="col-md-12">
+                                <div class="panel panel-color panel-info">
+                                    <div class="panel-body">
+										   <button type="button" id="btn-add" class="btn btn-primary btn-rounded waves-effect waves-light m-b-15"><i class="fa ion-plus-circled "> </i> 请假申请</button>
+										   <table class="table table-bordered table-striped" >
+												    <tr>
+													    <td style="text-align: center;width:60px;">序号</td>
+													   	<td style="text-align: center;">申请人</td>
+													   	<td style="text-align: center;">性别</td>
+														<td style="text-align: center;">请假天数</td>
+														<td style="text-align: center;">电话</td>
+														<td style="text-align: center;">邮件</td>
+														<td style="text-align: center;">年龄</td>
+														<td style="text-align: center;">扣除薪水</td>
+														<td style="text-align: center;">请假日期</td>
+														<td style="text-align: center;">状态</td>
+												    	<td style="text-align: center;" width="140px">操作</td>
+												   </tr>
+												   <tr th:each="data,dataStatus:${pageModel.data }">
+												   			<td style="text-align: center;">[[${(pageModel.curpage-1) * pageModel.pagecount+ dataStatus.count }]]</td>
+															<td style="text-align: center;"><a th:href="|javascript:detail('${data.id}')|">[[${data.appuserid}]]</a></td>
+															<td style="text-align: center;" th:text="${sexs[data.sex]}"></td>
+															<td style="text-align: center;" th:text="${data.day}"></td>
+															<td style="text-align: center;" th:text="${data.telphone}"></td>
+															<td style="text-align: center;" th:text="${data.email}"></td>
+															<td style="text-align: center;" th:text="${data.age}"></td>
+															<td style="text-align: right;"  th:text="${#numbers.formatDecimal(data.money,0,'COMMA',2,'POINT')}"></td>
+															<td style="text-align: center;" th:text="${data.leavedate}"></td>
+															<td style="text-align: center;" th:text="${statuss[data.status]}"></td>
+															<td style="text-align: center;">
+																<div class="btn-group">
+																	<a class="btn btn-primary waves-effect waves-light btn-xs"  th:href="|javascript:commit('${data.id}')|" >提交</a>
+																	<a class="btn btn-success btn-xs  waves-effect"  th:href="|javascript:modify('${data.id}')|">修改</a>
+						        								 	<a class="btn btn-pink waves-effect waves-light btn-xs"  th:href="|javascript:del('${data.id}')|">删除</a>
+																</div>
+															</td>
+													</tr>
+													 <tr th:if="${pageModel.data == null }">
+														  <td style="text-align: center;" colspan="11">
+														  	无查询记录
+														  </td>
+													 </tr>
+											</table>
+											<div th:replace="public/splitpage::#splitpageform(formAction='/leave/listUnCommit')"></div>
+                                    </div> <!-- Panel-body -->
+                                    
+                                </div> <!-- Panel -->
+                            </div> <!-- col-->
+                            
+                        </div> <!-- End row -->      
+              </div> <!-- end container -->
+          </div> <!-- content -->
+
+   
+        <script type="text/javascript" th:inline="javascript"> 
+	        $('#btn-add').on('click', function(){
+	        	 var index = layer.open({
+	        		type: 2,
+	                title: '请假申请',
+	                maxmin: true,
+	                area : [$(window).width()+"px" , $(window).height()+"px" ],
+	                content: "[(@{/})]leave/turnAdd"
+	             });
+	        	 layer.full(index);
+	        });
+	        
+	    	function detail(id){
+	    		window.open("[(@{/})]leave/detail/"+id);
+	    	}	
+	    	
+	        function commit(id){
+				var url = "[(@{/})]leave/commit/"+id;
+				 $.get(url,function(data) {
+					 if(data.status == "ok"){
+						 layer.msg("操作成功!", {icon: 6},function(){
+							 document.splitpageform.submit();
+     					 }); 
+					 }else{
+						 layer.msg("错误："  + data.staus +" , " +data.msg);
+					 }
+			 	 });
+			}
+			
+			function modify(id){
+				var index = layer.open({
+	        		type: 2,
+	                title: '请假申请',
+	                maxmin: true,
+	                area : [$(window).width()+"px" , $(window).height()+"px" ],
+	                content:  "[(@{/})]leave/turnModify/"+id
+	              });
+	        	 layer.full(index);
+			}
+			
+			function del(id){
+				var url = "[(@{/})]leave/delete/"+id;
+				var cwin = layer.confirm('确定要删除吗?', {
+						btn: ['删除','放弃'] //按钮
+					}, function(cwin){
+						layer.close(cwin);
+						 $.get(url,function(data) {
+							 if(data.status == "ok"){
+								 layer.msg("操作成功!", {icon: 6},function(){
+									 document.splitpageform.submit();
+		     					 });
+							 }else{
+								 layer.msg("错误："  + data.staus +" , " +data.msg);
+							 }
+					 	 });
+					}, function(cwin){
+						layer.close(cwin);
+					});  
+			}
+        </script>
+    </body>
+</html>

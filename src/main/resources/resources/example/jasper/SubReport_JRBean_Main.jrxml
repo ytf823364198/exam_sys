@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="SubReport_JRBean_Main" language="groovy" pageWidth="600" pageHeight="400" orientation="Landscape" columnWidth="560" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="05751726-9734-4207-8570-634d1e15d629">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="41"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["D:\\EWorkSpaces\\jasper\\src\\main\\resources\\jasper\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="applydate" class="java.util.Date">
+		<fieldDescription><![CDATA[applydate]]></fieldDescription>
+	</field>
+	<field name="applyuser" class="java.lang.String">
+		<fieldDescription><![CDATA[applyuser]]></fieldDescription>
+	</field>
+	<field name="buyer" class="java.lang.String">
+		<fieldDescription><![CDATA[buyer]]></fieldDescription>
+	</field>
+	<field name="class" class="java.lang.Class">
+		<fieldDescription><![CDATA[class]]></fieldDescription>
+	</field>
+	<field name="code" class="java.lang.String">
+		<fieldDescription><![CDATA[code]]></fieldDescription>
+	</field>
+	<field name="goodses" class="java.util.List">
+		<fieldDescription><![CDATA[goodses]]></fieldDescription>
+	</field>
+	<field name="id" class="java.lang.String">
+		<fieldDescription><![CDATA[id]]></fieldDescription>
+	</field>
+	<field name="invoice" class="java.lang.String">
+		<fieldDescription><![CDATA[invoice]]></fieldDescription>
+	</field>
+	<field name="leader" class="java.lang.String">
+		<fieldDescription><![CDATA[leader]]></fieldDescription>
+	</field>
+	<field name="model" class="java.lang.String">
+		<fieldDescription><![CDATA[model]]></fieldDescription>
+	</field>
+	<field name="organname" class="java.lang.String">
+		<fieldDescription><![CDATA[organname]]></fieldDescription>
+	</field>
+	<field name="supplier" class="java.lang.String">
+		<fieldDescription><![CDATA[supplier]]></fieldDescription>
+	</field>
+	<field name="total" class="java.lang.Double">
+		<fieldDescription><![CDATA[total]]></fieldDescription>
+	</field>
+	<field name="useer" class="java.lang.String">
+		<fieldDescription><![CDATA[useer]]></fieldDescription>
+	</field>
+	<variable name="MainTotal" class="java.lang.Double">
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="48" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="948d173a-4e63-4ba7-a6fb-802d010e4254" x="0" y="0" width="560" height="48"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="18" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[SubReport,显示入库单及入库单的商品(JRBean)]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="312" splitType="Stretch">
+			<textField>
+				<reportElement uuid="064d268c-fcca-4dfc-929c-dd4dc0a0bdd6" x="53" y="1" width="147" height="20"/>
+				<box leftPadding="4">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{code}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="66979154-9184-4091-b133-4b8792e00c74" x="0" y="1" width="53" height="20"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[入库单号：]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="c4d72aec-caa1-4694-87d0-2af069e1a024" x="252" y="1" width="135" height="20"/>
+				<box leftPadding="4">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{applyuser}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="4edff5fd-386d-47ee-8219-b592c980f1eb" x="200" y="1" width="52" height="20"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[申请人：]]></text>
+			</staticText>
+			<textField pattern="yyyy/MM/dd">
+				<reportElement uuid="4704fb9d-ce6a-482b-a326-46dba42c8036" x="440" y="1" width="115" height="20"/>
+				<box leftPadding="4">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{applydate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="07aaffbf-d6a8-4c5b-ae50-c33180a9e7db" x="387" y="1" width="53" height="20"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[申请日期：]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0add75e6-3f83-4542-b6e1-0afc4eaf8ef8" x="0" y="21" width="53" height="20"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[申请部门：]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="6d8c54cb-f268-4f32-865e-8bdf262ba729" x="53" y="21" width="147" height="20"/>
+				<box leftPadding="4">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{organname}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="e357039e-3d5f-4f46-99fe-784ff703f262" x="200" y="21" width="52" height="20"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[供应商：]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="28132646-4d72-407f-8cc0-35d2a84a6de1" x="252" y="21" width="135" height="20"/>
+				<box leftPadding="4">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{supplier}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="25f3ca72-2384-4569-8785-6a95f8b5026c" x="387" y="21" width="53" height="20"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[发票编号：]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="2136b881-e0be-430b-b081-a520038b9529" x="440" y="21" width="115" height="20"/>
+				<box leftPadding="4">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{invoice}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement uuid="f53c867c-1161-45f1-985d-505bc765fbc9" x="0" y="41" width="560" height="184"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource( $F{goodses})]]></dataSourceExpression>
+				<returnValue subreportVariable="SubTotal" toVariable="MainTotal"/>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "SubReport_JRBean_Sub.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement uuid="f2185e92-e504-4c2b-8fc3-9cfd3b38d7a3" x="0" y="274" width="53" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[部门领导：]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="a1e48808-1b52-4c73-b4e4-7f7b84a3ca4d" x="53" y="274" width="147" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{leader}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="c5558033-3a7c-40ae-a64c-3f6813940d1b" x="200" y="274" width="52" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[采购员：]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="3783573d-57cf-498c-9e44-0cc213c0fe36" x="252" y="274" width="135" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{buyer}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="6fccae30-6822-4463-b6bb-ea32af302dc6" x="387" y="274" width="53" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[使用人：]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="90cbe4f4-f0ff-4008-9250-307ac2aa1612" x="440" y="274" width="104" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{useer}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="0add75e6-3f83-4542-b6e1-0afc4eaf8ef8" x="0" y="225" width="53" height="20"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[合计]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0add75e6-3f83-4542-b6e1-0afc4eaf8ef8" x="53" y="225" width="387" height="20"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<textField evaluationTime="Column" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+				<reportElement uuid="a8e575de-ab47-41a5-903b-2eec1135a12a" x="440" y="225" width="115" height="20"/>
+				<box rightPadding="4">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{MainTotal}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

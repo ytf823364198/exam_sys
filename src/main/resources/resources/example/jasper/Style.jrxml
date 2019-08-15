@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Style" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f07848a0-29e3-47a1-954c-e2562b75fe28">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="style1" mode="Opaque" forecolor="#000066" backcolor="#CCCCCC" fill="Solid" hAlign="Center" vAlign="Middle" pattern="" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+	<style name="style2" style="style1"/>
+	<style name="style3" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{row_num} % 2 == 0]]></conditionExpression>
+			<style mode="Opaque" forecolor="#000000" backcolor="#CCCCCC">
+				<pen lineColor="#000000"/>
+			</style>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{QUANTITY}> 2]]></conditionExpression>
+			<style mode="Opaque" forecolor="#FF0000" backcolor="#66FFCC"/>
+		</conditionalStyle>
+	</style>
+	<style name="style4" style="style3">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{TOTAL} >10000d]]></conditionExpression>
+			<style mode="Opaque" backcolor="#FF6666"/>
+		</conditionalStyle>
+	</style>
+	<queryString>
+		<![CDATA[select * from ex_jasper_goods]]>
+	</queryString>
+	<field name="ID" class="java.lang.String"/>
+	<field name="CODE" class="java.lang.String"/>
+	<field name="NAME" class="java.lang.String"/>
+	<field name="BRAND" class="java.lang.String"/>
+	<field name="MODEL" class="java.lang.String"/>
+	<field name="SPEC" class="java.lang.String"/>
+	<field name="UNIT" class="java.lang.String"/>
+	<field name="QUANTITY" class="java.math.BigDecimal"/>
+	<field name="PRICE" class="java.math.BigDecimal"/>
+	<field name="TOTAL" class="java.math.BigDecimal"/>
+	<field name="PRODUCTDATE" class="java.sql.Timestamp"/>
+	<field name="NORM" class="oracle.sql.CLOB"/>
+	<field name="ENTERID" class="java.lang.String"/>
+	<field name="RANGE" class="java.lang.String"/>
+	<variable name="row_num" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$F{ID}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="52" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="fe0815ac-b00d-47bc-9fbc-f3b283d68502" mode="Opaque" x="0" y="0" width="555" height="52" forecolor="#000066" backcolor="#CCCCCC"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None">
+					<font fontName="Serif" size="24" isBold="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[设置样式]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="51" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="9e398536-72be-4ef2-a13c-f917ee0b43d1" style="style1" x="0" y="14" width="212" height="37"/>
+				<box leftPadding="30"/>
+				<textElement textAlignment="Left">
+					<font size="14" isBold="true" isItalic="false" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[style1：笔记本电脑]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="225a6f2b-dda6-47f0-8fee-9d4bd97523a2" style="style1" x="369" y="14" width="153" height="37"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[style1：针式打印机]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="80" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="a504feaa-b30b-4120-a78a-a78d8ae3d2b9" style="style2" x="0" y="10" width="369" height="32"/>
+				<box leftPadding="30"/>
+				<textElement textAlignment="Left">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[style2继承style1，Detail区域是条件样式：]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8c205ccc-52d7-4078-a9a2-00357db3d640" style="style1" x="0" y="60" width="100" height="20"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[物品编号]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ce7149c0-2147-46d6-b59a-adb69af611ff" style="style1" x="100" y="60" width="100" height="20"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[物品名称]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="3f3051c4-a56b-4452-8c9a-e0d13ea0b487" style="style1" x="200" y="60" width="100" height="20"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[品牌]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="3312fba1-d816-4cc6-ac40-25257b373481" style="style1" x="300" y="60" width="58" height="20"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[数量]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0b284197-d9b5-4453-9652-bb3f0e8fc0c9" style="style1" x="358" y="60" width="100" height="20"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[单价]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a7e6d25c-760b-4fcb-88ae-54f3f37b1f1f" style="style1" x="458" y="60" width="97" height="20"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[总价]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement uuid="62ff6a19-7f16-4394-b221-69d2c6251994" style="style3" x="0" y="0" width="100" height="20"/>
+				<box leftPadding="4">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{CODE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="9559e2ec-c206-4100-9d4c-77fdd3adf8de" style="style3" x="100" y="0" width="100" height="20"/>
+				<box leftPadding="4">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{NAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="98f09a5d-c369-4899-8ffc-a2475538d552" style="style3" x="200" y="0" width="100" height="20"/>
+				<box leftPadding="4">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{BRAND}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="b944a5fe-763a-492e-8dfa-1580b110b08a" style="style3" x="300" y="0" width="58" height="20"/>
+				<box leftPadding="4">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{QUANTITY}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00;#,##0.00-">
+				<reportElement uuid="d3d7c6f2-7642-4430-85b8-5a510a2695f5" style="style3" x="358" y="0" width="100" height="20"/>
+				<box leftPadding="0" rightPadding="4">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{PRICE}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00;#,##0.00-">
+				<reportElement uuid="f568195a-5115-445f-8375-eb4e45c56951" style="style4" x="458" y="0" width="97" height="20"/>
+				<box leftPadding="0" rightPadding="4">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{TOTAL}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

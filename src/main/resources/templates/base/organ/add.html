@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>[[${application.const.PROJECT_NAME}]]([[${application.const.PROJECT_VERSON}]])</title>
+        <link th:href="@{/assets/plugins/sweetalert/dist/sweetalert.css}" rel="stylesheet" type="text/css">
+
+        <link th:href="@{/assets/css/bootstrap.min.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/core.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/icons.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/components.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/pages.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/menu.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/responsive.css}" rel="stylesheet" type="text/css">
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js}"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js}"></script>
+        <![endif]-->
+     	<!-- jQuery  -->
+        <script th:src="@{/assets/js/jquery.min.js}"></script>
+        <script th:src="@{/assets/js/bootstrap.min.js}"></script>
+		<script type="text/javascript" th:src="@{/plugins/layer/layer.js}"></script>
+    </head>
+    <body>
+   		  <!-- Start content -->
+          <div class="content">
+              <div class="container" id="container">
+                   <div class="row">
+                            <div class="col-sm-12">
+                            
+                             <form class="form-horizontal" id="creatorForm" name="creatorForm" role="form" th:action="@{/organ/add}"  method="post" >    
+                                <input type="hidden" name="SesToken" th:value="${session.SesToken }"/>
+                                <div class="panel panel-color panel-info m-t-10">
+                                    <div class="panel-body">
+                                                                       
+                                            <div class="form-group">
+                                                <label class="col-md-2 control-label">部门编号</label>
+                                                <div class="col-md-10">
+                                                    <input id="id" name="id" maxlength="12" required="" class="form-control" value="" placeholder="部门编号" type="text">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-2 control-label" for="example-email">部门名称</label>
+                                                <div class="col-md-10">
+                                                    <input id="organname" name="organname" maxlength="32" required="" class="form-control" placeholder="部门名称" type="text">
+                                                </div>
+                                            </div>
+                                          
+
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">所属部门</label>
+                                                <div class="col-sm-10">
+                                                    <select id="pid" name="pid" class="form-control" required="">
+                                                    	<option value="0">=请选择所属部门=</option>
+                                                    	<option th:value="${organ.id}" th:each="organ : ${porgans}" >[[${organ.id} +' '+ ${organ.organname}  ]]</option>
+                                                    </select>
+                                                   
+                                                </div>
+                                            </div>
+                           
+                                        
+                                    </div> <!-- panel-body -->
+                                </div> <!-- panel -->
+                            
+                            <button type="button" id="btn-submit" class="btn btn-block btn-lg btn-primary waves-effect waves-light"><i class="md md-add "> </i> 新 增</button>
+                            
+                            </form>
+                            
+                            </div> <!-- col -->
+                        </div>
+                         
+                  
+              </div> <!-- end container -->
+          </div> <!-- content -->
+
+		<script type="text/javascript" th:inline="javascript"> 
+         $('#btn-submit').on('click', function(){
+        	  if( $("#id").val() == ""  ){
+        		  layer.msg('请输入部门编号',function(){
+        			  $("#id").focus();
+        		  });
+        		  return false;
+        	  }
+        	  if( $("#organname").val() == ""  ){
+        		  layer.msg('请输入部门名称',function(){
+        			  $("#organname").focus();
+        		  });
+        		  return false;
+        	  }
+        	  
+        	  if( $("#pid").val() == "0"  ){
+        		 var cwin = layer.confirm('没有选择所属部门，若是一级部门可不选择 ', {
+        			  btn: ['是一级部门','不是'] //按钮
+        			}, function(cwin){
+        				layer.close(cwin);
+        				submitForm();
+        			}, function(cwin){
+        				layer.close(cwin);
+        			});
+        	  }else{
+        		  submitForm();
+        	  }
+         });
+         
+         
+     	function submitForm(){
+     			 $("#btn-submit").addClass("disabled");
+     			 $('#btn-submit').attr("disabled","disabled");
+     			 $.post(document.creatorForm.action, $("#creatorForm").serialize(), function(data) {
+     				 if(data.status == "ok"){
+     					 layer.msg("添加成功!", {icon: 6},function(){
+     						parent.location.href="[(@{/organ/list})]";
+     					 });
+     				 }else {
+     					 $("#btn-submit").removeClass("disabled");
+    					 $('#btn-submit').removeAttr('disabled'); 
+     					 layer.msg("错误："+ data.msg ,function(){
+     	        			  $("#id").focus();
+     	        		 });
+     				 }
+     			 });	
+     	}
+        </script>
+    </body>
+</html>

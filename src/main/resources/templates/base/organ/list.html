@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>[[${application.const.PROJECT_NAME}]]([[${application.const.PROJECT_VERSON}]])</title>
+        <link th:href="@{/assets/plugins/sweetalert/dist/sweetalert.css}" rel="stylesheet" type="text/css">
+
+        <link th:href="@{/assets/css/bootstrap.min.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/core.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/icons.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/components.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/responsive.css}" rel="stylesheet" type="text/css">
+
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js}"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js}"></script>
+        <![endif]-->
+        
+     	<!-- jQuery  -->
+        <script th:src="@{/assets/js/jquery.min.js}"></script>
+        <script th:src="@{/assets/js/bootstrap.min.js}"></script>
+       
+		<link rel="stylesheet" type="text/css" th:href="@{/plugins/tree/treetable/tabletree4j.css}"  />
+		<script type="text/javascript" th:src="@{/plugins/tree/treetable/Core4j.js}"></script>
+		<script type="text/javascript" th:src="@{/plugins/tree/treetable/TableTree4j.js}"></script>
+		
+		<script type="text/javascript" th:src="@{/plugins/layer/layer.js}"></script>
+        <script type="text/javascript" th:inline="javascript"> 
+	        $(window).resize(function() {
+				changeWindow();	
+			});
+		
+        
+	        function changeWindow(){
+	        	var width = $("#container").width();
+	        	$("#worldcupgird").height( $(this).height() -176  );
+	        	var w0 = 120;
+	        	var w2 = 120;
+	        	var w1 = parseInt(width - w0 -w2 -40) ;
+	
+	        	var tableHead = document.getElementById('tableHead');    // table 的 id
+	        	var rowsHead = tableHead.rows;    // 获取表格所有行
+	        	rowsHead[0].cells[0].width = w0;
+	        	rowsHead[0].cells[1].width = w1;
+	        	rowsHead[0].cells[2].width = w2;
+	
+	        	var tb = document.getElementById('myworldcupgirdtree');    // table 的 id
+	        	var rows = tb.rows;    // 获取表格所有行
+	        	
+	        	rows[0].cells[0].width = w0;
+	        	rows[0].cells[1].width = w1;
+	        	rows[0].cells[2].width = w2-17;
+	        }
+        </script> 
+    </head>
+
+    <body>
+       
+       <!-- Start content -->
+          <div class="content" >
+              <div class="container" id="container">
+                  <!-- Page-Title -->
+                  <div class="row">
+                      <div class="col-sm-12">
+                          <h4 class="breadcrumb pull-left">组织机构管理</h4>
+                          <ol class="breadcrumb pull-right">
+                              <li><a href="#">组织机构</a></li>
+                              <li class="active">基础数据</li>
+                          </ol>
+                      </div>
+                  </div>
+
+
+               <div class="row" >
+                            <div class="col-md-12">
+                                <div class="panel panel-color panel-info" style="margin-bottom:0px;"> 
+                                    <div class="panel-body"  style="margin-bottom:0px;padding-bottom:5px;">
+										<button type="button" onclick="openWin();" class="btn btn-primary btn-rounded waves-effect waves-light m-b-15"><i class="fa ion-plus-circled "> </i> 新增部门</button>
+										<button type="button" onclick="colseOrOpen()" class="btn btn-info btn-rounded waves-effect waves-light m-b-15"><i class="fa md-lock-open "> </i> <span id="btn-open-html">关闭节点</span></button>
+									    <table id="tableHead"  class="table table-bordered table-striped" style="margin-bottom:0px;">
+										   <tr>
+												<td style="text-align: center;">部门编号</td>
+												<td>部门名称</td>
+												<td style="text-align: center;">操作</td>
+										   </tr>
+										 </table>
+										 <div id="worldcupgird">
+											   <script type="text/javascript" th:inline="javascript">
+											   /*<![CDATA[*/
+											   	var type;
+											
+											   	var dummyJsonData= function(){
+												this.jsoninitNodes = [
+															[# th:each="organ : ${organs}"  th:if="${'0'==organ.pid}" ]
+																{ id:"[(${organ.id})]",dataObject:{organId:"[(${organ.id})]",organName:"[(${organ.organname})]",option:'<div class="btn-group"><button type="button" class="btn btn-primary  waves-effect btn-xs" onclick=modify("[(${organ.id})]")>修改</button><button type="button" class="btn btn-pink waves-effect waves-light  btn-xs" onclick=del("[(${organ.id})]") >删除</button></div>',userObject:{isGroup:true}}},
+														   	[/]
+																
+														   	[# th:each="organ : ${organs}"  th:if="${'0' != organ.pid}" ]
+																{ id:"[(${organ.id})]",pid:"[(${organ.pid})]",dataObject:{organId:"[(${organ.id})]",organName:"[(${organ.organname})]",option:'<div class="btn-group"><button type="button" class="btn btn-primary btn-xs  waves-effect" onclick=modify("[(${organ.id})]")>修改</button><button type="button" class="btn btn-pink waves-effect waves-light btn-xs" onclick=del("[(${organ.id})]")>删除</button></div>',userObject:{isGroup:true}}},
+													   		[/]	
+																{id:"end",pid:"-1",dataObject:{organName:"结束",organPname:"zy"}}
+													];
+												}
+											
+											
+												var fifaGirdTree=new Core4j.toolbox.TableTree4j({
+													columns:[
+																{dataIndex:'organId'},
+																{isNodeClick:true,dataIndex:'organName'},
+																{dataIndex:'option'}
+															],	
+													treeMode:'gird',
+													renderTo:'worldcupgird',
+													useLine:true,
+													useIcon:true,
+													id:'myworldcupgirdtree',
+													useCookie:false,
+													themeName:'default',
+													selectMode:'single'
+												});
+												
+												fifaGirdTree.build(new dummyJsonData().jsoninitNodes,true);
+												fifaGirdTree.sortByColumnIndex(0);
+												
+												changeWindow();
+												/*]]>*/
+											</script>
+ 										</div>
+                                    </div> <!-- Panel-body -->
+                                </div> <!-- Panel -->
+                            </div> <!-- col-->
+                        </div> <!-- End row -->
+              </div> <!-- end container -->
+          </div> <!-- content -->
+
+        <script type="text/javascript">
+        	var isOpen = false;
+	        function colseOrOpen(){
+	        	var nodes = new dummyJsonData().jsoninitNodes;
+	            for(var i=0; i< nodes.length;i++){
+	            	if(nodes[i].pid != null  ){
+	            		fifaGirdTree.toggleNodeById(nodes[i].pid,isOpen);
+	            	}
+	            }
+	            isOpen = !isOpen ;
+	            if(isOpen){
+	            	$("#btn-open-html").html("展开节点") 
+	            }else{
+	            	$("#btn-open-html").html("关闭节点")
+	            }
+	        }
+	        colseOrOpen();
+	        
+	        
+	        function openWin(){
+	        	var index = layer.open({
+	        		type: 2,
+	                title: '新增部门',
+	                maxmin: true,
+	                //shadeClose: true, //点击遮罩关闭层
+	                 area : ["420px", "480px" ],
+	                content: "[(@{/organ/turnAdd})]"
+	              });
+	        	
+	        	//layer.full(index);
+	        }
+	        
+	        function modify(id){
+				var index = layer.open({
+	        		type: 2,
+	                title: '修改部门',
+	                maxmin: true,
+	                area : ["420px", "480px" ],
+	                content:  "[(@{/})]organ/turnModify/"+id
+	              });
+	        	 //layer.full(index);
+			}
+			
+			function del(id){
+				var url = "[(@{/})]organ/delete/"+id;
+				var cwin = layer.confirm('确定要删除吗?', {
+						btn: ['删除','放弃'] //按钮
+					}, function(cwin){
+						layer.close(cwin);
+						 $.get(url,function(data) {
+							 if(data.status == "ok"){
+								 layer.msg("操作成功!", {icon: 6},function(){
+									 document.location.href = "[(@{/})]organ/list";
+		     					 });
+							 }else{
+								 layer.msg("错误： 请先删除此部门下的小部门 ");
+							 }
+					 	 });
+					}, function(cwin){
+						layer.close(cwin);
+					});  
+			}
+	        
+        </script>
+
+    </body>
+</html>

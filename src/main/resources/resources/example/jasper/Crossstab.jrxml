@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Crossstab" language="groovy" pageWidth="595" pageHeight="542" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f4a3cc14-14fc-40c3-95c4-f2395254402a">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Crosstab Data Text" hAlign="Center"/>
+	<queryString>
+		<![CDATA[select * from ex_jasper_goods]]>
+	</queryString>
+	<field name="ID" class="java.lang.String"/>
+	<field name="CODE" class="java.lang.String"/>
+	<field name="NAME" class="java.lang.String"/>
+	<field name="BRAND" class="java.lang.String"/>
+	<field name="MODEL" class="java.lang.String"/>
+	<field name="SPEC" class="java.lang.String"/>
+	<field name="UNIT" class="java.lang.String"/>
+	<field name="QUANTITY" class="java.math.BigDecimal"/>
+	<field name="PRICE" class="java.math.BigDecimal"/>
+	<field name="TOTAL" class="java.math.BigDecimal"/>
+	<field name="PRODUCTDATE" class="java.sql.Timestamp"/>
+	<field name="NORM" class="oracle.sql.CLOB"/>
+	<field name="ENTERID" class="java.lang.String"/>
+	<field name="RANGE" class="java.lang.String"/>
+	<pageHeader>
+		<band height="50">
+			<staticText>
+				<reportElement uuid="a099bd96-3c4c-4cb7-b504-ea76e798c301" x="0" y="5" width="555" height="45"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="18" isBold="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ Crosstab交叉报表]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<summary>
+		<band height="50">
+			<crosstab>
+				<reportElement uuid="142b559b-a643-4559-868b-e79c79c1d4b3" x="0" y="0" width="555" height="50"/>
+				<crosstabHeaderCell>
+					<cellContents>
+						<staticText>
+							<reportElement uuid="95828d52-bb71-4d7a-9338-aac9137d35cf" style="Crosstab Data Text" x="0" y="0" width="70" height="20"/>
+							<box topPadding="5" rightPadding="10">
+								<pen lineWidth="0.25"/>
+								<topPen lineWidth="0.25"/>
+								<leftPen lineWidth="0.25"/>
+								<bottomPen lineWidth="0.0"/>
+								<rightPen lineWidth="0.0"/>
+							</box>
+							<textElement textAlignment="Right" verticalAlignment="Top">
+								<font size="7" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+							</textElement>
+							<text><![CDATA[价格区间]]></text>
+						</staticText>
+						<staticText>
+							<reportElement uuid="2e36c712-bbb4-4525-8561-8fd3e73985ea" style="Crosstab Data Text" x="0" y="10" width="70" height="20"/>
+							<box>
+								<leftPen lineWidth="0.25"/>
+							</box>
+							<textElement verticalAlignment="Bottom">
+								<font size="7" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+							</textElement>
+							<text><![CDATA[品牌]]></text>
+						</staticText>
+						<line>
+							<reportElement uuid="21052bcc-db93-4924-b4bd-79e29c21cc93" style="Crosstab Data Text" x="0" y="0" width="70" height="30"/>
+							<graphicElement>
+								<pen lineWidth="0.25"/>
+							</graphicElement>
+						</line>
+					</cellContents>
+				</crosstabHeaderCell>
+				<rowGroup name="BRAND" width="70" totalPosition="End">
+					<bucket class="java.lang.String">
+						<bucketExpression><![CDATA[$F{BRAND}]]></bucketExpression>
+					</bucket>
+					<crosstabRowHeader>
+						<cellContents backcolor="#F0F8FF" mode="Opaque">
+							<box>
+								<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textField>
+								<reportElement uuid="171f3be2-092a-40b9-883e-ac1d985b1b10" style="Crosstab Data Text" x="0" y="0" width="70" height="25"/>
+								<textElement verticalAlignment="Middle">
+									<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$V{BRAND}]]></textFieldExpression>
+							</textField>
+						</cellContents>
+					</crosstabRowHeader>
+					<crosstabTotalRowHeader>
+						<cellContents backcolor="#BFE1FF" mode="Opaque">
+							<box>
+								<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<staticText>
+								<reportElement uuid="244b430e-86ec-40bc-93a6-93b02fafb8d3" x="0" y="0" width="70" height="25"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+								</textElement>
+								<text><![CDATA[Total BRAND]]></text>
+							</staticText>
+						</cellContents>
+					</crosstabTotalRowHeader>
+				</rowGroup>
+				<columnGroup name="RANGE" height="30" totalPosition="End">
+					<bucket class="java.lang.String">
+						<bucketExpression><![CDATA[$F{RANGE}]]></bucketExpression>
+					</bucket>
+					<crosstabColumnHeader>
+						<cellContents backcolor="#F0F8FF" mode="Opaque">
+							<box>
+								<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textField>
+								<reportElement uuid="f78a4b65-1a4f-4627-abe9-070225d36727" style="Crosstab Data Text" x="0" y="0" width="57" height="30"/>
+								<textElement verticalAlignment="Middle">
+									<font size="8" isBold="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$V{RANGE}]]></textFieldExpression>
+							</textField>
+						</cellContents>
+					</crosstabColumnHeader>
+					<crosstabTotalColumnHeader>
+						<cellContents backcolor="#BFE1FF" mode="Opaque">
+							<box>
+								<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<staticText>
+								<reportElement uuid="84f8e80d-d282-4804-9c49-1ea6be9b7756" x="0" y="0" width="57" height="30"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="8" isBold="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+								</textElement>
+								<text><![CDATA[Total RANGE]]></text>
+							</staticText>
+						</cellContents>
+					</crosstabTotalColumnHeader>
+				</columnGroup>
+				<measure name="QUANTITYMeasure" class="java.math.BigDecimal" calculation="Sum">
+					<measureExpression><![CDATA[$F{QUANTITY}]]></measureExpression>
+				</measure>
+				<crosstabCell width="57" height="25">
+					<cellContents>
+						<box>
+							<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textField isBlankWhenNull="true">
+							<reportElement uuid="b6cac5ef-0413-48f0-a7e1-ea3d8143df33" style="Crosstab Data Text" x="0" y="0" width="57" height="25"/>
+							<textElement verticalAlignment="Middle">
+								<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$V{QUANTITYMeasure}>0 ? $V{QUANTITYMeasure}:null]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell width="57" height="25" rowTotalGroup="BRAND">
+					<cellContents backcolor="#BFE1FF" mode="Opaque">
+						<box>
+							<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textField>
+							<reportElement uuid="8f3ff567-c51a-43ad-969d-051b72d5ba8c" style="Crosstab Data Text" x="0" y="0" width="57" height="25"/>
+							<textElement verticalAlignment="Middle">
+								<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$V{QUANTITYMeasure}]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell width="57" height="25" columnTotalGroup="RANGE">
+					<cellContents backcolor="#BFE1FF" mode="Opaque">
+						<box>
+							<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textField>
+							<reportElement uuid="eb237acf-f565-44df-8718-9b77c1924825" style="Crosstab Data Text" x="0" y="0" width="57" height="25"/>
+							<textElement verticalAlignment="Middle">
+								<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$V{QUANTITYMeasure}]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell width="57" height="25" rowTotalGroup="BRAND" columnTotalGroup="RANGE">
+					<cellContents backcolor="#BFE1FF" mode="Opaque">
+						<box>
+							<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textField>
+							<reportElement uuid="cebb580c-f9b6-47f9-a97f-d122e432c38e" style="Crosstab Data Text" x="0" y="0" width="57" height="25"/>
+							<textElement verticalAlignment="Middle">
+								<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$V{QUANTITYMeasure}]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+			</crosstab>
+		</band>
+	</summary>
+</jasperReport>

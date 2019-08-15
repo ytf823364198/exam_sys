@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>[[${application.const.PROJECT_NAME}]]([[${application.const.PROJECT_VERSON}]])</title>
+        <!-- Plugin Css-->
+        <link rel="stylesheet" th:href="@{/assets/plugins/magnific-popup/dist/magnific-popup.css}">
+        <link rel="stylesheet" th:href="@{/assets/plugins/jquery-datatables-editable/datatables.css}">
+
+        <link th:href="@{/assets/css/bootstrap.min.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/core.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/icons.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/components.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/pages.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/menu.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/responsive.css}" rel="stylesheet" type="text/css">
+        <script th:src="@{/assets/js/modernizr.min.js}"></script>
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js}"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js}"></script>
+        <![endif]-->
+
+        <!-- jQuery  -->
+        <script th:src="@{/assets/js/jquery.min.js}"></script>
+        <script th:src="@{/assets/js/bootstrap.min.js}"></script>
+		<script type="text/javascript" th:src="@{/plugins/layer/layer.js}"></script>
+		<script type="text/javascript" th:src="@{/plugins/laydate/laydate.js}"></script>
+		<script type="text/javascript" th:src="@{/utils/number.js}"></script>
+		<script type="text/javascript" th:inline="javascript"> 
+		  	var webroot = "[(@{/})]";
+			laydate.render({ elem: '#search-leavedatege'});
+			laydate.render({ elem: '#search-leavedatele'});
+			laydate.render({ elem: '#search-apptimege'});
+			laydate.render({ elem: '#search-apptimele'});
+		</script>
+    </head>
+    <body>
+       	 <!-- Start content -->
+         <div class="content">
+          	<div class="container" id="container">
+              <!-- Page-Title -->
+              <div class="row">
+                  <div class="col-sm-12">
+                      <h4 class="breadcrumb pull-left">待办（待办任务）</h4>
+                      <ol class="breadcrumb pull-right">
+                      	<li><a href="#">待办</a></li>
+                        <li class="active">请假申请</li>
+                      </ol>
+                  </div>
+              </div>
+              
+              <!--搜索-->
+               <div class="row"> 
+                    <div class="col-md-12">
+                        <div class="panel panel-color panel-info" style="margin-bottom:4px;">
+                                <div class="panel-body">
+                                   		<form id="searchform" name="searchform" class="form-inline" th:action="@{/lea/listRunTask}"  role="form"  method="post">
+											<div class="form-group">
+                                                <label style="width:80px;text-align:right">请假天数</label>
+                                                <input class="form-control" style="width:98px;" id="search-dayge" name="dayge" maxlength="3"  onkeyup="javascript:checkInt(this)" onpaste="return false"  />-<input class="form-control" style="width:98px;" id="search-dayle" name="dayle" onkeyup="javascript:checkInt(this)" onpaste="return false" />
+                                            </div>
+											<div class="form-group">
+                                                <label style="width:80px;text-align:right">电话</label>
+                                                <input class="form-control" id="search-telphone" name="telphone"   type="text"  maxlength="12" >
+                                            </div>
+											<div class="form-group">
+                                                <label style="width:80px;text-align:right">邮件</label>
+                                                <input class="form-control" id="search-email" name="email"   type="text"  maxlength="16" >
+                                            </div>
+											<div class="form-group">
+                                                <label style="width:80px;text-align:right">年龄</label>
+                                                <input class="form-control" style="width:98px;" id="search-agege" name="agege" maxlength="3"  onkeyup="javascript:checkInt(this)" onpaste="return false"  />-<input class="form-control" style="width:98px;" id="search-agele" name="agele" onkeyup="javascript:checkInt(this)" onpaste="return false" />
+                                            </div>
+											<div class="form-group">
+                                                <label style="width:80px;text-align:right">扣除薪水</label>
+                                                <input class="form-control" style="width:98px;" id="search-moneyge" name="moneyge" maxlength="9"  onkeyup="javascript:checkDouble(this)" onpaste="return false"  />-<input class="form-control" style="width:98px;" id="search-moneyle" name="moneyle" onkeyup="javascript:checkDouble(this)" onpaste="return false" />
+                                            </div>
+											<div class="form-group">
+                                                <label style="width:80px;text-align:right">请假日期</label>
+                                                <input class="form-control" style="width:98px;" id="search-leavedatege" name="leavedatege" onfocus="javascript:this.blur();" onpaste="return false"  />-<input class="form-control" style="width:98px;" id="search-leavedatele" name="leavedatele" onfocus="javascript:this.blur();" onpaste="return false" />
+                                            </div>
+									        <div class="form-group">
+                                                <label style="width:80px;text-align:right">状态</label>
+                                                <select id="search-status" name="status" class="form-control" style="width:201px;">
+                                                   	 <option value="">=请选择=</option>
+                                                   	 <option th:value="${status.key}" th:each="status : ${statuss}" >[[${status.value} ]]</option>
+                                                 </select>
+                                            </div>  	   	 
+									        <div class="form-group">
+                                                <label style="width:80px;text-align:right">性别</label>
+                                                <select id="search-sex" name="sex" class="form-control" style="width:201px;">
+                                                   	 <option value="">=请选择=</option>
+                                                   	 <option th:value="${sex.key}" th:each="sex : ${sexs}" >[[${sex.value} ]]</option>
+                                                 </select>
+                                            </div>  	   	 
+											<div class="form-group">
+                                                <label style="width:80px;text-align:right">申请人</label>
+                                                <input class="form-control" id="search-appuserid" name="appuserid"   type="text"  maxlength="8" >
+                                            </div>
+											<div class="form-group">
+                                                <label style="width:80px;text-align:right">申请时间</label>
+                                                <input class="form-control" style="width:98px;" id="search-apptimege" name="apptimege" onfocus="javascript:this.blur();" onpaste="return false"  />-<input class="form-control" style="width:98px;" id="search-apptimele" name="apptimele" onfocus="javascript:this.blur();" onpaste="return false" />
+                                            </div>
+											<button type="submit" class="btn btn-info waves-effect waves-light" ><i class="ion-search"> </i> 搜索</button>
+                                        </form>
+                                </div>
+                        </div>
+                    </div> <!--搜索 col-->               
+               </div> <!--搜索 row-->
+               
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+								 <table class="table table-bordered table-striped" >
+              						<tr>
+										<td style="text-align: center;width:60px;">序号</td>
+										<td style="text-align: center;">请假天数</td>
+										<td style="text-align: center;">电话</td>
+										<td style="text-align: center;">邮件</td>
+										<td style="text-align: center;">年龄</td>
+										<td style="text-align: center;">扣除薪水</td>
+										<td style="text-align: center;">请假日期</td>
+										<td style="text-align: center;">备注说明</td>
+										<td style="text-align: center;">状态</td>
+										<td style="text-align: center;">性别</td>
+										<td style="text-align: center;">申请人</td>
+										<td style="text-align: center;">申请时间</td>
+              							<td style="text-align: center;">流程节点</td>
+										<td style="text-align: center;" width="80px">操作</td>
+									</tr>
+              						<tr th:each="data,dataStatus:${pageModel.data }">
+										<td style="text-align: center;">[[${(pageModel.curpage-1) * pageModel.pagecount+ dataStatus.count }]]</td>
+										<td style="text-align: center;" ><a th:href="|javascript:detail('${data.id}')|">[[${data.day }]]</a></td>
+										<td style="text-align: center;" >[[${data.telphone }]]</td>
+										<td style="text-align: center;" >[[${data.email }]]</td>
+										<td style="text-align: center;" >[[${data.age }]]</td>
+										<td style="text-align: right;" >[[${#numbers.formatDecimal(data.money,0,'COMMA',2,'POINT')}]]</td>
+										<td style="text-align: center;" >[[${data.leavedate }]]</td>
+										<td style="text-align: center;" >[[${data.remark }]]</td>
+										<td style="text-align: center;" >[[${statuss[data.status]}]]</td>
+										<td style="text-align: center;" >[[${sexs[data.sex]}]]</td>
+										<td style="text-align: center;" >[[${data.appuserid }]]</td>
+										<td style="text-align: center;" >[[${data.apptime }]]</td>
+										<td style="text-align: center;">
+											<a th:href="|javascript:viewBPMImage('${data.procinstid}')|">[[${data.taskname}]]</a>
+										</td>
+										<td style="text-align: center;">
+											<div class="btn-group">
+												<a class="btn btn-primary btn-xs  waves-effect" th:href="|javascript:turnTask('${data.taskid}','${data.id}'),'lea'|"><i class="fa fa-user "> </i> 办理</a>
+											</div>
+										</td>
+									</tr>
+									 <tr th:if="${pageModel.data == null }">
+										  <td style="text-align: center;" colspan="13">
+										  	无查询记录
+										  </td>
+									 </tr> 
+								</table>
+							<div th:replace="public/splitpage::#splitpageform(formAction='/lea/listRunTask')"></div>
+                          </div> <!-- Panel-body -->
+                        </div> <!-- Panel -->
+                    </div> <!-- col-->
+                </div> <!-- End row -->   
+                   
+		    </div> <!-- end container -->
+		</div> <!-- content -->    
+		          
+	    <script type="text/javascript" th:inline="javascript"> 
+	    	function detail(id){
+	    		window.open("[(@{/})]lea/detail/"+id);
+	    	}
+	    </script>
+	    
+    </body>
+</html>

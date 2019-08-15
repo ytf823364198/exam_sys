@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>[[${application.const.PROJECT_NAME}]]([[${application.const.PROJECT_VERSON}]])</title>
+        <link th:href="@{/assets/plugins/sweetalert/dist/sweetalert.css}" rel="stylesheet" type="text/css">
+
+        <link th:href="@{/assets/css/bootstrap.min.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/core.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/icons.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/components.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/responsive.css}" rel="stylesheet" type="text/css">
+
+
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js}"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js}"></script>
+        <![endif]-->
+        
+        
+     <!-- jQuery  -->
+        <script th:src="@{/assets/js/jquery.min.js}"></script>
+        <script th:src="@{/assets/js/bootstrap.min.js}"></script>
+		<script type="text/javascript" th:src="@{/plugins/layer/layer.js}"></script>
+       
+        
+    </head>
+
+
+    <body>
+        
+
+   <!-- Start content -->
+          <div class="content">
+              <div class="container" id="container">
+                  <!-- Page-Title -->
+                  <div class="row">
+                      <div class="col-sm-12">
+                          <h4 class="breadcrumb pull-left">导出日志</h4>
+                          <ol class="breadcrumb pull-right">
+                              <li><a href="#">导出表格</a></li>
+                              <li class="active">实列</li>
+                          </ol>
+                      </div>
+                  </div>
+              
+               <div class="row">
+               
+                            <div class="col-md-12">
+                                <div class="panel panel-color panel-info">
+                                    <div class="panel-heading"><h3 class="panel-title">按搜索条件导出，超过100万记录分Sheet</h3></div>
+                                    <div class="panel-body">
+										<form class="form-horizontal" id="expForm" name="expForm" th:action="@{/example/exp}" role="form"  method="post" >    
+			                                             <input type="hidden" id="format" name="format" value="xlsx"/>           
+			                                            <div class="form-group">
+			                                                <label class="col-md-2 control-label">操作人</label>
+			                                                <div class="col-md-4">
+			                                                    <input  name="userid"  class="form-control" value="" placeholder="" type="text">
+			                                                </div>
+			                                            </div>
+			                                            
+			                                            <div class="form-group">
+			                                                <label class="col-md-2 control-label">执行动作</label>
+			                                                <div class="col-md-4">
+			                                                    <input name="action"  class="form-control" value="" placeholder="" type="text">
+			                                                </div>
+			                                            </div>
+			                                            
+			                                             <div class="form-group">
+			                                                <label class="col-md-2 control-label">IP</label>
+			                                                <div class="col-md-4">
+			                                                    <input  name="ip"  class="form-control" value="" placeholder="" type="text">
+			                                                </div>
+			                                            </div>
+			                                            
+			                                            <div class="form-group">
+			                                                <label class="col-md-2 control-label">操作日期</label>
+			                                                <div class="col-md-4">
+			                                                    <input  name="opttime"  class="form-control" value="" placeholder="" type="text">
+			                                                </div>
+			                                            </div>
+			                                            
+			                                            <div class="form-group  m-b-0">
+			                                                <div class="col-sm-offset-2 col-sm-10">
+			                                                  <button id="btn-excel" type="button" class="btn btn-primary waves-effect waves-light" >
+			                                                  		<i class="fa  fa-file-excel-o "> </i>  导出Excel
+			                                                  </button>
+			                                                  
+			                                                  <button id="btn-csv" type="button" class="btn btn-primary waves-effect waves-light" >
+			                                                  		<i class="fa  fa-file-excel-o "> </i>  导出CSV
+			                                                  </button>
+			                                                </div>
+			                                            </div>
+			                                           
+			                            </form>
+
+                                    </div> <!-- Panel-body -->
+                                    
+                                </div> <!-- Panel -->
+                            </div> <!-- col-->
+                            
+                        </div> <!-- End row -->
+                        
+
+                        
+                         <div class="row">
+                            <div class="col-md-12">
+                                <div class="panel panel-color panel-info">
+                                    <div class="panel-heading"><h3 class="panel-title">按搜索条件导出，超过100万记录分Sheet，要导出的字段可选择</h3></div>
+                                    <div class="panel-body">
+                                    <form class="form-horizontal" id="expFieldForm" name="expFieldForm" th:action="@{/example/exp}" role="form"  method="post" >    
+			                        <input type="hidden" id="fieldformat" name="format" value="xlsx"/>           
+                            		<div class="col-md-2"> 
+
+ 											<div class="checkbox checkbox-primary"  th:each="data,dataStatus:${fields }" >
+                                                <input name="field"   th:value="${data.key}" th:id="'field'+ ${data.key}" checked="checked" type="checkbox">
+                                                <label th:for="'field'+ ${data.key}">[[${data.value}]]</label>
+                                            </div>
+                                           
+                                    </div> 
+
+                                 <div class="col-md-8"> 
+											
+			                                            <div class="form-group">
+			                                                <label class="col-md-2 control-label">操作人</label>
+			                                                <div class="col-md-4">
+			                                                    <input  name="userid"  class="form-control" value="" placeholder="" type="text">
+			                                                </div>
+			                                            </div>
+			                                            
+			                                            <div class="form-group">
+			                                                <label class="col-md-2 control-label">执行动作</label>
+			                                                <div class="col-md-4">
+			                                                    <input name="action"  class="form-control" value="" placeholder="" type="text">
+			                                                </div>
+			                                            </div>
+			                                            
+			                                             <div class="form-group">
+			                                                <label class="col-md-2 control-label">IP</label>
+			                                                <div class="col-md-4">
+			                                                    <input  name="ip"  class="form-control" value="" placeholder="" type="text">
+			                                                </div>
+			                                            </div>
+			                                            
+			                                            <div class="form-group">
+			                                                <label class="col-md-2 control-label">操作日期</label>
+			                                                <div class="col-md-4">
+			                                                    <input  name="opttime"  class="form-control" value="" placeholder="" type="text">
+			                                                </div>
+			                                            </div>
+			                                            
+			                                            <div class="form-group  m-b-0">
+			                                                <div class="col-sm-offset-2 col-sm-10">
+			                                                  <button id="btn-field-excel" type="button" class="btn btn-primary waves-effect waves-light" >
+			                                                  		<i class="fa  fa-file-excel-o "> </i>  导出Excel
+			                                                  </button>
+			                                                  
+			                                                  <button id="btn-field-csv" type="button" class="btn btn-primary waves-effect waves-light" >
+			                                                  		<i class="fa  fa-file-excel-o "> </i>  导出CSV
+			                                                  </button>
+			                                                </div>
+			                                            </div>
+			                                           
+			                          
+									 </div>
+                                 
+                                   </form>
+                                    </div> <!-- Panel-body -->
+                                    
+                                </div> <!-- Panel -->
+                            </div> <!-- col-->
+                            
+                        </div> <!-- End row -->
+                         
+                        
+              </div> <!-- end container -->
+          </div> <!-- content -->
+
+   
+         <script type="text/javascript" th:inline="javascript"> 
+
+         	$('#btn-excel').on('click', function(){
+         		$("#format").val("xlsx");
+         		document.expForm.submit();
+         		
+         	});
+         	$('#btn-csv').on('click', function(){
+         		$("#format").val("csv");
+         		document.expForm.submit();
+         	});
+         	$('#btn-field-excel').on('click', function(){
+         		$("#fieldformat").val("xlsx");
+         		document.expFieldForm.submit();
+         		
+         	});
+         	$('#btn-field-csv').on('click', function(){
+         		$("#fieldformat").val("csv");
+         		document.expFieldForm.submit();
+         	});
+         	
+         	
+         </script>
+      
+    
+    </body>
+</html>

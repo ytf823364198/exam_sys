@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="NewFont" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="90993c58-aca7-4b70-9102-7b3d6b6855b3">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<detail>
+		<band height="802" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="99d28344-b501-4d65-99e3-70b4a06101fb" x="15" y="20" width="520" height="251"/>
+				<textElement>
+					<font fontName="钟齐志莽行书" size="24" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[习近平在贺电中说，中泰是亲密友好邻邦，“中泰一家亲”深入民心，两国全面战略合作伙伴关系不断深化。泰国王室长期关心重视中泰关系发展，为中泰友好事业发挥了不可替代的重要作用。你长期积极推动中泰友好关系发展。我愿同你共同努力，推动两国关系不断迈上新台阶，造福两国和两国人民。]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

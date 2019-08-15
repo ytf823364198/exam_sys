@@ -1,0 +1,110 @@
+@CHARSET "UTF-8";
+
+/**
+ * TABLETREE4J VESION 2 CSS
+ * @author LK
+ * @email lannerk@qq.com
+ * @date 2010-5-5
+ * @version 2.0
+ */
+
+.tabletree4j-menu {
+    border: none;
+    border-collapse: collapse;
+	width:100%;
+}
+
+.tabletree4j-menu td {
+    padding: 6px 8px 6px 8px;
+}
+
+.tabletree4j-gird{
+	border:1px solid rgb(221, 221, 221);
+	border-collapse: collapse;
+	/**width:100%;*/
+}
+.tabletree4j-gird td{
+	border:1px solid rgb(221, 221, 221);
+	 padding: 6px 8px 6px 8px;
+}
+
+
+ 
+	.bigtitle{
+		font-family:Arial;
+		font-weight:bold;
+		font-size:22px;
+		margin-bottom:10px;
+	}
+	.footer{
+		font-family:Arial;
+		font-weight:bold;
+		font-size:12px;
+		color:#747474;
+	}
+ 
+	.title{
+		padding-left:10px;
+		font-family:Arial;
+		/*font-weight:bold;*/
+		font-size:18px;
+		color:#747474;
+	}
+ 
+	.fromtitle{
+		background-color:#f5f5f5;
+		text-align:center;
+		font-family:Arial;
+		color:#acac59;
+		padding-top:5px;
+		padding-bottom:5px;
+	}
+ 
+	.fromcontent{
+		font-family:Arial;
+		padding-right:5px;
+		padding-bottom:10px;
+		padding-top:10px;
+	}
+ 
+	.content{
+		font-family:Arial;
+	}
+	.clickbtn{
+		cursor:pointer;
+	}
+	.headerbg{
+		background:#f6f6f6; text-align:center;  color:#005E8A;
+		height:35px;
+		font-family:"Arial";
+	}
+	.headerbg td{
+		text-align:center;
+	}
+ 
+ 
+	.tabletree4j-gird td{
+	height:32px;
+	}
+ 
+	.arrow-tt-node-content{
+		text-align:center;
+		width:100%;
+	}
+	.circle-tt-node-content{
+		text-align:center;
+		width:100%;
+	}
+	.default-tt-node-content{
+		text-align:center;
+		width:100%;
+	}
+
+#worldcupgird{
+	overflow-y:scroll 
+}
+
+#worldcupgird::-webkit-scrollbar {/*滚动条整体样式*/
+            width: 4px;     /*高宽分别对应横竖滚动条的尺寸*/
+            height: 4px;
+        }

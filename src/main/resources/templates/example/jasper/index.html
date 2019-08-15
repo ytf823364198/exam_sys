@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>[[${application.const.PROJECT_NAME}]]([[${application.const.PROJECT_VERSON}]])</title>
+        <link th:href="@{/assets/plugins/sweetalert/dist/sweetalert.css}" rel="stylesheet" type="text/css">
+
+        <link th:href="@{/assets/css/bootstrap.min.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/core.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/icons.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/components.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/pages.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/menu.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/responsive.css}" rel="stylesheet" type="text/css">
+
+
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js}"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js}"></script>
+        <![endif]-->
+        
+        
+     <!-- jQuery  -->
+        <script th:src="@{/assets/js/jquery.min.js}"></script>
+        <script th:src="@{/assets/js/bootstrap.min.js}"></script>
+		
+		<script type="text/javascript" th:src="@{/plugins/layer/layer.js}"></script>
+		<style type="text/css">
+			.table th, .table td {
+				text-align: center;
+				vertical-align: middle!important;
+			}
+		</style>
+		
+        <script type="text/javascript" th:inline="javascript"> 
+        function openWin(){
+        	var index = layer.open({
+        		type: 2,
+                title: '新增角色',
+                maxmin: true,
+                //shadeClose: true, //点击遮罩关闭层
+                //area : [$(window).width()+"px" , $(window).height()+"px" ],
+                 area : ["370px", "420px" ],
+                content: "[(@{/role/turnAdd})]"
+              });
+        	
+        	//layer.full(index);
+        }
+        
+        </script>
+        
+    </head>
+
+
+    <body>
+        
+
+   <!-- Start content -->
+          <div class="content">
+              <div class="container" id="container">
+                  <!-- Page-Title -->
+                  <div class="row">
+                      <div class="col-sm-12">
+                          <h4 class="breadcrumb pull-left">JasperReport报表制作实例</h4>
+                          <ol class="breadcrumb pull-right">
+                              <li><a href="#">报表制作</a></li>
+                              <li class="active">实例</li>
+                          </ol>
+                      </div>
+                  </div>
+              
+               <div class="row">
+                            <div class="col-md-12">
+                                <div class="panel panel-color panel-info">
+                                    
+                                    <div class="panel-body">
+										   <table class="table table-bordered table-striped" >
+												    
+												    <tr>
+												    	<td style="text-align: center;">章节</td>
+														<td style="text-align: center;">内容</td>
+														<td style="text-align: center;">资源路径</td>
+														<td style="text-align: center;">效果演示</td>
+												   </tr>
+												   <tr>
+														<td>Band</td>
+														<td>iReport的Band、组件、属性</td>
+														<td>Brand.jrxml</td>  
+														<td></td>	
+												  	</tr>
+												  	
+												  	<tr>
+														<td rowspan="3">通过Map传参生成PDF</td>
+														<td>Java调用jasper输出PDF</td>
+														<td>MapParameter.jrxml</td>  	
+														<td></td>
+												  	</tr>
+												  	<tr>
+														<td>web项目调用jasper中输出PDF</td>
+														<td>MapParameter.jrxml</td> 
+														<td><a th:href="@{/example/jasper/MapParameter}" target="_blank">/example/jasper/MapParameter</a></td> 	
+												  	</tr>
+												  	<tr>
+														<td>Japer生命周期</td>
+														<td>MapParameter.jrxml</td>  
+														<td></td>	
+												  	</tr>
+												  	
+												  	
+												  	<tr>
+														<td rowspan="3">通过JRBean数据源输出报表</td>
+														<td>数据源配置，显示出Fields</td>
+														<td></td>  
+														<td></td>	
+												  	</tr>
+												  	<tr>
+														<td>JRBean填充商品信息</td>
+														<td>JRBean.jrxml</td>  
+														<td><a th:href="@{/example/jasper/JRBean}" target="_blank">/example/jasper/JRBean</a></td> 		
+												  	</tr>
+												  	<tr>
+														<td>用List填充商品列表</td>
+														<td>JRBeanList.jrxml</td>  		
+														<td><a th:href="@{/example/jasper/JRBeanList}" target="_blank">/example/jasper/JRBeanList</a></td> 
+												  	</tr>
+
+												  	
+												  	<tr>
+														<td rowspan="3">通过JDBC数据源输出报表</td>
+														<td>数据源配置，显示出Fields</td>
+														<td></td>  
+														<td></td>	
+												  	</tr>
+												  	<tr>
+														<td>用JDBC填充商品信息</td>
+														<td>JDBC.jrxml</td>  	
+														<td><a th:href="@{/example/jasper/JDBC}" target="_blank">/example/jasper/JDBC</a></td>	
+												  	</tr>
+												  	<tr>
+														<td>用JDBC填充商品列表</td>
+														<td>JDBCList.jrxml</td>  
+														<td><a th:href="@{/example/jasper/JDBCList}" target="_blank">/example/jasper/JDBCList</a></td>	 	
+												  	</tr>
+												  	<tr>
+												  	<td rowspan="4">Parameters传参</td>
+														<td>用Parameters实现条件查询</td>
+														<td>JDBCQuery.jrxml</td>  
+														<td><a th:href="@{/example/jasper/JDBCQuery}" target="_blank">/example/jasper/JDBCQuery</a></td>
+												  	</tr>
+												  	<tr>
+														<td>用Parameters实现IN,NOT IN查询</td>
+														<td>JDBCInQuery.jrxml</td>  
+														<td><a th:href="@{/example/jasper/JDBCInQuery}" target="_blank">/example/jasper/JDBCInQuery</a></td>	
+												  	</tr>
+												  	<tr>
+														<td>用Parameters实现动态SQL查询</td>
+														<td>JDBCDynamicSQLQuery.jrxml</td>  
+														<td><a th:href="@{/example/jasper/JDBCDynamicSQLQuery}" target="_blank">/example/jasper/JDBCDynamicSQLQuery</a></td>		
+												  	</tr>
+												  	<tr>
+														<td>参数中传递JavaBean</td>
+														<td>FixPageSizePrint.jrxml</td>  
+														<td><a th:href="@{/example/jasper/FixPageSizePrint}" target="_blank">/example/jasper/FixPageSizePrint</a></td>	
+												  	</tr>
+												  	
+													<tr>
+														<td rowspan="7">变量Variables的使用</td>
+														<td>设置商品列表序号</td>
+														<td>Variables.jrxml</td>  
+														<td><a th:href="@{/example/jasper/Variables}" target="_blank">/example/jasper/Variables</a></td>
+												  	</tr>
+												  	<tr>
+														<td>设置打印日期</td>
+														<td>Variables.jrxml</td>  	
+														<td><a th:href="@{/example/jasper/Variables}" target="_blank">/example/jasper/Variables</a></td>	
+												  	</tr>
+												  	<tr>
+														<td>设置分页</td>
+														<td>Variables.jrxml</td>  	
+														<td><a th:href="@{/example/jasper/Variables}" target="_blank">/example/jasper/Variables</a></td>
+												  	</tr>
+												  	<tr>
+														<td>计算累计金额</td>
+														<td>Variables.jrxml</td>  
+														<td><a th:href="@{/example/jasper/Variables}" target="_blank">/example/jasper/Variables</a></td>	 	
+												  	</tr>
+												  	<tr>
+														<td>计算每页金额</td>
+														<td>Variables.jrxml</td>  
+														<td><a th:href="@{/example/jasper/Variables}" target="_blank">/example/jasper/Variables</a></td>
+												  	</tr>
+												  	<tr>
+														<td>计算总金额</td>
+														<td>Variables.jrxml</td>  
+														<td><a th:href="@{/example/jasper/Variables}" target="_blank">/example/jasper/Variables</a></td>	
+												  	</tr>
+												  	<tr>
+														<td>每一页显示的条目数</td>
+														<td>Variables.jrxml</td>  
+														<td><a th:href="@{/example/jasper/Variables}" target="_blank">/example/jasper/Variables</a></td>	
+												  	</tr>
+												  	
+												  	
+												  	
+												 	<tr>
+														<td rowspan="7">组件-子报表SubReport</td>
+														<td>JDBC数据源打印商品入库单及商品</td>
+														<td>SubReport_JDBC_Main.jrxml</td>  
+														<td><a th:href="@{/example/jasper/SubReportJDBC}" target="_blank">/example/jasper/SubReportJDBC</a></td>
+												  	</tr>
+												  	<tr>
+														<td>通过SQL补全固定列表条数的显示</td>
+														<td>SubReport_JDBC_Main.jrxml</td>  
+														<td><a th:href="@{/example/jasper/SubReportJDBC}" target="_blank">/example/jasper/SubReportJDBC</a></td>	
+												  	</tr>
+												  	<tr>
+														<td>父子报表给子报表传参</td>
+														<td>SubReport_JDBC_Main.jrxml</td>  
+														<td><a th:href="@{/example/jasper/SubReportJDBC}" target="_blank">/example/jasper/SubReportJDBC</a></td>
+												  	</tr>
+												  	<tr>
+														<td>子报表返回结果给父报表</td>
+														<td>SubReport_JDBC_Main.jrxml</td>  
+														<td><a th:href="@{/example/jasper/SubReportJDBC}" target="_blank">/example/jasper/SubReportJDBC</a></td>	
+												  	</tr>
+												  	<tr>
+														<td>父子报表给子报表传递JRBean数据源</td>
+														<td>SubReport_JRBean_Main.jrxml</td>  
+														<td><a th:href="@{/example/jasper/SubReportJRBean}" target="_blank">/example/jasper/SubReportJRBean</a></td> 	 	
+												  	</tr>
+												  	<tr>
+														<td>解决子报表不能分页套打的问题</td>
+														<td>FixPageSizePrint.jrxml</td>  
+														<td><a th:href="@{/example/jasper/FixPageSizePrint}" target="_blank">/example/jasper/FixPageSizePrint</a></td> 
+												  	</tr>
+												  	<tr>
+														<td>多报表合并</td>
+														<td>FixPageSizePrint.jrxml</td>  
+														<td><a th:href="@{/example/jasper/FillReport}" target="_blank">/example/jasper/FillReport</a></td>	
+												  	</tr>
+												  	
+												  	
+												  	
+												  	<tr>
+														<td rowspan="5">组件-多数据集DataSet<p>配合List组件、Table组件的使用</p></td>
+														<td>DataSet的配置</td>
+														<td></td>  
+														<td></td>
+												  	</tr>
+												  	<tr>
+														<td>DataSet与List组件替换子报表</td>
+														<td>DataSetList.jrxml</td>  
+														<td><a th:href="@{/example/jasper/DataSetList}" target="_blank">/example/jasper/DataSetList</a></td>	
+												  	</tr>
+												  	<tr>
+														<td>给List控件传参数</td>
+														<td>DataSetList.jrxml</td>  
+														<td><a th:href="@{/example/jasper/DataSetList}" target="_blank">/example/jasper/DataSetList</a></td>
+												  	</tr>
+												  	<tr>
+														<td>用多Detail解决内容Overflows的问题</td>
+														<td></td>  
+														<td></td> 	
+												  	</tr>
+												  	<tr>
+														<td>DataSet与Table组件替换子报表</td>
+														<td>DataSetTable.jrxml</td>  
+														<td><a th:href="@{/example/jasper/DataSetTable}" target="_blank">/example/jasper/DataSetTable</a></td>
+												  	</tr>
+												  	
+												
+													<tr>
+														<td rowspan="4">组件-Shape、Images、Barcode</td>
+														<td>Shape组件</td>
+														<td>Shape.jrxml</td>  
+														<td></td>
+												  	</tr>
+												  	<tr>
+														<td>Images组件</td>
+														<td>Image.jrxml</td>  
+														<td><a th:href="@{/example/jasper/Image}" target="_blank">/example/jasper/Image</a></td>	
+												  	</tr>
+												  	<tr>
+														<td>Barcode组件</td>
+														<td>BarCode.jrxml</td>  
+														<td><a th:href="@{/example/jasper/BarCode}" target="_blank">/example/jasper/BarCode</a></td>
+												  	</tr>
+												  	<tr>
+														<td>打印商品二维码标签</td>
+														<td>BarCode.jrxml</td>  
+														<td><a th:href="@{/example/jasper/BarCode}" target="_blank">/example/jasper/BarCode</a></td>
+												  	</tr>
+												  	
+												 
+												 
+												 
+													<tr>
+														<td rowspan="4">组件-图表Chart、蜘蛛图表</td>
+														<td>DataSet和Chart组件生产条形图</td>
+														<td></td>  
+														<td></td>
+												  	</tr>
+												  	<tr>
+														<td>DataSet和Chart组件生产柱形图</td>
+														<td></td>  
+														<td></td>
+												  	</tr>
+												  	<tr>
+														<td>DataSet和Chart组件生产饼图</td>
+														<td></td>  
+														<td></td>
+												  	</tr>
+												  	<tr>
+														<td>DataSet和蜘蛛网图表</td>
+														<td></td>  
+														<td></td>
+												  	</tr>
+												  	 	
+												  	 	
+												  	<tr>
+														<td rowspan="1">组件-交叉报表Crosstab</td>
+														<td>组件-交叉报表Crosstab</td>
+														<td>Crossstab.jrxml</td>  
+														<td><a th:href="@{/example/jasper/Crossstab}" target="_blank">/example/jasper/Crossstab</a></td>
+												  	</tr> 	
+												  	
+												  	
+												  	<tr>
+														<td rowspan="3">分组报表和栏</td>
+														<td>用向导创建分组报表</td>
+														<td>Group.jrxml</td>  
+														<td><a th:href="@{/example/jasper/Group}" target="_blank">/example/jasper/Group</a></td>
+												  	</tr> 
+												  	<tr>
+														<td>多栏的分组报表</td>
+														<td>GroupColumn.jrxml</td>  
+														<td><a th:href="@{/example/jasper/GroupColumn}" target="_blank">/example/jasper/GroupColumn</a></td>
+												  	</tr> 
+												  	<tr>
+														<td>分组报表的重置类型</td>
+														<td>GroupResetType.jrxml</td>  
+														<td><a th:href="@{/example/jasper/GroupResetType}" target="_blank">/example/jasper/GroupResetType</a></td>
+												  	</tr> 
+												  	
+												  	
+												  	<tr>
+														<td rowspan="5">设置字体Font、样式Style、模板</td>
+														<td>Font，自定义字体</td>
+														<td>Font.jrml</td>  
+														<td><a th:href="@{/example/jasper/Font}" target="_blank">/example/jasper/Font</a></td>
+												  	</tr>
+												  	<tr>
+														<td>Style，条件样式</td>
+														<td>Style.jrml</td>  
+														<td><a th:href="@{/example/jasper/Style}" target="_blank">/example/jasper/Style</a></td>
+												  	</tr>
+												  	<tr>
+														<td>Style，通用样式模板</td>
+														<td><p>StyleTemplate.jrxml</p>
+															<p>style/StyleTemplate.jrtx</p>
+														</td>  
+														<td></td>
+												  	</tr>
+												  	<tr>
+														<td>模板</td>
+														<td>self_template.jrxml</td>  
+														<td></td>
+												  	</tr>
+												  	
+												  	<tr>
+														<td>背景、水印</td>
+														<td>JDBC.jrxml</td>  
+														<td><a th:href="@{/example/jasper/JDBC}" target="_blank">/example/jasper/JDBC</a></td>
+												  	</tr>
+												  		
+												  	
+												  	
+												  	<tr>
+														<td rowspan="3">控件的各属性介绍<br/>开发中其他问题处理</td>
+														<td>巧用Title做封面</td>
+														<td></td>  
+														<td></td>
+												  	</tr>
+												  	<tr>
+														<td>报表不分页</td>
+														<td></td>  
+														<td></td>
+												  	</tr>
+												  	<tr>
+														<td>一个模板同时输出PDF，XLS，DOC，HTM</td>
+														<td>Excel.jrxml</td>  
+														<td><a th:href="@{/example/jasper/Excel}" target="_blank">/example/jasper/Excel</a></td>
+												  	</tr>
+											</table>
+
+                                    </div> <!-- Panel-body -->
+                                    
+                                </div> <!-- Panel -->
+                            </div> <!-- col-->
+                            
+                        </div> <!-- End row -->
+              </div> <!-- end container -->
+          </div> <!-- content -->
+
+   
+        
+      
+    
+    </body>
+</html>

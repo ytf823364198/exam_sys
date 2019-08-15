@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Images" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f6ffe943-1ee4-4ef4-85f8-9024096dbd9c">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="IMAGE_URL" class="java.lang.String"/>
+	<parameter name="IMAGE_IO" class="java.lang.String"/>
+	<parameter name="IMAGE_STREAM" class="java.io.InputStream" isForPrompting="false"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="58" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="fbb620ad-c51b-4169-ac75-8beaccd4fa3a" x="0" y="0" width="555" height="58"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="18" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Images控件]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="157" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="c1464023-c7e4-4fa8-ac02-ac10c28326e0" x="0" y="0" width="555" height="36"/>
+				<box leftPadding="4" rightPadding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+					<paragraph lineSpacing="Single" lineSpacingSize="8.0"/>
+				</textElement>
+				<text><![CDATA[1、String方式 ：http://localhost:80/jasper/images/xdxrgtq.jpg ;jasper/images/xdxrgtq.jpg]]></text>
+			</staticText>
+			<image scaleImage="FillFrame">
+				<reportElement uuid="5149e9ae-ebc1-48dc-82d1-3d36e78ea562" x="12" y="36" width="254" height="120"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineStyle="Solid" lineColor="#000000"/>
+				</graphicElement>
+				<imageExpression><![CDATA[$P{IMAGE_URL}]]></imageExpression>
+			</image>
+		</band>
+		<band height="170">
+			<staticText>
+				<reportElement uuid="c1464023-c7e4-4fa8-ac02-ac10c28326e0" x="0" y="0" width="555" height="41"/>
+				<box leftPadding="4" rightPadding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[2、java .net.URL方式 ：new java.net.URL("http://localhost:80/jasper/images/xdxrgtq.jpg")]]></text>
+			</staticText>
+			<image scaleImage="FillFrame">
+				<reportElement uuid="5149e9ae-ebc1-48dc-82d1-3d36e78ea562" x="12" y="41" width="254" height="128"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineStyle="Solid" lineColor="#000000"/>
+				</graphicElement>
+				<imageExpression><![CDATA[new java.net.URL( $P{IMAGE_URL})]]></imageExpression>
+			</image>
+		</band>
+		<band height="174">
+			<staticText>
+				<reportElement uuid="c1464023-c7e4-4fa8-ac02-ac10c28326e0" x="12" y="0" width="555" height="37"/>
+				<box leftPadding="4" rightPadding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[3、java .io.File方式 ：new java .io.File("D:\\xx.jpg")]]></text>
+			</staticText>
+			<image scaleImage="FillFrame">
+				<reportElement uuid="5149e9ae-ebc1-48dc-82d1-3d36e78ea562" x="12" y="37" width="254" height="136"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineStyle="Solid" lineColor="#000000"/>
+				</graphicElement>
+				<imageExpression><![CDATA[new java.io.File( $P{IMAGE_IO})]]></imageExpression>
+			</image>
+		</band>
+		<band height="175">
+			<staticText>
+				<reportElement uuid="c1464023-c7e4-4fa8-ac02-ac10c28326e0" x="0" y="0" width="555" height="32"/>
+				<box leftPadding="4" rightPadding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[4、java .io.InputStream方式 ：]]></text>
+			</staticText>
+			<image scaleImage="FillFrame">
+				<reportElement uuid="5149e9ae-ebc1-48dc-82d1-3d36e78ea562" x="12" y="32" width="254" height="140"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineStyle="Solid" lineColor="#000000"/>
+				</graphicElement>
+				<imageExpression><![CDATA[new java.io.File( $P{IMAGE_IO})]]></imageExpression>
+			</image>
+		</band>
+	</detail>
+</jasperReport>

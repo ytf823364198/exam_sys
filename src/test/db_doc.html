@@ -1,0 +1,3336 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>数据库文档生成</title>
+<style type="text/css">
+table{border:1px #000000 solid; border-collapse:collapse; line-height:24px; text-align:center; background:white; font-size:12px;width:600px;}
+table{word-wrap:break-word;word-break:break-all;white-space:normal;}
+
+td.colname{width:130px}
+td.coltype{width:100px}
+td.collength{width:60px}
+td.colnull{width:50px}
+td{border:1px #000000 solid;height:30px;text-align:left;padding-left:4px;}
+.head{background:#dcdedf;font-size:14px;font-weight:bold;}
+.head td{text-align:center;}
+.center{text-align:center;}
+</style>
+
+</head>
+<body>
+<br/>
+
+<h3>ACT_EVT_LOG </h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>LOG_NR_</td>
+	<td>NUMBER</td>
+	<td class="center">19</td>
+	<td class="center">N</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TYPE_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PROC_DEF_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PROC_INST_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>EXECUTION_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TASK_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TIME_STAMP_</td>
+	<td>TIMESTAMP(6)</td>
+	<td class="center"></td>
+	<td class="center">N</td>
+	<td></td>
+</tr>
+<tr>
+	<td>USER_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>DATA_</td>
+	<td>BLOB</td>
+	<td class="center"></td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>LOCK_OWNER_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>LOCK_TIME_</td>
+	<td>TIMESTAMP(6)</td>
+	<td class="center"></td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>IS_PROCESSED_</td>
+	<td>NUMBER</td>
+	<td class="center">3</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+</table>
+<h3>ACT_GE_BYTEARRAY </h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">N</td>
+	<td></td>
+</tr>
+<tr>
+	<td>REV_</td>
+	<td>NUMBER</td>
+	<td class="center">22</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>NAME_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>DEPLOYMENT_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>BYTES_</td>
+	<td>BLOB</td>
+	<td class="center"></td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>GENERATED_</td>
+	<td>NUMBER</td>
+	<td class="center">1</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+</table>
+<h3>ACT_GE_PROPERTY </h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>NAME_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">N</td>
+	<td></td>
+</tr>
+<tr>
+	<td>VALUE_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">600</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>REV_</td>
+	<td>NUMBER</td>
+	<td class="center">22</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+</table>
+<h3>ACT_HI_ACTINST </h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">N</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PROC_DEF_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">N</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PROC_INST_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">N</td>
+	<td></td>
+</tr>
+<tr>
+	<td>EXECUTION_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">N</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ACT_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">N</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TASK_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CALL_PROC_INST_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ACT_NAME_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ACT_TYPE_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">N</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ASSIGNEE_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>START_TIME_</td>
+	<td>TIMESTAMP(6)</td>
+	<td class="center"></td>
+	<td class="center">N</td>
+	<td></td>
+</tr>
+<tr>
+	<td>END_TIME_</td>
+	<td>TIMESTAMP(6)</td>
+	<td class="center"></td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>DURATION_</td>
+	<td>NUMBER</td>
+	<td class="center">19</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TENANT_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+</table>
+<h3>ACT_HI_ATTACHMENT </h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">N</td>
+	<td></td>
+</tr>
+<tr>
+	<td>REV_</td>
+	<td>NUMBER</td>
+	<td class="center">22</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>USER_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>NAME_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>DESCRIPTION_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">4000</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TYPE_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TASK_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PROC_INST_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>URL_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">4000</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CONTENT_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TIME_</td>
+	<td>TIMESTAMP(6)</td>
+	<td class="center"></td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+</table>
+<h3>ACT_HI_COMMENT </h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">N</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TYPE_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TIME_</td>
+	<td>TIMESTAMP(6)</td>
+	<td class="center"></td>
+	<td class="center">N</td>
+	<td></td>
+</tr>
+<tr>
+	<td>USER_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TASK_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PROC_INST_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ACTION_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>MESSAGE_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">4000</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>FULL_MSG_</td>
+	<td>BLOB</td>
+	<td class="center"></td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+</table>
+<h3>ACT_HI_DETAIL </h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">N</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TYPE_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">N</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PROC_INST_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>EXECUTION_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TASK_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ACT_INST_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>NAME_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">N</td>
+	<td></td>
+</tr>
+<tr>
+	<td>VAR_TYPE_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>REV_</td>
+	<td>NUMBER</td>
+	<td class="center">22</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TIME_</td>
+	<td>TIMESTAMP(6)</td>
+	<td class="center"></td>
+	<td class="center">N</td>
+	<td></td>
+</tr>
+<tr>
+	<td>BYTEARRAY_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>DOUBLE_</td>
+	<td>NUMBER</td>
+	<td class="center">22,10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>LONG_</td>
+	<td>NUMBER</td>
+	<td class="center">19</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TEXT_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">4000</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TEXT2_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">4000</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+</table>
+<h3>ACT_HI_IDENTITYLINK </h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">N</td>
+	<td></td>
+</tr>
+<tr>
+	<td>GROUP_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TYPE_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>USER_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TASK_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PROC_INST_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+</table>
+<h3>ACT_HI_PROCINST </h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">N</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PROC_INST_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">N</td>
+	<td></td>
+</tr>
+<tr>
+	<td>BUSINESS_KEY_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PROC_DEF_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">N</td>
+	<td></td>
+</tr>
+<tr>
+	<td>START_TIME_</td>
+	<td>TIMESTAMP(6)</td>
+	<td class="center"></td>
+	<td class="center">N</td>
+	<td></td>
+</tr>
+<tr>
+	<td>END_TIME_</td>
+	<td>TIMESTAMP(6)</td>
+	<td class="center"></td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>DURATION_</td>
+	<td>NUMBER</td>
+	<td class="center">19</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>START_USER_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>START_ACT_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>END_ACT_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SUPER_PROCESS_INSTANCE_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>DELETE_REASON_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">4000</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TENANT_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>NAME_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+</table>
+<h3>ACT_HI_TASKINST </h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">N</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PROC_DEF_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TASK_DEF_KEY_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PROC_INST_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>EXECUTION_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PARENT_TASK_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>NAME_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>DESCRIPTION_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">4000</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>OWNER_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ASSIGNEE_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>START_TIME_</td>
+	<td>TIMESTAMP(6)</td>
+	<td class="center"></td>
+	<td class="center">N</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CLAIM_TIME_</td>
+	<td>TIMESTAMP(6)</td>
+	<td class="center"></td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>END_TIME_</td>
+	<td>TIMESTAMP(6)</td>
+	<td class="center"></td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>DURATION_</td>
+	<td>NUMBER</td>
+	<td class="center">19</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>DELETE_REASON_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">4000</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PRIORITY_</td>
+	<td>NUMBER</td>
+	<td class="center">22</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>DUE_DATE_</td>
+	<td>TIMESTAMP(6)</td>
+	<td class="center"></td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>FORM_KEY_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CATEGORY_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TENANT_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+</table>
+<h3>ACT_HI_VARINST </h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">N</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PROC_INST_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>EXECUTION_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TASK_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>NAME_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">N</td>
+	<td></td>
+</tr>
+<tr>
+	<td>VAR_TYPE_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">200</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>REV_</td>
+	<td>NUMBER</td>
+	<td class="center">22</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>BYTEARRAY_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>DOUBLE_</td>
+	<td>NUMBER</td>
+	<td class="center">22,10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>LONG_</td>
+	<td>NUMBER</td>
+	<td class="center">19</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TEXT_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">4000</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TEXT2_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">4000</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CREATE_TIME_</td>
+	<td>TIMESTAMP(6)</td>
+	<td class="center"></td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>LAST_UPDATED_TIME_</td>
+	<td>TIMESTAMP(6)</td>
+	<td class="center"></td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+</table>
+<h3>ACT_ID_GROUP </h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">N</td>
+	<td></td>
+</tr>
+<tr>
+	<td>REV_</td>
+	<td>NUMBER</td>
+	<td class="center">22</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>NAME_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TYPE_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+</table>
+<h3>ACT_ID_INFO </h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">N</td>
+	<td></td>
+</tr>
+<tr>
+	<td>REV_</td>
+	<td>NUMBER</td>
+	<td class="center">22</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>USER_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TYPE_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>KEY_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>VALUE_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PASSWORD_</td>
+	<td>BLOB</td>
+	<td class="center"></td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PARENT_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+</table>
+<h3>ACT_ID_MEMBERSHIP </h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>USER_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">N</td>
+	<td></td>
+</tr>
+<tr>
+	<td>GROUP_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">N</td>
+	<td></td>
+</tr>
+</table>
+<h3>ACT_ID_USER </h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">N</td>
+	<td></td>
+</tr>
+<tr>
+	<td>REV_</td>
+	<td>NUMBER</td>
+	<td class="center">22</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>FIRST_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>LAST_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>EMAIL_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PWD_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PICTURE_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+</table>
+<h3>ACT_PROCDEF_INFO </h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">N</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PROC_DEF_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">N</td>
+	<td></td>
+</tr>
+<tr>
+	<td>REV_</td>
+	<td>NUMBER</td>
+	<td class="center">22</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>INFO_JSON_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+</table>
+<h3>ACT_RE_DEPLOYMENT </h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">N</td>
+	<td></td>
+</tr>
+<tr>
+	<td>NAME_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CATEGORY_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TENANT_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>DEPLOY_TIME_</td>
+	<td>TIMESTAMP(6)</td>
+	<td class="center"></td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+</table>
+<h3>ACT_RE_MODEL </h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">N</td>
+	<td></td>
+</tr>
+<tr>
+	<td>REV_</td>
+	<td>NUMBER</td>
+	<td class="center">22</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>NAME_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>KEY_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CATEGORY_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CREATE_TIME_</td>
+	<td>TIMESTAMP(6)</td>
+	<td class="center"></td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>LAST_UPDATE_TIME_</td>
+	<td>TIMESTAMP(6)</td>
+	<td class="center"></td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>VERSION_</td>
+	<td>NUMBER</td>
+	<td class="center">22</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>META_INFO_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">4000</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>DEPLOYMENT_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>EDITOR_SOURCE_VALUE_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>EDITOR_SOURCE_EXTRA_VALUE_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TENANT_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+</table>
+<h3>ACT_RE_PROCDEF </h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">N</td>
+	<td></td>
+</tr>
+<tr>
+	<td>REV_</td>
+	<td>NUMBER</td>
+	<td class="center">22</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CATEGORY_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>NAME_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>KEY_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">N</td>
+	<td></td>
+</tr>
+<tr>
+	<td>VERSION_</td>
+	<td>NUMBER</td>
+	<td class="center">22</td>
+	<td class="center">N</td>
+	<td></td>
+</tr>
+<tr>
+	<td>DEPLOYMENT_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>RESOURCE_NAME_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">4000</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>DGRM_RESOURCE_NAME_</td>
+	<td>VARCHAR2</td>
+	<td class="center">4000</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>DESCRIPTION_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">4000</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>HAS_START_FORM_KEY_</td>
+	<td>NUMBER</td>
+	<td class="center">1</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>HAS_GRAPHICAL_NOTATION_</td>
+	<td>NUMBER</td>
+	<td class="center">1</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SUSPENSION_STATE_</td>
+	<td>NUMBER</td>
+	<td class="center">22</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TENANT_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+</table>
+<h3>ACT_RU_EVENT_SUBSCR </h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">N</td>
+	<td></td>
+</tr>
+<tr>
+	<td>REV_</td>
+	<td>NUMBER</td>
+	<td class="center">22</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>EVENT_TYPE_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">N</td>
+	<td></td>
+</tr>
+<tr>
+	<td>EVENT_NAME_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>EXECUTION_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PROC_INST_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ACTIVITY_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CONFIGURATION_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CREATED_</td>
+	<td>TIMESTAMP(6)</td>
+	<td class="center"></td>
+	<td class="center">N</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PROC_DEF_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TENANT_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+</table>
+<h3>ACT_RU_EXECUTION </h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">N</td>
+	<td></td>
+</tr>
+<tr>
+	<td>REV_</td>
+	<td>NUMBER</td>
+	<td class="center">22</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PROC_INST_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>BUSINESS_KEY_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PARENT_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PROC_DEF_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SUPER_EXEC_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ACT_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>IS_ACTIVE_</td>
+	<td>NUMBER</td>
+	<td class="center">1</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>IS_CONCURRENT_</td>
+	<td>NUMBER</td>
+	<td class="center">1</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>IS_SCOPE_</td>
+	<td>NUMBER</td>
+	<td class="center">1</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>IS_EVENT_SCOPE_</td>
+	<td>NUMBER</td>
+	<td class="center">1</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SUSPENSION_STATE_</td>
+	<td>NUMBER</td>
+	<td class="center">22</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CACHED_ENT_STATE_</td>
+	<td>NUMBER</td>
+	<td class="center">22</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TENANT_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>NAME_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>LOCK_TIME_</td>
+	<td>TIMESTAMP(6)</td>
+	<td class="center"></td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+</table>
+<h3>ACT_RU_IDENTITYLINK </h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">N</td>
+	<td></td>
+</tr>
+<tr>
+	<td>REV_</td>
+	<td>NUMBER</td>
+	<td class="center">22</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>GROUP_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TYPE_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>USER_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TASK_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PROC_INST_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PROC_DEF_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+</table>
+<h3>ACT_RU_JOB </h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">N</td>
+	<td></td>
+</tr>
+<tr>
+	<td>REV_</td>
+	<td>NUMBER</td>
+	<td class="center">22</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TYPE_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">N</td>
+	<td></td>
+</tr>
+<tr>
+	<td>LOCK_EXP_TIME_</td>
+	<td>TIMESTAMP(6)</td>
+	<td class="center"></td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>LOCK_OWNER_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>EXCLUSIVE_</td>
+	<td>NUMBER</td>
+	<td class="center">1</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>EXECUTION_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PROCESS_INSTANCE_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PROC_DEF_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>RETRIES_</td>
+	<td>NUMBER</td>
+	<td class="center">22</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>EXCEPTION_STACK_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>EXCEPTION_MSG_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">4000</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>DUEDATE_</td>
+	<td>TIMESTAMP(6)</td>
+	<td class="center"></td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>REPEAT_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>HANDLER_TYPE_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>HANDLER_CFG_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">4000</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TENANT_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+</table>
+<h3>ACT_RU_TASK </h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">N</td>
+	<td></td>
+</tr>
+<tr>
+	<td>REV_</td>
+	<td>NUMBER</td>
+	<td class="center">22</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>EXECUTION_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PROC_INST_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PROC_DEF_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>NAME_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PARENT_TASK_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>DESCRIPTION_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">4000</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TASK_DEF_KEY_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>OWNER_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ASSIGNEE_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>DELEGATION_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PRIORITY_</td>
+	<td>NUMBER</td>
+	<td class="center">22</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CREATE_TIME_</td>
+	<td>TIMESTAMP(6)</td>
+	<td class="center"></td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>DUE_DATE_</td>
+	<td>TIMESTAMP(6)</td>
+	<td class="center"></td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CATEGORY_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SUSPENSION_STATE_</td>
+	<td>NUMBER</td>
+	<td class="center">22</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TENANT_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>FORM_KEY_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+</table>
+<h3>ACT_RU_VARIABLE </h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">N</td>
+	<td></td>
+</tr>
+<tr>
+	<td>REV_</td>
+	<td>NUMBER</td>
+	<td class="center">22</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TYPE_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">N</td>
+	<td></td>
+</tr>
+<tr>
+	<td>NAME_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">510</td>
+	<td class="center">N</td>
+	<td></td>
+</tr>
+<tr>
+	<td>EXECUTION_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PROC_INST_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TASK_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>BYTEARRAY_ID_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>DOUBLE_</td>
+	<td>NUMBER</td>
+	<td class="center">22,10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>LONG_</td>
+	<td>NUMBER</td>
+	<td class="center">19</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TEXT_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">4000</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TEXT2_</td>
+	<td>NVARCHAR2</td>
+	<td class="center">4000</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+</table>
+<h3>BASE_ATTACH </h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>ID</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">N</td>
+	<td>ID</td>
+</tr>
+<tr>
+	<td>PATH</td>
+	<td>VARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">Y</td>
+	<td>文件存储路径</td>
+</tr>
+<tr>
+	<td>NAME</td>
+	<td>VARCHAR2</td>
+	<td class="center">512</td>
+	<td class="center">Y</td>
+	<td>文件名</td>
+</tr>
+<tr>
+	<td>FORMAT</td>
+	<td>VARCHAR2</td>
+	<td class="center">16</td>
+	<td class="center">Y</td>
+	<td>格式</td>
+</tr>
+<tr>
+	<td>LENGTH</td>
+	<td>NUMBER</td>
+	<td class="center">17</td>
+	<td class="center">Y</td>
+	<td>文件长度</td>
+</tr>
+<tr>
+	<td>FILESIZE</td>
+	<td>VARCHAR2</td>
+	<td class="center">16</td>
+	<td class="center">Y</td>
+	<td>文件大小（如3.2M,78KB）</td>
+</tr>
+<tr>
+	<td>FLAG</td>
+	<td>VARCHAR2</td>
+	<td class="center">16</td>
+	<td class="center">Y</td>
+	<td>文件业务分类标识</td>
+</tr>
+<tr>
+	<td>OBJECTID</td>
+	<td>VARCHAR2</td>
+	<td class="center">16</td>
+	<td class="center">Y</td>
+	<td>关联业务表单ID</td>
+</tr>
+<tr>
+	<td>MD5</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td>MD5码</td>
+</tr>
+<tr>
+	<td>UPLOADTIME</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td>上传时间</td>
+</tr>
+</table>
+<h3>BASE_CLOB </h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>OBJECTID</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ATTRKEY</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ATTRVAL</td>
+	<td>CLOB</td>
+	<td class="center"></td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+</table>
+<h3>BASE_INSPECT </h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>OBJECTID</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>USERID</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>REALNAME</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>RESULT</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>INFO</td>
+	<td>VARCHAR2</td>
+	<td class="center">4000</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>OPTTIME</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>FLAG</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TASKNAME</td>
+	<td>VARCHAR2</td>
+	<td class="center">64</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TASKDEFKEY</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ISBPM</td>
+	<td>VARCHAR2</td>
+	<td class="center">2</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+</table>
+<h3>BASE_LOG 系统request请求记录</h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>ID</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">N</td>
+	<td>主键</td>
+</tr>
+<tr>
+	<td>USERID</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td>操作人工号</td>
+</tr>
+<tr>
+	<td>REALNAME</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td>操作人姓名</td>
+</tr>
+<tr>
+	<td>ACTION</td>
+	<td>VARCHAR2</td>
+	<td class="center">64</td>
+	<td class="center">Y</td>
+	<td>执行动作 (URL路径)</td>
+</tr>
+<tr>
+	<td>IP</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td>客户端IP地址</td>
+</tr>
+<tr>
+	<td>BROWSER</td>
+	<td>VARCHAR2</td>
+	<td class="center">1024</td>
+	<td class="center">Y</td>
+	<td>浏览器版本</td>
+</tr>
+<tr>
+	<td>OPTTIME</td>
+	<td>VARCHAR2</td>
+	<td class="center">20</td>
+	<td class="center">Y</td>
+	<td>操作时间</td>
+</tr>
+<tr>
+	<td>RESULT</td>
+	<td>VARCHAR2</td>
+	<td class="center">12</td>
+	<td class="center">Y</td>
+	<td>执行结果( y成功 ,n失败)</td>
+</tr>
+</table>
+<h3>BASE_MAIL_MSG 系统待发邮件表</h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>ID</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">N</td>
+	<td>主键</td>
+</tr>
+<tr>
+	<td>TOEMAIL</td>
+	<td>VARCHAR2</td>
+	<td class="center">64</td>
+	<td class="center">Y</td>
+	<td>发送的邮箱地址</td>
+</tr>
+<tr>
+	<td>TOUSER</td>
+	<td>VARCHAR2</td>
+	<td class="center">64</td>
+	<td class="center">Y</td>
+	<td>发送给谁的姓名</td>
+</tr>
+<tr>
+	<td>SUBJECT</td>
+	<td>VARCHAR2</td>
+	<td class="center">128</td>
+	<td class="center">Y</td>
+	<td>邮件标题</td>
+</tr>
+<tr>
+	<td>MSG</td>
+	<td>VARCHAR2</td>
+	<td class="center">4000</td>
+	<td class="center">Y</td>
+	<td>邮件正文</td>
+</tr>
+<tr>
+	<td>ADDTIME</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td>添加时间</td>
+</tr>
+<tr>
+	<td>TRYTIMES</td>
+	<td>NUMBER</td>
+	<td class="center">22</td>
+	<td class="center">Y</td>
+	<td>尝试次数（可能一次发送不成功,需不断发送）</td>
+</tr>
+<tr>
+	<td>STATUS</td>
+	<td>VARCHAR2</td>
+	<td class="center">4</td>
+	<td class="center">Y</td>
+	<td>正在发送   (n未发送  e发送失败 y已发送)</td>
+</tr>
+<tr>
+	<td>LASTTIME</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td>最后一次发送时间</td>
+</tr>
+</table>
+<h3>BASE_MAIL_SEND_ERROR 系统邮件发送历史</h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>MSGID</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td>邮件消息ID</td>
+</tr>
+<tr>
+	<td>ERROR</td>
+	<td>VARCHAR2</td>
+	<td class="center">512</td>
+	<td class="center">Y</td>
+	<td>发送错误原因</td>
+</tr>
+<tr>
+	<td>SENDTIME</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td>发送时间</td>
+</tr>
+</table>
+<h3>BASE_MENU </h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>ID</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PID</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>NAME</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>URL</td>
+	<td>VARCHAR2</td>
+	<td class="center">64</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>MURL</td>
+	<td>VARCHAR2</td>
+	<td class="center">64</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TYPE</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PERMCODE</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>STATUS</td>
+	<td>VARCHAR2</td>
+	<td class="center">2</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SORTNO</td>
+	<td>NUMBER</td>
+	<td class="center">3</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>REMIND</td>
+	<td>VARCHAR2</td>
+	<td class="center">2</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>REMINDSORTNO</td>
+	<td>NUMBER</td>
+	<td class="center">3</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>HASNODE</td>
+	<td>VARCHAR2</td>
+	<td class="center">2</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ICO</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+</table>
+<h3>BASE_NOTICE 系统通知</h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>ID</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">N</td>
+	<td>主键</td>
+</tr>
+<tr>
+	<td>TITLE</td>
+	<td>VARCHAR2</td>
+	<td class="center">256</td>
+	<td class="center">Y</td>
+	<td>通知标题</td>
+</tr>
+<tr>
+	<td>TYPE</td>
+	<td>VARCHAR2</td>
+	<td class="center">4</td>
+	<td class="center">Y</td>
+	<td>类别（1、通知公告 、2最新消息）</td>
+</tr>
+<tr>
+	<td>ADDUSERID</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td>发布人ID</td>
+</tr>
+<tr>
+	<td>ADDUSER</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td>发布人姓名</td>
+</tr>
+<tr>
+	<td>ADDDATE</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td>发布时间</td>
+</tr>
+<tr>
+	<td>ISWARN</td>
+	<td>VARCHAR2</td>
+	<td class="center">2</td>
+	<td class="center">Y</td>
+	<td>是否重要提醒</td>
+</tr>
+<tr>
+	<td>WARNDATE</td>
+	<td>VARCHAR2</td>
+	<td class="center">18</td>
+	<td class="center">Y</td>
+	<td>提醒结束日期</td>
+</tr>
+</table>
+<h3>BASE_ORGAN 系统组织机构</h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>ID</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">N</td>
+	<td>主键</td>
+</tr>
+<tr>
+	<td>ORGANNAME</td>
+	<td>VARCHAR2</td>
+	<td class="center">64</td>
+	<td class="center">N</td>
+	<td>部门名称</td>
+</tr>
+<tr>
+	<td>PID</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td>父部门编号</td>
+</tr>
+</table>
+<h3>BASE_RES_CLOB 系统大文本字段</h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>ID</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td>主键</td>
+</tr>
+<tr>
+	<td>CLASSID</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td>类id，业务数据ID</td>
+</tr>
+<tr>
+	<td>ATTRKEY</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td>变量 格式：类名.字段名 BaseNotice.content</td>
+</tr>
+<tr>
+	<td>ATTRVAL</td>
+	<td>CLOB</td>
+	<td class="center"></td>
+	<td class="center">Y</td>
+	<td>内容</td>
+</tr>
+</table>
+<h3>BASE_ROLE 系统角色</h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>ID</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">N</td>
+	<td>主键</td>
+</tr>
+<tr>
+	<td>ROLENAME</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">N</td>
+	<td>角色名称</td>
+</tr>
+<tr>
+	<td>SORT</td>
+	<td>NUMBER</td>
+	<td class="center">22</td>
+	<td class="center">Y</td>
+	<td>排序号</td>
+</tr>
+<tr>
+	<td>INLAY</td>
+	<td>VARCHAR2</td>
+	<td class="center">2</td>
+	<td class="center">Y</td>
+	<td>是否内置(y是，n否)</td>
+</tr>
+<tr>
+	<td>ORGAN</td>
+	<td>VARCHAR2</td>
+	<td class="center">2</td>
+	<td class="center">Y</td>
+	<td>是否关联部门 (y是，n否 )</td>
+</tr>
+</table>
+<h3>BASE_ROLE_MENU 系统角色菜单</h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>ROLEID</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">N</td>
+	<td>角色ID</td>
+</tr>
+<tr>
+	<td>MENUID</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">N</td>
+	<td>菜单ID</td>
+</tr>
+</table>
+<h3>BASE_USER 系统用户</h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>ID</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">N</td>
+	<td>主键</td>
+</tr>
+<tr>
+	<td>USERNAME</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td>用户工号</td>
+</tr>
+<tr>
+	<td>REALNAME</td>
+	<td>VARCHAR2</td>
+	<td class="center">64</td>
+	<td class="center">Y</td>
+	<td>姓名</td>
+</tr>
+<tr>
+	<td>TELPHONE</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td>联系电话</td>
+</tr>
+<tr>
+	<td>MOBILE</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td>手机</td>
+</tr>
+<tr>
+	<td>EMAIL</td>
+	<td>VARCHAR2</td>
+	<td class="center">64</td>
+	<td class="center">Y</td>
+	<td>邮件</td>
+</tr>
+<tr>
+	<td>PASSWORD</td>
+	<td>VARCHAR2</td>
+	<td class="center">16</td>
+	<td class="center">Y</td>
+	<td>备用密码</td>
+</tr>
+<tr>
+	<td>PUTMAIL</td>
+	<td>VARCHAR2</td>
+	<td class="center">4</td>
+	<td class="center">Y</td>
+	<td>推送邮件|y:推送,n:不推送</td>
+</tr>
+<tr>
+	<td>PUTMS</td>
+	<td>VARCHAR2</td>
+	<td class="center">4</td>
+	<td class="center">Y</td>
+	<td>推送短信|y:推送,n:不推送</td>
+</tr>
+<tr>
+	<td>TYPE</td>
+	<td>VARCHAR2</td>
+	<td class="center">4</td>
+	<td class="center">Y</td>
+	<td>类别|jzg:推送,xs:不推送</td>
+</tr>
+<tr>
+	<td>TUTORID</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td>导师工号</td>
+</tr>
+<tr>
+	<td>STATUS</td>
+	<td>VARCHAR2</td>
+	<td class="center">4</td>
+	<td class="center">Y</td>
+	<td>推送短信|y:可用,n:禁用</td>
+</tr>
+</table>
+<h3>BASE_USER_ORGAN 系统用户部门</h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>USERID</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td>用户ID</td>
+</tr>
+<tr>
+	<td>ORGANID</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td>部门ID</td>
+</tr>
+</table>
+<h3>BASE_USER_ROLE 系统用户角色</h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>USERID</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td>用户工号</td>
+</tr>
+<tr>
+	<td>ROLEID</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td>角色id</td>
+</tr>
+</table>
+<h3>EXAMPLE_LEAVE 请假申请</h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>ID</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">N</td>
+	<td>主键</td>
+</tr>
+<tr>
+	<td>DAY</td>
+	<td>NUMBER</td>
+	<td class="center">3</td>
+	<td class="center">Y</td>
+	<td>请假天数</td>
+</tr>
+<tr>
+	<td>TELPHONE</td>
+	<td>VARCHAR2</td>
+	<td class="center">12</td>
+	<td class="center">Y</td>
+	<td>电话</td>
+</tr>
+<tr>
+	<td>EMAIL</td>
+	<td>VARCHAR2</td>
+	<td class="center">64</td>
+	<td class="center">Y</td>
+	<td>邮件</td>
+</tr>
+<tr>
+	<td>AGE</td>
+	<td>NUMBER</td>
+	<td class="center">3</td>
+	<td class="center">Y</td>
+	<td>年龄</td>
+</tr>
+<tr>
+	<td>MONEY</td>
+	<td>NUMBER</td>
+	<td class="center">12,2</td>
+	<td class="center">Y</td>
+	<td>扣除薪水</td>
+</tr>
+<tr>
+	<td>LEAVEDATE</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td>请假日期</td>
+</tr>
+<tr>
+	<td>REMARK</td>
+	<td>VARCHAR2</td>
+	<td class="center">512</td>
+	<td class="center">Y</td>
+	<td>备注说明</td>
+</tr>
+<tr>
+	<td>STATUS</td>
+	<td>VARCHAR2</td>
+	<td class="center">2</td>
+	<td class="center">Y</td>
+	<td>状态|0:未提交,1:审批中,-1:已否决,2:已审批,9:已作废</td>
+</tr>
+<tr>
+	<td>SEX</td>
+	<td>VARCHAR2</td>
+	<td class="center">2</td>
+	<td class="center">Y</td>
+	<td>性别|F:女的,M:男的</td>
+</tr>
+<tr>
+	<td>APPUSERID</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td>申请人</td>
+</tr>
+<tr>
+	<td>APPTIME</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td>申请时间</td>
+</tr>
+<tr>
+	<td>PROCINSTID</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td>流程实例</td>
+</tr>
+</table>
+<h3>EX_JASPER_ENTER </h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>ID</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">N</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CODE</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>APPLYUSER</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>APPLYDATE</td>
+	<td>DATE</td>
+	<td class="center"></td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ORGANNAME</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SUPPLIER</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>INVOICE</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>BUYER</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>USEER</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>LEADER</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TOTAL</td>
+	<td>NUMBER</td>
+	<td class="center">17,2</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+</table>
+<h3>EX_JASPER_GOODS </h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>ID</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">N</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CODE</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>NAME</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>BRAND</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>MODEL</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SPEC</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>UNIT</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>QUANTITY</td>
+	<td>NUMBER</td>
+	<td class="center">12</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PRICE</td>
+	<td>NUMBER</td>
+	<td class="center">17,2</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TOTAL</td>
+	<td>NUMBER</td>
+	<td class="center">17,2</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PRODUCTDATE</td>
+	<td>DATE</td>
+	<td class="center"></td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>NORM</td>
+	<td>CLOB</td>
+	<td class="center"></td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ENTERID</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>RANGE</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+</table>
+<h3>EX_LEAVE 请假申请</h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>ID</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td>主键</td>
+</tr>
+<tr>
+	<td>DAY</td>
+	<td>NUMBER</td>
+	<td class="center">3</td>
+	<td class="center">Y</td>
+	<td>请假天数</td>
+</tr>
+<tr>
+	<td>TELPHONE</td>
+	<td>VARCHAR2</td>
+	<td class="center">12</td>
+	<td class="center">Y</td>
+	<td>电话</td>
+</tr>
+<tr>
+	<td>EMAIL</td>
+	<td>VARCHAR2</td>
+	<td class="center">64</td>
+	<td class="center">Y</td>
+	<td>邮件</td>
+</tr>
+<tr>
+	<td>AGE</td>
+	<td>NUMBER</td>
+	<td class="center">3</td>
+	<td class="center">Y</td>
+	<td>年龄</td>
+</tr>
+<tr>
+	<td>MONEY</td>
+	<td>NUMBER</td>
+	<td class="center">12,2</td>
+	<td class="center">Y</td>
+	<td>扣除薪水</td>
+</tr>
+<tr>
+	<td>LEAVEDATE</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td>请假日期</td>
+</tr>
+<tr>
+	<td>REMARK</td>
+	<td>VARCHAR2</td>
+	<td class="center">512</td>
+	<td class="center">Y</td>
+	<td>备注说明</td>
+</tr>
+<tr>
+	<td>STATUS</td>
+	<td>VARCHAR2</td>
+	<td class="center">2</td>
+	<td class="center">Y</td>
+	<td>状态|0:未提交,1:审批中,-1:已否决,2:已审批,9:已作废</td>
+</tr>
+<tr>
+	<td>SEX</td>
+	<td>VARCHAR2</td>
+	<td class="center">2</td>
+	<td class="center">Y</td>
+	<td>性别|F:女的,M:男的</td>
+</tr>
+<tr>
+	<td>APPUSERID</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td>申请人</td>
+</tr>
+<tr>
+	<td>APPTIME</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td>申请时间</td>
+</tr>
+<tr>
+	<td>PROCINSTID</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td>流程实例ID</td>
+</tr>
+</table>
+
+</body>
+</html>
