@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>[[${application.const.PROJECT_NAME}]]([[${application.const.PROJECT_VERSON}]])</title>
+        <!-- Plugin Css-->
+        <link rel="stylesheet" th:href="@{/assets/plugins/magnific-popup/dist/magnific-popup.css}">
+        <link rel="stylesheet" th:href="@{/assets/plugins/jquery-datatables-editable/datatables.css}">
+
+        <link th:href="@{/assets/css/bootstrap.min.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/core.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/icons.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/components.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/pages.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/menu.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/responsive.css}" rel="stylesheet" type="text/css">
+        <script th:src="@{/assets/js/modernizr.min.js}"></script>
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js}"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js}"></script>
+        <![endif]-->
+
+        <!-- jQuery  -->
+        <script th:src="@{/assets/js/jquery.min.js}"></script>
+        <script th:src="@{/assets/js/bootstrap.min.js}"></script>
+		<script type="text/javascript" th:src="@{/plugins/layer/layer.js}"></script>
+		<script type="text/javascript" th:src="@{/plugins/laydate/laydate.js}"></script>
+		<script type="text/javascript" th:inline="javascript"> 
+		  	var webroot = "[(@{/})]";
+			laydate.render({ elem: '#search-creattimege'});
+			laydate.render({ elem: '#search-creattimele'});
+		</script>
+    </head>
+    <body>
+       	 <!-- Start content -->
+         <div class="content">
+          	<div class="container" id="container">
+              <!-- Page-Title -->
+              <div class="row">
+                  <div class="col-sm-12">
+                      <h4 class="breadcrumb pull-left">查询（所有单据）</h4>
+                      <ol class="breadcrumb pull-right">
+                      	<li><a href="#">查询</a></li>
+                        <li class="active">题库信息</li>
+                      </ol>
+                  </div>
+              </div>
+              
+              <!--搜索-->
+               <div class="row"> 
+                    <div class="col-md-12">
+                        <div class="panel panel-color panel-info" style="margin-bottom:4px;">
+                                <div class="panel-body">
+                                   		<form id="searchform" name="searchform" class="form-inline" th:action="@{/question_kpi/list}" onsubmit="return search()" role="form"  method="post">
+											<div class="form-group">
+                                                <label style="width:80px;text-align:right">题库名称</label>
+                                                <input class="form-control" id="search-name" name="name"   type="text"  maxlength="16" >
+                                            </div>
+											<div class="form-group">
+                                                <label style="width:80px;text-align:right">创建时间</label>
+                                                <input class="form-control" style="width:98px;" id="search-creattimege" name="creattimege" onfocus="javascript:this.blur();" onpaste="return false"  />-<input class="form-control" style="width:98px;" id="search-creattimele" name="creattimele" onfocus="javascript:this.blur();" onpaste="return false" />
+                                            </div>
+											<div class="form-group">
+                                                <label style="width:80px;text-align:right">试卷备注</label>
+                                                <input class="form-control" id="search-remark" name="remark"   type="text"  maxlength="16" >
+                                            </div>
+											<div class="form-group">
+                                                <label style="width:80px;text-align:right">题目数量</label>
+                                                <input class="form-control" id="search-type" name="type"   type="text"  maxlength="12" >
+                                            </div>
+                                            <div class="btn-group">
+												<button type="submit" class="btn btn-info waves-effect waves-light" ><i class="ion-search"> </i> 搜索</button>
+											</div>
+                                        </form>
+                                </div>
+                        </div>
+                    </div> <!--搜索 col-->               
+               </div> <!--搜索 row-->
+               
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                            <button type="button" onclick="openWin();" class="btn btn-primary btn-rounded waves-effect waves-light m-b-15"><i class="fa ion-plus-circled "> </i> 新增题库</button>
+								 <table class="table table-bordered table-striped" >
+              						<tr>
+										<td style="text-align: center;width:60px;">序号</td>
+										<td style="text-align: center;">题库名称</td>
+										<td style="text-align: center;">创建时间</td>
+										<td style="text-align: center;">试卷备注</td>
+										<td style="text-align: center;">题目数量</td>
+              							<td style="text-align: center;" width="100px">操作</td>
+									</tr>
+              						<tr th:each="data,dataStatus:${pageModel.data }">
+										<td style="text-align: center;">[[${(pageModel.curpage-1) * pageModel.pagecount+ dataStatus.count }]]</td>
+										<td style="text-align: center;" ><a th:href="|javascript:detail('${data.id}')|">[[${data.name }]]</a></td>
+										<td style="text-align: center;" >[[${#dates.format(data.creattime, 'yyyy-MM-dd')}]]</td>
+										<td style="text-align: center;" >[[${data.remark }]]</td>
+										<td style="text-align: center;" >[[${data.type }]]</td>
+										<td style="text-align: center;">
+											<div class="btn-group">
+												<a class="btn btn-success btn-xs  waves-effect"  th:href="|javascript:modify('${data.id}')|">修改</a>
+	        								 	<a class="btn btn-pink waves-effect waves-light btn-xs"  th:href="|javascript:del('${data.id}')|">删除</a>
+											</div>
+										</td>
+									</tr>
+									 <tr th:if="${pageModel.data == null }">
+										  <td style="text-align: center;" colspan="5">
+										  	无查询记录
+										  </td>
+									 </tr> 
+								</table>
+							<div th:replace="public/splitpage::#splitpageform(formAction='/question_kpi/list')"></div>
+                          </div> <!-- Panel-body -->
+                        </div> <!-- Panel -->
+                    </div> <!-- col-->
+                </div> <!-- End row -->   
+                   
+		    </div> <!-- end container -->
+		</div> <!-- content -->              
+	    <script type="text/javascript" th:inline="javascript"> 
+	    	function modify(id){
+				var index = layer.open({
+	        		type: 2,
+	                title: '修改题库信息',
+	                maxmin: true,
+	                area : [$(window).width()+"px" , $(window).height()+"px" ],
+	                content:  "[(@{/})]question_kpi/turnModify/"+id
+	              });
+	        	 layer.full(index);
+			}
+			
+			function del(id){
+				var url = "[(@{/})]question_kpi/delete/"+id;
+				var cwin = layer.confirm('确定要删除吗?', {
+						btn: ['删除','放弃'] //按钮
+					}, function(cwin){
+						layer.close(cwin);
+						 $.get(url,function(data) {
+							 if(data.status == "ok"){
+								 layer.msg("操作成功!", {icon: 6},function(){
+									 document.splitpageform.submit();
+		     					 });
+							 }else{
+								 layer.msg("错误："  + data.staus +" , " +data.msg);
+							 }
+					 	 });
+					}, function(cwin){
+						layer.close(cwin);
+					});  
+			}
+			
+	    	function detail(id){
+	    		window.open("[(@{/})]question_kpi/detail/"+id);
+	    	}
+	    	
+	    	function search(){
+	    		document.searchform.action = "[(@{/})]question_kpi/list";
+	    		return true;
+	    	}
+	    	
+	    	function excel(){
+	    		document.searchform.action = "[(@{/})]question_kpi/exp";
+	    		document.searchform.submit();
+	    	}
+	    </script>
+		
+    </body>
+</html>

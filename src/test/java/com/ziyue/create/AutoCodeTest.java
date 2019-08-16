@@ -14,9 +14,9 @@ public class AutoCodeTest {
 	@Test
 	public void autoCode() {
 		
-		String tableName = "EX_LEAVE";//表名
-		String classNameShort = "lea";//类名简写
-		String htmlDir = "lea"; // HTML放置路径(首尾不能加“/”)
+		String tableName = "wj_question_kpi";//表名
+		String classNameShort = "wj_question";//类名简写
+		String htmlDir = "wj_question"; // HTML放置路径(首尾不能加“/”)
 		
 		AutoCode ac = new AutoCode(tableName, classNameShort, htmlDir);
 		ac.createAll();  //创建Java代码和HTML页面代码

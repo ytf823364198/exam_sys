@@ -42,7 +42,11 @@
                                     <li  th:each="submenu:${menus}" th:if=" ${menu.id == submenu.pid}"><a  th:href="@{/} + ${submenu.url}" target="iframe" th:text="${submenu.name}"></a></li>
                                 </ul>
                             </li>
-                       
+                            <li>
+                                <a th:href="@{/wj_question/list}" target="iframe" class="waves-effect waves-light">
+                                	<i class="md-dashboard"></i><span>[开发]题目表</span>
+                                </a>
+                            </li>
                         </ul>
                         <div class="clearfix"></div>
                     </div>

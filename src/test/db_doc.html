@@ -3331,6 +3331,3268 @@ td{border:1px #000000 solid;height:30px;text-align:left;padding-left:4px;}
 	<td>流程实例ID</td>
 </tr>
 </table>
+<h3>QUESTION_BANK 题库信息</h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>ID</td>
+	<td>VARCHAR2</td>
+	<td class="center">64</td>
+	<td class="center">Y</td>
+	<td>题库序号</td>
+</tr>
+<tr>
+	<td>NAME</td>
+	<td>VARCHAR2</td>
+	<td class="center">64</td>
+	<td class="center">Y</td>
+	<td>题库名称</td>
+</tr>
+<tr>
+	<td>CREATTIME</td>
+	<td>DATE</td>
+	<td class="center"></td>
+	<td class="center">Y</td>
+	<td>创建时间</td>
+</tr>
+<tr>
+	<td>REMARK</td>
+	<td>VARCHAR2</td>
+	<td class="center">64</td>
+	<td class="center">Y</td>
+	<td>试卷备注</td>
+</tr>
+<tr>
+	<td>TYPE</td>
+	<td>VARCHAR2</td>
+	<td class="center">12</td>
+	<td class="center">Y</td>
+	<td>试卷类型</td>
+</tr>
+</table>
+<h3>TBL_ACTIVITI </h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>ID</td>
+	<td>VARCHAR2</td>
+	<td class="center">36</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ACTIVITY_NAME</td>
+	<td>VARCHAR2</td>
+	<td class="center">300</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ACTIVITY_TYPE</td>
+	<td>VARCHAR2</td>
+	<td class="center">5</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>COURSE_ID</td>
+	<td>VARCHAR2</td>
+	<td class="center">5</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TEMPLATE_ID</td>
+	<td>VARCHAR2</td>
+	<td class="center">36</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TIME_ID</td>
+	<td>VARCHAR2</td>
+	<td class="center">36</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>MEMO</td>
+	<td>VARCHAR2</td>
+	<td class="center">255</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+</table>
+<h3>TBL_ACTI_ACTI </h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>OID</td>
+	<td>NUMBER</td>
+	<td class="center">22</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CONTENT</td>
+	<td>VARCHAR2</td>
+	<td class="center">1000</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>QTYPE</td>
+	<td>NUMBER</td>
+	<td class="center">22</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SEQ</td>
+	<td>NUMBER</td>
+	<td class="center">22</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>REMARK</td>
+	<td>VARCHAR2</td>
+	<td class="center">20</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SCORE</td>
+	<td>NUMBER</td>
+	<td class="center">22</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>RIGHTVALUE</td>
+	<td>VARCHAR2</td>
+	<td class="center">30</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+</table>
+<h3>TBL_CLASS </h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>ID</td>
+	<td>VARCHAR2</td>
+	<td class="center">36</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CREATE_DATE</td>
+	<td>DATE</td>
+	<td class="center"></td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>UPDATE_DATE</td>
+	<td>DATE</td>
+	<td class="center"></td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>DELETED</td>
+	<td>VARCHAR2</td>
+	<td class="center">5</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>BJMC</td>
+	<td>VARCHAR2</td>
+	<td class="center">200</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>BJLSH</td>
+	<td>VARCHAR2</td>
+	<td class="center">30</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>JBNY</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SSXXDM</td>
+	<td>VARCHAR2</td>
+	<td class="center">20</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SSXQDM</td>
+	<td>VARCHAR2</td>
+	<td class="center">20</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>NJDM</td>
+	<td>VARCHAR2</td>
+	<td class="center">5</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>BJLXM</td>
+	<td>VARCHAR2</td>
+	<td class="center">5</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>BJZT</td>
+	<td>VARCHAR2</td>
+	<td class="center">5</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>BZR</td>
+	<td>VARCHAR2</td>
+	<td class="center">50</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>JB</td>
+	<td>VARCHAR2</td>
+	<td class="center">20</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>BZ</td>
+	<td>CLOB</td>
+	<td class="center"></td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+</table>
+<h3>TBL_DICTIONARY </h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>CODE</td>
+	<td>VARCHAR2</td>
+	<td class="center">255</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>NAME</td>
+	<td>VARCHAR2</td>
+	<td class="center">255</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ID</td>
+	<td>VARCHAR2</td>
+	<td class="center">255</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+</table>
+<h3>TBL_GRADE </h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>ID</td>
+	<td>VARCHAR2</td>
+	<td class="center">36</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>NJDM</td>
+	<td>VARCHAR2</td>
+	<td class="center">36</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>NJMC</td>
+	<td>VARCHAR2</td>
+	<td class="center">255</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>NJZT</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+</table>
+<h3>TBL_ITEM </h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>ID</td>
+	<td>VARCHAR2</td>
+	<td class="center">36</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TEMPLATE_ID</td>
+	<td>VARCHAR2</td>
+	<td class="center">36</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>DELETED</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PARENT_ID</td>
+	<td>VARCHAR2</td>
+	<td class="center">36</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>LEVEL</td>
+	<td>VARCHAR2</td>
+	<td class="center">255</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SORT</td>
+	<td>VARCHAR2</td>
+	<td class="center">30</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>MIN_SCORE</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>MAX_SCORE</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>WEIGHT</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ITEMTYPE</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CONTENT</td>
+	<td>VARCHAR2</td>
+	<td class="center">1000</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>MEMO</td>
+	<td>VARCHAR2</td>
+	<td class="center">1000</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+</table>
+<h3>TBL_SCHOOLINFO </h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>ID</td>
+	<td>VARCHAR2</td>
+	<td class="center">36</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>XXBSM</td>
+	<td>VARCHAR2</td>
+	<td class="center">255</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>XXDM</td>
+	<td>VARCHAR2</td>
+	<td class="center">255</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>XXMC</td>
+	<td>VARCHAR2</td>
+	<td class="center">255</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>XXJC</td>
+	<td>VARCHAR2</td>
+	<td class="center">255</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>XXDZ</td>
+	<td>VARCHAR2</td>
+	<td class="center">255</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>XXYWMC</td>
+	<td>VARCHAR2</td>
+	<td class="center">255</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>XXGZID</td>
+	<td>VARCHAR2</td>
+	<td class="center">255</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>XXLBM</td>
+	<td>VARCHAR2</td>
+	<td class="center">255</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>XZXM</td>
+	<td>VARCHAR2</td>
+	<td class="center">255</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>LXDH</td>
+	<td>VARCHAR2</td>
+	<td class="center">255</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>BZ</td>
+	<td>VARCHAR2</td>
+	<td class="center">255</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+</table>
+<h3>TBL_SCHOOLKIND </h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>ID</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>XXLBM</td>
+	<td>VARCHAR2</td>
+	<td class="center">100</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>LBMC</td>
+	<td>VARCHAR2</td>
+	<td class="center">50</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+</table>
+<h3>TBL_SCHOOL_SELF_RAT </h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>ID</td>
+	<td>VARCHAR2</td>
+	<td class="center">36</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SCHOOL_ID</td>
+	<td>VARCHAR2</td>
+	<td class="center">36</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SCHOOL_NAME</td>
+	<td>VARCHAR2</td>
+	<td class="center">200</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CLASSES_CNT</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>STUDENT_CNT</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TEACHER_CNT</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>IS_ART_CLASS_FULLY</td>
+	<td>VARCHAR2</td>
+	<td class="center">20</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>IS_OPEN_OTHER_ART_CLASS</td>
+	<td>VARCHAR2</td>
+	<td class="center">20</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SCHOOL_TEAM_CNT</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ART_ACTIVITY_CNT</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ATTEND_STUDENTS</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>FULL_TIME_ART_TEACHERS</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PART_TIME_ART_TEACHERS</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>FULL_TIME_USE</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PART_TIME_USE</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>HIGHGRADUATE_CNT</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>GRADUATE_CNT</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>UNDERGRADUATE_CNT</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>JUNIOR_CNT</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>MIDDLE_CNT</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>OTHER_EDUCATION_CNT</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>HIGHSENIOR_TITLES_CNT</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SENIOR_TITLES_CNT</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SECONDARY_TITLES_CNT</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PRIMARY_TITLES_CNT</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>AGE_20_TO_30</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>AGE_30_TO_40</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>AGE_40_TO_50</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>AGE_AFTER_50</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ART_TEACHER_PROPORTION</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TEACHER_SCHOOL_PROPORTION</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ATTEND_ART_TEACHER</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>RECOGNITION_TEACHER</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>EXECUTIVE</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>EDUCATIONAL_RESEARCH_MUSIC</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>EDUCATIONAL_RESEARCH_ART</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>EDUCATIONAL_RESEARCH_SYNTHETIC</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ACTIVITY_CENTER_MUSIC</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ACTIVITY_CENTER_ART</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ACTIVITY_CENTER_SYNTHETIC</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>IS_EQUIPMENT_STANDARD</td>
+	<td>VARCHAR2</td>
+	<td class="center">20</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ART_CLASSES</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>IS_HAVE_ART_CLASSES</td>
+	<td>VARCHAR2</td>
+	<td class="center">20</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ART_EDU_BUDGET</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ART_EDU_ADD</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>IS_ARTISTIC_CHARACTERISTICS</td>
+	<td>VARCHAR2</td>
+	<td class="center">20</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ARTIST_ITEM_1</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ARTIST_ITEM_2</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ARTIST_COMMUNITIES_1</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ARTIST_COMMUNITIES_2</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ARTIST_SELF_RATING</td>
+	<td>VARCHAR2</td>
+	<td class="center">20</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CREATTIME</td>
+	<td>DATE</td>
+	<td class="center"></td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CREATPEOPLE</td>
+	<td>VARCHAR2</td>
+	<td class="center">20</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SCHOOL_TYPE</td>
+	<td>VARCHAR2</td>
+	<td class="center">50</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+</table>
+<h3>TBL_SCHOOL_SELF_RATING_BACK </h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>ID</td>
+	<td>VARCHAR2</td>
+	<td class="center">36</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SCHOOL_ID</td>
+	<td>VARCHAR2</td>
+	<td class="center">36</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CLASSES_CNT</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>STUDENT_CNT</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TEACHER_CNT</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>IS_ART_CLASS_FULLY</td>
+	<td>VARCHAR2</td>
+	<td class="center">20</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>IS_OPEN_OTHER_ART_CLASS</td>
+	<td>VARCHAR2</td>
+	<td class="center">20</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SCHOOL_TEAM_CNT</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ART_ACTIVITY_CNT</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ATTEND_STUDENTS</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>FULL_TIME_ART_TEACHERS</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PART_TIME_ART_TEACHERS</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>FULL_TIME_USE</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PART_TIME_USE</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>HIGHGRADUATE_CNT</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>GRADUATE_CNT</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>UNDERGRADUATE_CNT</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>JUNIOR_CNT</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>MIDDLE_CNT</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>OTHER_EDUCATION_CNT</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>HIGHSENIOR_TITLES_CNT</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SENIOR_TITLES_CNT</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SECONDARY_TITLES_CNT</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PRIMARY_TITLES_CNT</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>AGE_20_TO_30</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>AGE_30_TO_40</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>AGE_40_TO_50</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>AGE_AFTER_50</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ART_TEACHER_PROPORTION</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TEACHER_SCHOOL_PROPORTION</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ATTEND_ART_TEACHER</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>RECOGNITION_TEACHER</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>EXECUTIVE</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>EDUCATIONAL_RESEARCH_MUSIC</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>EDUCATIONAL_RESEARCH_ART</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>EDUCATIONAL_RESEARCH_SYNTHETIC</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ACTIVITY_CENTER_MUSIC</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ACTIVITY_CENTER_ART</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ACTIVITY_CENTER_SYNTHETIC</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>IS_EQUIPMENT_STANDARD</td>
+	<td>VARCHAR2</td>
+	<td class="center">20</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ART_CLASSES</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>IS_HAVE_ART_CLASSES</td>
+	<td>VARCHAR2</td>
+	<td class="center">20</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ART_EDU_BUDGET</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ART_EDU_ADD</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>IS_ARTISTIC_CHARACTERISTICS</td>
+	<td>VARCHAR2</td>
+	<td class="center">20</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ARTIST_ITEM_1</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ARTIST_ITEM_2</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ARTIST_COMMUNITIES_1</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ARTIST_COMMUNITIES_2</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ARTIST_SELF_RATING</td>
+	<td>VARCHAR2</td>
+	<td class="center">20</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CREATTIME</td>
+	<td>DATE</td>
+	<td class="center"></td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CREATPEOPLE</td>
+	<td>VARCHAR2</td>
+	<td class="center">20</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SCHOOL_NAME</td>
+	<td>VARCHAR2</td>
+	<td class="center">100</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SCHOOL_TYPE</td>
+	<td>VARCHAR2</td>
+	<td class="center">100</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+</table>
+<h3>TBL_SCOPE </h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>ID</td>
+	<td>VARCHAR2</td>
+	<td class="center">36</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ACTIVITIY_ID</td>
+	<td>VARCHAR2</td>
+	<td class="center">36</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CLASS_ID</td>
+	<td>VARCHAR2</td>
+	<td class="center">36</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+</table>
+<h3>TBL_SCORE </h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>ID</td>
+	<td>VARCHAR2</td>
+	<td class="center">36</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ACTIVITY_ID</td>
+	<td>VARCHAR2</td>
+	<td class="center">36</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>STUDENT_ID</td>
+	<td>VARCHAR2</td>
+	<td class="center">36</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ITEM_ID</td>
+	<td>VARCHAR2</td>
+	<td class="center">36</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ART_SCORE</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>MUSIC_SCORE</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>AVG_SCORE</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>MEMO</td>
+	<td>VARCHAR2</td>
+	<td class="center">255</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+</table>
+<h3>TBL_TEACHER </h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>ID</td>
+	<td>VARCHAR2</td>
+	<td class="center">36</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>STATE</td>
+	<td>VARCHAR2</td>
+	<td class="center">5</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>DELETED</td>
+	<td>VARCHAR2</td>
+	<td class="center">5</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CREATE_DATE</td>
+	<td>DATE</td>
+	<td class="center"></td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>UPDATE_DATE</td>
+	<td>DATE</td>
+	<td class="center"></td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>XM</td>
+	<td>VARCHAR2</td>
+	<td class="center">30</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>GH</td>
+	<td>VARCHAR2</td>
+	<td class="center">20</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>YWXM</td>
+	<td>VARCHAR2</td>
+	<td class="center">50</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>XMPY</td>
+	<td>VARCHAR2</td>
+	<td class="center">50</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CYM</td>
+	<td>VARCHAR2</td>
+	<td class="center">50</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>XXMC</td>
+	<td>VARCHAR2</td>
+	<td class="center">255</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>XXDM</td>
+	<td>VARCHAR2</td>
+	<td class="center">20</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>XBM</td>
+	<td>VARCHAR2</td>
+	<td class="center">5</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CSRQ</td>
+	<td>DATE</td>
+	<td class="center"></td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CSDM</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>JG</td>
+	<td>VARCHAR2</td>
+	<td class="center">50</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>MZM</td>
+	<td>VARCHAR2</td>
+	<td class="center">5</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>GJDQM</td>
+	<td>VARCHAR2</td>
+	<td class="center">5</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SFZJLXM</td>
+	<td>VARCHAR2</td>
+	<td class="center">20</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SFZJH</td>
+	<td>VARCHAR2</td>
+	<td class="center">30</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SFZJYXQ</td>
+	<td>DATE</td>
+	<td class="center"></td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>HYZKM</td>
+	<td>VARCHAR2</td>
+	<td class="center">5</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>GATQWM</td>
+	<td>VARCHAR2</td>
+	<td class="center">5</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ZZMMM</td>
+	<td>VARCHAR2</td>
+	<td class="center">5</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>RDNY</td>
+	<td>VARCHAR2</td>
+	<td class="center">20</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>JKZKM</td>
+	<td>VARCHAR2</td>
+	<td class="center">20</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ZJXYM</td>
+	<td>VARCHAR2</td>
+	<td class="center">20</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>XXM</td>
+	<td>VARCHAR2</td>
+	<td class="center">20</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ZP</td>
+	<td>VARCHAR2</td>
+	<td class="center">500</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>JGH</td>
+	<td>VARCHAR2</td>
+	<td class="center">20</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>JTZZ</td>
+	<td>VARCHAR2</td>
+	<td class="center">100</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>XZZ</td>
+	<td>VARCHAR2</td>
+	<td class="center">100</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>HKSZD</td>
+	<td>VARCHAR2</td>
+	<td class="center">100</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>HKXZM</td>
+	<td>VARCHAR2</td>
+	<td class="center">20</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>XLM</td>
+	<td>VARCHAR2</td>
+	<td class="center">20</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>GZNY</td>
+	<td>VARCHAR2</td>
+	<td class="center">20</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>LXNY</td>
+	<td>VARCHAR2</td>
+	<td class="center">20</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CJNY</td>
+	<td>VARCHAR2</td>
+	<td class="center">20</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>BZLBM</td>
+	<td>VARCHAR2</td>
+	<td class="center">20</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ZXXBZLBM</td>
+	<td>VARCHAR2</td>
+	<td class="center">20</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>DABH</td>
+	<td>VARCHAR2</td>
+	<td class="center">100</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>DAWB</td>
+	<td>VARCHAR2</td>
+	<td class="center">1000</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TXDZ</td>
+	<td>VARCHAR2</td>
+	<td class="center">100</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>LXDH</td>
+	<td>VARCHAR2</td>
+	<td class="center">30</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>YZBM</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>DZXX</td>
+	<td>VARCHAR2</td>
+	<td class="center">20</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ZYDZ</td>
+	<td>VARCHAR2</td>
+	<td class="center">100</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TC</td>
+	<td>VARCHAR2</td>
+	<td class="center">2000</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SXH</td>
+	<td>VARCHAR2</td>
+	<td class="center">255</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+</table>
+<h3>TBL_TEACHER_SELF_RATINGS </h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>ID</td>
+	<td>VARCHAR2</td>
+	<td class="center">36</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>DELETED</td>
+	<td>VARCHAR2</td>
+	<td class="center">5</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CREATE_DATE</td>
+	<td>DATE</td>
+	<td class="center"></td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>UPDATE_DATE</td>
+	<td>DATE</td>
+	<td class="center"></td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TEACHER_ID</td>
+	<td>VARCHAR2</td>
+	<td class="center">50</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PROVINCE</td>
+	<td>VARCHAR2</td>
+	<td class="center">20</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CITY</td>
+	<td>VARCHAR2</td>
+	<td class="center">20</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SCHOOL</td>
+	<td>VARCHAR2</td>
+	<td class="center">20</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PHONE</td>
+	<td>VARCHAR2</td>
+	<td class="center">15</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SCHOOL_CLASS</td>
+	<td>VARCHAR2</td>
+	<td class="center">50</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CLASS_TOTAL_PRIM</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CLS_TOTAL_SEC</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CLS_TOTAL_HIGH</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>STU_IN_SCHL_TOTAL_PRIM</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>STU_IN_SCHL_TOTAL_SEC</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>STU_IN_SCHL_TOTAL_HIGH</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TCH_TOTAL_PRIM</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TCH_TOTAL_SEC</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TCH_TOTAL_HIGH</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>MUSIC_PER_WEEK</td>
+	<td>VARCHAR2</td>
+	<td class="center">5</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>MUSIC_SCORE</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ART_PER_WEEK</td>
+	<td>VARCHAR2</td>
+	<td class="center">5</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ART_SCORE</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>COMPRE_ART_PER_WEEK</td>
+	<td>VARCHAR2</td>
+	<td class="center">5</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>COMPRE_ART_PER_WEEK_SCORE</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SCHL_ART_COURSE_PER_WEEK</td>
+	<td>VARCHAR2</td>
+	<td class="center">5</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SCHL_ART_COURSE</td>
+	<td>VARCHAR2</td>
+	<td class="center">5</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SCHL_ART_COURSE_SCORE</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ART_COURSE_PROBLEM</td>
+	<td>VARCHAR2</td>
+	<td class="center">500</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ART_COURSE_IMPROVE</td>
+	<td>VARCHAR2</td>
+	<td class="center">500</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ART_COURSE_AUDIT_SCORE</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SCHL_ART_ACT_PER_YEAR</td>
+	<td>VARCHAR2</td>
+	<td class="center">5</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SCHL_ART_ACT_PER_YEAR_SCORE</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SCHL_ART_ACT_PER_WEEK</td>
+	<td>VARCHAR2</td>
+	<td class="center">5</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SCHL_ART_ACT_PER_SCORE</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SCHL_ART_CLUB_TOTAL</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SCHL_ART_CLUB</td>
+	<td>VARCHAR2</td>
+	<td class="center">500</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SCHL_ART_CLUB_SCORE</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SCHL_ART_ACT_PRTP</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SCHL_ART_ACT_PRTP_SCORE</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SCHL_ENVIRON</td>
+	<td>VARCHAR2</td>
+	<td class="center">300</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SCHL_ENVIRON_SCORE</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ART_ACT_PROBLEM</td>
+	<td>VARCHAR2</td>
+	<td class="center">500</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ART_ACT_IMPROVE</td>
+	<td>VARCHAR2</td>
+	<td class="center">300</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ART_ACT_AUDIT_SCORE</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ART_TCH_TOTAL</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ART_TCH_FULL_TIME_TOTAL</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ART_TCH_PART_TIME_TOTAL</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ART_TCH_MUSIC_TOTAL</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ART_TCH_ART_TOTAL</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ART_TCH_OTHER_TOTAL</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ART_TCH_SCORE</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TCH_STU_RATIO</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TCH_STU_RATIO_SCORE</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>AVG_HOUR_PER_WEEK</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>AVG_HOUR_PER_WEEK_SCORE</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ART_TCH_SHORT</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ART_TCH_SHORT_SCORE</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ART_TCH_TRN_TOTAL</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ART_TCH_TRN_SCORE</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ART_TCH_PROBLEM</td>
+	<td>VARCHAR2</td>
+	<td class="center">500</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ART_TCH_IMPROVE</td>
+	<td>VARCHAR2</td>
+	<td class="center">500</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ART_TCH_AUDIT_SCORE</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ROOM_TOTAL</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ROOM_MUSIC</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ROOM_ART</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ROOM_OTHER</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ROOM</td>
+	<td>VARCHAR2</td>
+	<td class="center">200</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ROOM_SCORE</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ART_VENUE_TOTAL</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ART_VENUE_MEASURE</td>
+	<td>VARCHAR2</td>
+	<td class="center">20</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ART_VENUE_SCORE</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>EQUIPED</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>EQUIPED_SCORE</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CONDITION_PROBLEM</td>
+	<td>VARCHAR2</td>
+	<td class="center">500</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CONDITION_IMPROVE</td>
+	<td>VARCHAR2</td>
+	<td class="center">500</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CONDITION_AUDIT_SCORE</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>DEVELOP_RESULT1</td>
+	<td>VARCHAR2</td>
+	<td class="center">500</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>DEVELOP_SCORE1</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>DEVELOP_RESULT2</td>
+	<td>VARCHAR2</td>
+	<td class="center">500</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>DEVELOP_SCORE2</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>DEVELOP_RESULT3</td>
+	<td>VARCHAR2</td>
+	<td class="center">500</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>DEVELOP_SCORE3</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>DEVELOP_PROBLEM</td>
+	<td>VARCHAR2</td>
+	<td class="center">500</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>DEVELOP_IMPROVE</td>
+	<td>VARCHAR2</td>
+	<td class="center">500</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>DEVELOP_AUDIT_SCORE</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>STU_EVALUATION_BEGIN_YEAR</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>STU_EVALUATION_RATIO</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>STU_EVALUATION_EXCELLENT</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>STU_EVALUATION_GOOD</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>STU_EVALUATION_QUALIFIED</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>STU_EVALUATION_UNQUALIFIED</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>STU_EVALUATION_SCORE</td>
+	<td>VARCHAR2</td>
+	<td class="center">255</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>STU_EVALUATION_PROBLEM</td>
+	<td>VARCHAR2</td>
+	<td class="center">500</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>STU_EVALUATION_IMPROVE</td>
+	<td>VARCHAR2</td>
+	<td class="center">500</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>STU_EVALUATION_AUDIT_SCORE</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SCORE_TOTAL</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>RANK</td>
+	<td>VARCHAR2</td>
+	<td class="center">10</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>AUTHOR</td>
+	<td>VARCHAR2</td>
+	<td class="center">30</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>EDIT_TIME</td>
+	<td>DATE</td>
+	<td class="center"></td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>STATUS</td>
+	<td>VARCHAR2</td>
+	<td class="center">5</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+</table>
+<h3>TBL_TEMPLATE </h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>ID</td>
+	<td>VARCHAR2</td>
+	<td class="center">36</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TEMPLATE_NAME</td>
+	<td>VARCHAR2</td>
+	<td class="center">300</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>COURSE_TYPE</td>
+	<td>VARCHAR2</td>
+	<td class="center">30</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>MEMO</td>
+	<td>VARCHAR2</td>
+	<td class="center">500</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TEMPLATE_TYPE</td>
+	<td>VARCHAR2</td>
+	<td class="center">255</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TEMPLATE_SCOPE</td>
+	<td>VARCHAR2</td>
+	<td class="center">50</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+</table>
+<h3>WJ_OBJECT </h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>OID</td>
+	<td>VARCHAR2</td>
+	<td class="center">50</td>
+	<td class="center">Y</td>
+	<td>试卷序号</td>
+</tr>
+<tr>
+	<td>TITLE</td>
+	<td>VARCHAR2</td>
+	<td class="center">300</td>
+	<td class="center">Y</td>
+	<td>试卷标题</td>
+</tr>
+<tr>
+	<td>DISCRIBE</td>
+	<td>VARCHAR2</td>
+	<td class="center">300</td>
+	<td class="center">Y</td>
+	<td>试卷描述</td>
+</tr>
+<tr>
+	<td>CREATETIME</td>
+	<td>DATE</td>
+	<td class="center"></td>
+	<td class="center">Y</td>
+	<td>创建时间</td>
+</tr>
+<tr>
+	<td>STATE</td>
+	<td>NUMBER</td>
+	<td class="center">22</td>
+	<td class="center">Y</td>
+	<td>试卷状态</td>
+</tr>
+<tr>
+	<td>REMARK</td>
+	<td>VARCHAR2</td>
+	<td class="center">200</td>
+	<td class="center">Y</td>
+	<td>试卷备注</td>
+</tr>
+<tr>
+	<td>ANONYMOUSFLAG</td>
+	<td>CHAR</td>
+	<td class="center">6</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TYPE</td>
+	<td>NUMBER</td>
+	<td class="center">6</td>
+	<td class="center">Y</td>
+	<td>试卷类型</td>
+</tr>
+<tr>
+	<td>OBJECT</td>
+	<td>VARCHAR2</td>
+	<td class="center">12</td>
+	<td class="center">Y</td>
+	<td>试卷学科</td>
+</tr>
+<tr>
+	<td>TERM</td>
+	<td>VARCHAR2</td>
+	<td class="center">12</td>
+	<td class="center">Y</td>
+	<td>试卷学期</td>
+</tr>
+</table>
+<h3>WJ_OBJECT_GRADE </h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>ID</td>
+	<td>NUMBER</td>
+	<td class="center">22</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TITLE</td>
+	<td>VARCHAR2</td>
+	<td class="center">200</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>GRADE</td>
+	<td>VARCHAR2</td>
+	<td class="center">12</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+</table>
+<h3>WJ_PIC </h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>OID</td>
+	<td>NUMBER</td>
+	<td class="center">22</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>QSEQ</td>
+	<td>NUMBER</td>
+	<td class="center">22</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SELSEQ</td>
+	<td>NUMBER</td>
+	<td class="center">22</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PATH</td>
+	<td>VARCHAR2</td>
+	<td class="center">255</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+</table>
+<h3>WJ_QUESTION 学业测评试题</h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>OID</td>
+	<td>VARCHAR2</td>
+	<td class="center">50</td>
+	<td class="center">Y</td>
+	<td>题库类型编号</td>
+</tr>
+<tr>
+	<td>CONTENT</td>
+	<td>VARCHAR2</td>
+	<td class="center">300</td>
+	<td class="center">Y</td>
+	<td>试题内容</td>
+</tr>
+<tr>
+	<td>QTYPE</td>
+	<td>VARCHAR2</td>
+	<td class="center">50</td>
+	<td class="center">Y</td>
+	<td>试题类别</td>
+</tr>
+<tr>
+	<td>SEQ</td>
+	<td>VARCHAR2</td>
+	<td class="center">50</td>
+	<td class="center">Y</td>
+	<td>试题序号</td>
+</tr>
+<tr>
+	<td>REMARK</td>
+	<td>VARCHAR2</td>
+	<td class="center">50</td>
+	<td class="center">Y</td>
+	<td>试题备注</td>
+</tr>
+<tr>
+	<td>SCORE</td>
+	<td>VARCHAR2</td>
+	<td class="center">50</td>
+	<td class="center">Y</td>
+	<td>试题分数</td>
+</tr>
+<tr>
+	<td>RIGHTVALUE</td>
+	<td>VARCHAR2</td>
+	<td class="center">30</td>
+	<td class="center">Y</td>
+	<td>正确答案</td>
+</tr>
+<tr>
+	<td>ID</td>
+	<td>VARCHAR2</td>
+	<td class="center">50</td>
+	<td class="center">N</td>
+	<td>序号</td>
+</tr>
+</table>
+<h3>WJ_QUESTION_KPI 题目表</h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>OID</td>
+	<td>VARCHAR2</td>
+	<td class="center">50</td>
+	<td class="center">Y</td>
+	<td>题库类型编号</td>
+</tr>
+<tr>
+	<td>CONTENT</td>
+	<td>VARCHAR2</td>
+	<td class="center">200</td>
+	<td class="center">N</td>
+	<td>题目内容</td>
+</tr>
+<tr>
+	<td>QTYPE</td>
+	<td>VARCHAR2</td>
+	<td class="center">50</td>
+	<td class="center">N</td>
+	<td>题目类型</td>
+</tr>
+<tr>
+	<td>SEQ</td>
+	<td>VARCHAR2</td>
+	<td class="center">50</td>
+	<td class="center">N</td>
+	<td>题目序号</td>
+</tr>
+<tr>
+	<td>REMARK</td>
+	<td>VARCHAR2</td>
+	<td class="center">50</td>
+	<td class="center">N</td>
+	<td>题目备注</td>
+</tr>
+<tr>
+	<td>SCORE</td>
+	<td>VARCHAR2</td>
+	<td class="center">50</td>
+	<td class="center">N</td>
+	<td>题目分数</td>
+</tr>
+<tr>
+	<td>RIGHTVALUE</td>
+	<td>VARCHAR2</td>
+	<td class="center">30</td>
+	<td class="center">N</td>
+	<td>正确答案</td>
+</tr>
+<tr>
+	<td>ID</td>
+	<td>VARCHAR2</td>
+	<td class="center">50</td>
+	<td class="center">Y</td>
+	<td>编号 </td>
+</tr>
+</table>
+<h3>WJ_REPLAY </h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>REPLAYID</td>
+	<td>NUMBER</td>
+	<td class="center">22</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>REPLAYCODE</td>
+	<td>VARCHAR2</td>
+	<td class="center">100</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>REPLAYIP</td>
+	<td>VARCHAR2</td>
+	<td class="center">100</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>OID</td>
+	<td>NUMBER</td>
+	<td class="center">22</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>REPLAYTIME</td>
+	<td>DATE</td>
+	<td class="center"></td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>REPLAYSCORE</td>
+	<td>NUMBER</td>
+	<td class="center">22</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>REMARK</td>
+	<td>VARCHAR2</td>
+	<td class="center">200</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+</table>
+<h3>WJ_REPLAYITEM </h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>REPLYID</td>
+	<td>NUMBER</td>
+	<td class="center">22</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>REPLAYCODE</td>
+	<td>VARCHAR2</td>
+	<td class="center">100</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>OID</td>
+	<td>NUMBER</td>
+	<td class="center">22</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>REPLAYTIME</td>
+	<td>DATE</td>
+	<td class="center"></td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>REPLAYTEST</td>
+	<td>NUMBER</td>
+	<td class="center">22</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>REPLAYITEM</td>
+	<td>VARCHAR2</td>
+	<td class="center">64</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+</table>
+<h3>WJ_REPLAY_ALL </h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>REPLAYID</td>
+	<td>VARCHAR2</td>
+	<td class="center">32</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>REPLAYCODE</td>
+	<td>VARCHAR2</td>
+	<td class="center">100</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>REPLAYIP</td>
+	<td>VARCHAR2</td>
+	<td class="center">100</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>REPLAYTIME</td>
+	<td>DATE</td>
+	<td class="center"></td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>REPLAYSCORE</td>
+	<td>NUMBER</td>
+	<td class="center">11,1</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+</table>
+<h3>WJ_REPLAY_KPI </h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>REPLAYID</td>
+	<td>NUMBER</td>
+	<td class="center">22</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>REPLAYCODE</td>
+	<td>VARCHAR2</td>
+	<td class="center">100</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>REPLAYIP</td>
+	<td>VARCHAR2</td>
+	<td class="center">100</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>OID</td>
+	<td>NUMBER</td>
+	<td class="center">22</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>REPLAYTIME</td>
+	<td>DATE</td>
+	<td class="center"></td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>REPLAYSCORE</td>
+	<td>NUMBER</td>
+	<td class="center">22</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>REMARK</td>
+	<td>VARCHAR2</td>
+	<td class="center">200</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+</table>
+<h3>WJ_SELECTER </h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>OID</td>
+	<td>NUMBER</td>
+	<td class="center">22</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>QSEQ</td>
+	<td>NUMBER</td>
+	<td class="center">22</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CONTENT</td>
+	<td>VARCHAR2</td>
+	<td class="center">1000</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>RIGHTVALUE</td>
+	<td>VARCHAR2</td>
+	<td class="center">255</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SELSEQ</td>
+	<td>NUMBER</td>
+	<td class="center">22</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>REMARK</td>
+	<td>VARCHAR2</td>
+	<td class="center">20</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SCORE</td>
+	<td>NUMBER</td>
+	<td class="center">22</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ID</td>
+	<td>VARCHAR2</td>
+	<td class="center">50</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+</table>
+<h3>WJ_SELECTER_KPI </h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>OID</td>
+	<td>NUMBER</td>
+	<td class="center">22</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>QSEQ</td>
+	<td>NUMBER</td>
+	<td class="center">22</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CONTENT</td>
+	<td>VARCHAR2</td>
+	<td class="center">1000</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>RIGHTVALUE</td>
+	<td>VARCHAR2</td>
+	<td class="center">255</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SELSEQ</td>
+	<td>NUMBER</td>
+	<td class="center">22</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>REMARK</td>
+	<td>VARCHAR2</td>
+	<td class="center">20</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SCORE</td>
+	<td>NUMBER</td>
+	<td class="center">22</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TYPE</td>
+	<td>NUMBER</td>
+	<td class="center">22</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ID</td>
+	<td>VARCHAR2</td>
+	<td class="center">50</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+</table>
+<h3>WJ_STUDENT </h3>
+<table>
+<tr class="head">
+	<td class="colname">字段名称</td>
+	<td class="coltype">字段类型</td>
+	<td class="collength">长度</td>
+	<td class="colnull">可为空</td>
+	<td>注释</td>
+</tr>
+<tr>
+	<td>ID</td>
+	<td>VARCHAR2</td>
+	<td class="center">36</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>XM</td>
+	<td>VARCHAR2</td>
+	<td class="center">50</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SFZJH</td>
+	<td>VARCHAR2</td>
+	<td class="center">30</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>NJDM</td>
+	<td>VARCHAR2</td>
+	<td class="center">20</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>USERNAME</td>
+	<td>VARCHAR2</td>
+	<td class="center">20</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PASSWORD</td>
+	<td>VARCHAR2</td>
+	<td class="center">20</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>XNM</td>
+	<td>VARCHAR2</td>
+	<td class="center">255</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+<tr>
+	<td>XXMC</td>
+	<td>VARCHAR2</td>
+	<td class="center">255</td>
+	<td class="center">Y</td>
+	<td></td>
+</tr>
+</table>
 
 </body>
 </html>

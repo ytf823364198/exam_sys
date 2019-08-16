@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>[[${application.const.PROJECT_NAME}]]([[${application.const.PROJECT_VERSON}]])</title>
+        <link th:href="@{/assets/plugins/sweetalert/dist/sweetalert.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/bootstrap.min.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/core.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/icons.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/components.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/pages.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/menu.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/assets/css/responsive.css}" rel="stylesheet" type="text/css">
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js}"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js}"></script>
+        <![endif]-->
+     	<!-- jQuery  -->
+        <script th:src="@{/assets/js/jquery.min.js}"></script>
+        <script th:src="@{/assets/js/bootstrap.min.js}"></script>
+		
+		<script type="text/javascript" th:src="@{/plugins/layer/layer.js}"></script>
+		<script type="text/javascript" th:src="@{/plugins/laydate/laydate.js}"></script>
+				
+		<script type="text/javascript" th:inline="javascript"> 
+		 	var webroot = "[(@{/})]";
+			laydate.render({ elem: '#creattime'});
+		</script>
+    </head>
+    
+    <body>
+		<!--  content -->
+		<div class="content">
+			<div class="container" id="container">
+				<div class="row">
+					<div class="col-sm-12">
+						<form class="form-horizontal" id="creatorForm" name="creatorForm" role="form" th:action="@{/question_kpi/modify}"  method="post" >    
+							<input type="hidden" name="SesToken" th:value="${session.SesToken }"/>
+							<input type="hidden" name="id" th:value="${question_kpi.id }"/>
+							<div class="panel panel-default m-t-10">
+								<div class="panel-body">
+									<div class="form-group">
+										<label class="col-md-2 control-label"><font color="red">*</font> 题库名称</label>
+										<div class="col-md-10">
+											<input id="name" name="name" maxlength="16"  th:value="${question_kpi.name }"  required="" class="form-control"  type="text">
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-md-2 control-label"><font color="red">*</font> 创建时间</label>
+										<div class="col-md-10">
+											<input id="creattime" name="creattime" maxlength="19"  th:value="${#dates.format(question_kpi.creattime, 'yyyy-MM-dd')}" onpaste="return false"  onfocus="javascript:this.blur();"  required="" class="form-control"  type="text">
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-md-2 control-label"><font color="red">*</font> 试卷备注</label>
+										<div class="col-md-10">
+											<input id="remark" name="remark" maxlength="16"  th:value="${question_kpi.remark }"  required="" class="form-control"  type="text">
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-md-2 control-label"><font color="red">*</font> 试卷类型</label>
+										<div class="col-md-10">
+											<input id="type" name="type" maxlength="12"  th:value="${question_kpi.type }"  required="" class="form-control"  type="text">
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-2 control-label"></label>
+										<div class="col-sm-10">
+											<button type="button" id="btn-submit" class="btn  btn-primary waves-effect waves-light"><i class="md md-add "> </i> 修 改 </button>
+										</div>
+									</div>
+ 								</div> <!-- panel-body -->
+							</div> <!-- panel -->
+						</form>
+					</div> <!-- col -->
+				</div> <!-- row -->
+			</div> <!-- container -->
+		</div> <!-- content -->
+		<script type="text/javascript" th:inline="javascript"> 
+			$('#btn-submit').on("click", function(){
+				$("#name").val($.trim( $("#name").val() ));
+				if( $("#name").val() == "" ){
+					layer.msg("错误：题库名称不能为空!",function(){
+						$("#name").focus();
+					});
+					return false;
+				}
+				
+				$("#creattime").val($.trim( $("#creattime").val() ));
+				if( $("#creattime").val() == "" ){
+					layer.msg("错误：创建时间不能为空!",function(){
+						$("#creattime").focus();
+					});
+					return false;
+				}
+				
+				$("#remark").val($.trim( $("#remark").val() ));
+				if( $("#remark").val() == "" ){
+					layer.msg("错误：试卷备注不能为空!",function(){
+						$("#remark").focus();
+					});
+					return false;
+				}
+				
+				$("#type").val($.trim( $("#type").val() ));
+				if( $("#type").val() == "" ){
+					layer.msg("错误：试卷类型不能为空!",function(){
+						$("#type").focus();
+					});
+					return false;
+				}
+				
+				submitForm();	
+			});
+
+			function submitForm(){
+				$("#btn-submit").addClass("disabled");
+				$("#btn-submit").attr("disabled","disabled");
+				$.post(document.creatorForm.action, $("#creatorForm").serialize(), function(data) {
+					if(data.status == "ok"){
+						layer.msg("修改成功!", {icon: 6},function(){
+							parent.splitpageform.submit();
+						});
+					}else if(data.status == "error"){
+						$("#btn-submit").removeClass("disabled");
+						$("#btn-submit").removeAttr("disabled");
+						layer.msg('修改失败:' + data.msg ,function(){
+     	        			 
+						});
+					}
+				});	
+			}
+		</script>
+	</body>
+</html>
