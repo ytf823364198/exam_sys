@@ -124,7 +124,7 @@ public class QuestionKpiService {
 						row = sheet.createRow(i+1 + (num - 1) * pageModel.getPagecount());
 						int rowNo = 0;
 						//TODO 导出的字段
-						POIUtil.setCell(row , rowNo++ , question_kpi.getName() ,styles.get("base"));
+						POIUtil.setCell(row , rowNo++ , question_kpi.getText() ,styles.get("base"));
 						POIUtil.setCell(row , rowNo++ , question_kpi.getCreattime() ,styles.get("base"));
 						POIUtil.setCell(row , rowNo++ , question_kpi.getRemark() ,styles.get("base"));
 						POIUtil.setCell(row , rowNo++ , question_kpi.getType() ,styles.get("base"));

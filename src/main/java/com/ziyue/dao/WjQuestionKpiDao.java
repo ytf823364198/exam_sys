@@ -29,7 +29,7 @@ public class WjQuestionKpiDao  extends BaseDao {
 			questionBank.setId(StringUtil.UUID());
 		}
 		String sql = "insert into question_bank(pid,remark,name,createtime,type)";
-		Object args[] = new Object[]{questionBank.getPid(),questionBank.getRemark(),questionBank.getName(),questionBank.getCreattime(),questionBank.getType()};
+		Object args[] = new Object[]{questionBank.getPid(),questionBank.getRemark(),questionBank.getText(),questionBank.getCreattime(),questionBank.getType()};
 		sql = sql + StringUtil.sqlField(args.length);
 		jdbcTemplate.update(sql, args);
 		return questionBank.getId();
@@ -173,11 +173,40 @@ public class WjQuestionKpiDao  extends BaseDao {
 		return sql.toString();
 	}
 
-	public List<MenuTree> getTreeList() {
+	public ArrayList<QuestionBank> getTreeList() {
 		// TODO Auto-generated method stub
-		String sql = "select id,pid,name,type from question_bank";
-		List<MenuTree> lists = (List<MenuTree>) jdbcTemplate.query(sql, new Object[] {},new BeanPropertyRowMapper(MenuTree.class));
+		String sql = "select id,pid,text,type from question_bank";
+		ArrayList<QuestionBank> lists = (ArrayList<QuestionBank>) jdbcTemplate.query(sql, new Object[] {},new BeanPropertyRowMapper(QuestionBank.class));
 		return lists;
+	}
+	public List<QuestionBank> getAllQuestionList() {
+		String sql = "select id,text,remark,pid,type from question_bank ";
+		return (List<QuestionBank>) jdbcTemplate.query(sql, new BeanPropertyRowMapper(QuestionBank.class));
+	}
+
+	public QuestionBank findQuestionById(String id) {
+		try{
+			String sql = "select * from question_bank where id= ? ";
+			return  (QuestionBank)jdbcTemplate.queryForObject(sql, new Object[]{id}, new BeanPropertyRowMapper(QuestionBank.class));
+		}catch(Exception e){
+			return null;
+		}
+	}
+
+	public int modify(QuestionBank questionBank) {
+		String sql = "update question_bank set name= ?,createtime= ?,remark=?,pid=?,type=? where id = ?";
+		return jdbcTemplate.update(sql,new Object[] {questionBank.getText(),questionBank.getCreattime(),questionBank.getRemark(),questionBank.getPid(),questionBank.getType(),questionBank.getId()},Integer.class);
+	}
+
+	public int delete(String id) {
+		String sql = "delete from question_bank where id = ?";
+		return jdbcTemplate.update(sql,new Object[] {id},Integer.class);
+	}
+
+	public List<QuestionBank> findChildTypeById(String id) {
+		// TODO Auto-generated method stub
+		String sql = "select * from question_bank where id = ? or pid = ?";
+		return (List<QuestionBank>) jdbcTemplate.query(sql, new Object[] {id,id},new BeanPropertyRowMapper(QuestionBank.class));
 	}
 }
 

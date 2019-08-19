@@ -17,15 +17,19 @@ import lombok.ToString;
 @Setter
 @Getter
 @NoArgsConstructor
-@AllArgsConstructor
 @ToString
 public class QuestionBank implements java.io.Serializable {
 	// 属性
 	private String id; // 题库序号  
-	private String name; // 题库名称  
+	private String text; // 题库名称  
 	private Date creattime; // 创建时间  
 	private String remark; // 试卷备注  
 	private String type; // 试卷类型  
 	private String pid;
-
+	private List<QuestionBank> nodes = new ArrayList<>();
+	public QuestionBank(String id, String pid, String text) {
+	        this.id = id;
+	        this.pid = pid;
+	        this.text = text;
+	    }
 }

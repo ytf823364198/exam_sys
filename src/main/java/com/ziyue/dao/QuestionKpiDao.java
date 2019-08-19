@@ -27,7 +27,7 @@ public class QuestionKpiDao  extends BaseDao {
 			question_kpi.setId(StringUtil.UUID());
 		}
 		String sql = "insert into question_bank(id,name,creattime,remark,type)";
-		Object args[] = new Object[]{question_kpi.getId(),question_kpi.getName(),question_kpi.getCreattime(),question_kpi.getRemark(),question_kpi.getType()};
+		Object args[] = new Object[]{question_kpi.getId(),question_kpi.getText(),question_kpi.getCreattime(),question_kpi.getRemark(),question_kpi.getType()};
 		sql = sql + StringUtil.sqlField(args.length);
 		jdbcTemplate.update(sql, args);
 		return question_kpi.getId();
@@ -48,7 +48,7 @@ public class QuestionKpiDao  extends BaseDao {
 	 */
 	public void modifyQuestionBank(QuestionBank question_kpi){
 		String sql = "update question_bank set name=?,creattime=?,remark=?,type=? where id = ? ";
-		Object[] args = new Object[]{question_kpi.getName(),question_kpi.getCreattime(),question_kpi.getRemark(),question_kpi.getType(),question_kpi.getId()};
+		Object[] args = new Object[]{question_kpi.getText(),question_kpi.getCreattime(),question_kpi.getRemark(),question_kpi.getType(),question_kpi.getId()};
 		jdbcTemplate.update(sql,args);
 	}
 

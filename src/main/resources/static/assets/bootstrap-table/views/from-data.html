@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>from-data</title>
+    <meta charset="utf-8">
+    <!-- 1、Jquery组件引用-->
+    <script src="../js/jquery.min.js?v=1.11.2"></script>
+    <!-- 2、bootstrap组件引用-->
+    <link href="../css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <script src="../js/bootstrap.min.js?v=3.3.6"></script>
+    <!-- 3、bootstrap-table组件引用-->
+    <link href="../css/plugins/bootstrap-table/bootstrap-table.min.css?v=1.11.1" rel="stylesheet" />
+    <script src="../js/plugins/bootstrap-table/bootstrap-table.min.js?v1.11.0"></script>
+    <script src="../js/plugins/bootstrap-table/bootstrap-table-zh-CN.js?v1.11.0"></script><!--显示中文-->
+</head>
+<body>
+    <div class="container">
+        <h1>From data</h1>
+        <p></p>
+        <table id="table">
+            <thead>
+            <tr>
+                <th data-field="id">ID</th>
+                <th data-field="name">Item Name</th>
+                <th data-field="price">Item Price</th>
+            </tr>
+            </thead>
+        </table>
+    </div>
+<script>
+    var $table = $('#table');
+
+    $(function () {
+        var data = [
+            {
+                "id": 0,
+                "name": "Item 0",
+                "price": "$0"
+            },
+            {
+                "id": 1,
+                "name": "Item 1",
+                "price": "$1"
+            },
+            {
+                "id": 2,
+                "name": "Item 2",
+                "price": "$2"
+            },
+            {
+                "id": 3,
+                "name": "Item 3",
+                "price": "$3"
+            },
+            {
+                "id": 4,
+                "name": "Item 4",
+                "price": "$4"
+            },
+            {
+                "id": 5,
+                "name": "Item 5",
+                "price": "$5"
+            }
+        ];
+        $table.bootstrapTable({data: data});
+    });
+</script>
+</body>
+</html>

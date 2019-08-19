@@ -9,9 +9,10 @@
 	th:href="@{/assets/plugins/magnific-popup/dist/magnific-popup.css}">
 <link rel="stylesheet"
 	th:href="@{/assets/plugins/jquery-datatables-editable/datatables.css}">
-
-<link th:href="@{/assets/css/bootstrap.min.css}" rel="stylesheet"
-	type="text/css">
+<link rel="stylesheet" type="text/css"
+	th:href="@{/assets/bootstrap-table/css/bootstrap.min.css}">
+<link rel="stylesheet" type="text/css"
+	th:href="@{/assets/bootstrap-table/js/plugins/bootstrap-table/bootstrap-table.css}">
 <link th:href="@{/assets/css/core.css}" rel="stylesheet" type="text/css">
 <link th:href="@{/assets/css/icons.css}" rel="stylesheet"
 	type="text/css">
@@ -20,77 +21,313 @@
 <link th:href="@{/assets/css/pages.css}" rel="stylesheet"
 	type="text/css">
 <link th:href="@{/assets/css/menu.css}" rel="stylesheet" type="text/css">
-<link rel="stylesheet" th:href="@{/plugins/ztree/zTreeStyle.css}"
-	type="text/css">
 <link th:href="@{/assets/css/responsive.css}" rel="stylesheet"
 	type="text/css">
+<link th:href="@{/assets/bootstrap-treeview/bootstrap-treeview.min.css}"
+	rel="stylesheet" type="text/css">
+<script th:src="@{/assets/js/jquery.min.js}"></script>
 <script th:src="@{/assets/js/modernizr.min.js}"></script>
-<script type="text/javascript" th:src="@{/assets/js/jquery1.8.min.js}"></script>
+<script type="text/javascript" th:src="@{/assets/js/bootstrap.min.js}"></script>
+<script th:src="@{/assets/bootstrap-treeview/bootstrap-treeview.js}"></script>
 <script type="text/javascript"
-	th:src="@{/plugins/ztree/jquery.ztree.core-3.4.js}"></script>
+	th:src="@{/assets/bootstrap-table/js/plugins/bootstrap-table/bootstrap-table.js}"></script>
+<script type="text/javascript"
+	th:src="@{/assets/bootstrap-table/js/plugins/bootstrap-table/bootstrap-table.min.js}"></script>
+<script type="text/javascript"
+	th:src="@{/assets/bootstrap-table/js/plugins/bootstrap-table/bootstrap-table-zh-CN.js}"></script>
 <script type="text/javascript" th:inline="javascript">
-	var setting = {
-		async : {
-			enable : true,
-			url : "/wj_question/asyncGetNodes",
-			autoParam : [ "id", "pid", "name" ],//异步加载时需要自动提交父节点属性的参数
-			dataFilter : filter
-		//异步获取到节点的name属性
-		},
-		data : {
-			simpleData : {
-				enable : true,
-				idKey : 'id',
-				pIdKey : 'pid',
-				rootPId : 0
-			}
-		},
-		check : {
-			//chkboxType: { "Y": "ps", "N": "ps" },
-			chkStyle : "checkbox",//复选框类型
-			enable : true
-		//每个节点上是否显示 CheckBox 
-		},
-		view : {
-			showIcon : true, //显示节点图标
-			dblClickExpand : false,//双击节点时，是否自动展开父节点的标识
-			showLine : true,//是否显示节点之间的连线
-			fontCss : {
-				'color' : 'black',
-				'font-weight' : 'bold'
-			},//字体样式函数
-			selectedMulti : false
-		//设置是否允许同时选中多个节点
-		},
-		callback : {
-			beforeClick : function(treeId, treeNode) {
-				zTree = $.fn.zTree.getZTreeObj("zTree");
-				if (treeNode.isParent) {
-					zTree.expandNode(treeNode);//如果是父节点，则展开该节点
-				} else {
-					zTree.checkNode(treeNode, !treeNode.checked, true, true);//单击勾选，再次单击取消勾选
+	//获取树数据
+		function getTree(){
+			$.ajax({
+				url : "/wj_question/getTreeList",
+				type : "post",
+				dataType : "json",
+				success : function(result) {
+					//渲染树
+					alert(JSON.stringify(result));
+			    	$('#left-tree').treeview({
+		    		  color: "#428bca",
+		    		    //backColor: "black",背景色
+		    		    //borderColor:'green',
+		    		    collapseIcon: "glyphicon glyphicon-minus",//可收缩的节点图标
+		    		    nodeIcon: "glyphicon glyphicon-user",
+		    		    //emptyIcon: "glyphicon glyphicon-ban-circle",//设置列表树中没有子节点的节点的图标
+		    		    expandIcon: "glyphicon glyphicon-plus",  //设置列表上中有子节点的图标
+		    		    highlightSearchResults:true,//是否高亮搜索结果 默认true
+		    		    highlightSelected:true,     //是否选中高亮显示
+		    		    onhoverColor: "#f5f5f5",    //鼠标滑过的颜色
+		    		    levels: 0 ,                 //设置初始化展开几级菜单 默认为2
+		    		    selectedIcon: 'glyphicon glyphicon-tint',
+		    		   // selectedBackColor: 'black',  //设置被选中的节点背景颜色
+		    		    //selectedColor : 'red',      //设置被选择节点的字体、图标颜色
+		    		    showBorder:true,                //是否显示边框
+		    		    showCheckbox:false,              //是否显示多选框
+		    		    //uncheckedIcon:'',             //设置未选择节点的图标
+		    		    showTags:true,//显示徽章
+		    			data: result,
+		    			levels: 1,
+			    		onNodeSelected: function (event, data) {
+			    						$("#mytable").bootstrapTable({
+			    							ajax : function (request) {
+			    								
+			    							$.ajax({
+						    		    		url:"/wj_question/findQuestTypeById",
+						    					type:"post",
+						    					data:{
+						    						"id" : data.id
+						    					},
+						    					contentType: "application/json;charset=utf-8",
+						    					success : function (msg) {			
+						    						request.success({
+						    		                    row : msg
+						    		                });
+						    		                $('#mytable').bootstrapTable('load', msg);
+						    		            },
+						    					error:function(){
+						    						alert("错误");
+						    					}
+						    		        });
+						    			},
+			    					        striped : true, //是否显示行间隔色
+			    					        pageNumber : 1, //初始化加载第一页
+			    					        pagination : true,//是否分页
+			    					        sidePagination : 'client',//server:服务器端分页|client：前端分页
+			    					        pageSize : 5,//单页记录数
+			    					        pageList : [5,10,20,30,50],//可选择单页记录数
+			    					        smartDisplay:false,
+			    					        uniqueId: "id",                     //每一行的唯一标识，一般为主键列
+			    					        showPaginationSwitch:true,
+			    					        search:true,
+			    					        showToggle:true,
+			    					        showRefresh : true,//刷新按钮
+			    					        columns : [{
+			    					            title : '题库名称',
+			    					            field : 'text',
+			    					            sortable : true,
+			    					            align: 'center',
+			    					            width:150
+			    					        },{
+			    					            title : '操作',
+			    					            width: 200,
+			    					            field : 'id',
+			    					            align: 'center',
+			    					            valign: 'middle',
+			    					            formatter: actionFormatter,
+			    					        }],
+			    					        showCheckbox:false//是否显示多选
+			    						});
+			    					},
+						
+					});  
+				},
+				error : function() {
+					alert("加载失败！")
 				}
-			
-			}
+			});           
 		}
-	};
+		//操作栏的格式化
+	    function actionFormatter(value, row, index) {
+	        var id = value;
+	        var result = "";
+	        result += "<a href='javascript:;' class='btn btn-xs green' onclick=\"AddType()\" title='添加子分类'><span class='glyphicon glyphicon-plus'></span></a>";
+	        result += "<a href='javascript:;' class='btn btn-xs blue' onclick=\"EditViewById('" + id + "')\" title='编辑'><span class='glyphicon glyphicon-pencil'></span></a>";
+	        result += "<a href='javascript:;' class='btn btn-xs red' onclick=\"DeleteByIds('" + id + "')\" title='删除'><span class='glyphicon glyphicon-remove'></span></a>";
+	        return result;
+	    }
+    //事件注册
+    function BindEvent()
+    {
+    	 //保存-新增
+    	 $("#Save").click(function () {
+    	 	$('#addOperation-dialog').modal('hide')
+                           //静态添加节点
+                           var parentNode = $('#left-tree').treeview('getSelected');
+                           var node = {
+                           	text: $('#addName').val()
+                           };
+                           $('#left-tree').treeview('addNode', [node, parentNode]);
 
-	$(document).ready(
-			function() {
-				initZTree();
-				var treeObj = $.fn.zTree.getZTreeObj("zTree"), nodes = treeObj
-						.getCheckedNodes(true), v = "";
-				for (var i = 0; i < nodes.length; i++) {
-					v += nodes[i].name + ",";
-					alert(nodes[i].id); //获取选中节点的值
+           });
+    	}
+  //显示-添加
+	$("#btnAdd").click(function(){
+		var node = $('#left-tree').treeview('getSelected');
+		if (node.length == 0) {
+			$.showMsgText('请选择节点');
+			return;
+		}
+		$('#addName').val('');
+		$('#addOperation-dialog').modal('show');
+		
+	});
+	//删除
+	$("#btnDel").click(function(){
+		var node = $('#left-tree').treeview('getSelected');
+		if (node.length == 0) {
+			$.showMsgText('请选择节点');
+			return;
+		}
+		  BootstrapDialog.confirm({
+                title: '提示',
+                message: '确定删除此节点?',
+                size: BootstrapDialog.SIZE_SMALL,
+                type: BootstrapDialog.TYPE_DEFAULT,
+                closable: true,
+                btnCancelLabel: '取消', 
+                btnOKLabel: '确定', 
+                callback: function (result) {
+                    if(result)
+                    {
+                        del();
+                    }
+                }
+            });
+		  function del(){
+			$('#left-tree').treeview('removeNode', [ node, { silent: true } ]);
+		  }
+		
+	});
+	
+	$(document).ready(function () {
+		getTree();
+
+		BindEvent();
+		
+		$("#mytable").bootstrapTable({
+	        url:"/wj_question/getAllQuestionList",  //请求地址
+	        striped : true, //是否显示行间隔色
+	        pageNumber : 1, //初始化加载第一页
+	        pagination : true,//是否分页
+	        sidePagination : 'client',//server:服务器端分页|client：前端分页
+	        pageSize : 5,//单页记录数
+	        pageList : [5,10,20,30,50],//可选择单页记录数
+	        smartDisplay:false,
+	        uniqueId: "id",                     //每一行的唯一标识，一般为主键列
+	        showPaginationSwitch:true,
+	        search:true,
+	        showToggle:true,
+	        showRefresh : true,//刷新按钮
+	        columns : [{
+	            title : '题库名称',
+	            field : 'text',
+	            sortable : true,
+	            align: 'center',
+	            width:150
+	        },{
+	            title : '操作',
+	            width: 200,
+	            field : 'id',
+	            align: 'center',
+	            valign: 'middle',
+	            formatter: actionFormatter,
+	        }]
+	  
+	    })
+	    //操作栏的格式化
+	    function actionFormatter(value, row, index) {
+	        var id = value;
+	        var result = "";
+	        result += "<a href='javascript:;' class='btn btn-xs green' onclick=\"AddType()\" title='添加子分类'><span class='glyphicon glyphicon-plus'></span></a>";
+	        result += "<a href='javascript:;' class='btn btn-xs blue' onclick=\"EditViewById('" + id + "')\" title='编辑'><span class='glyphicon glyphicon-pencil'></span></a>";
+	        result += "<a href='javascript:;' class='btn btn-xs red' onclick=\"DeleteByIds('" + id + "')\" title='删除'><span class='glyphicon glyphicon-remove'></span></a>";
+	        return result;
+	    }
+		
+	    
+	});
+	function EditViewById(id){
+	    	$.ajax({
+	    		url:"/wj_question/findQuestionById",
+				type:"post",
+				data:{
+					"id" : id
+				},
+				dataType:"json",
+				success:function(data){
+					 $("#myModalLabel").text("编辑");
+					 $("#id").val(data.id)
+			    	 $("#name").val(data.name)
+			         $("#createtime").val(data.createtime)
+			         $("#pid").val(data.pid)
+			         $("#type").val(data.type)
+			         $("#myModal").modal();
 				}
-			});
+	    	})
+	    }
+	    /* $(function(){
+	    	$("#sava-edit-btn").click(function(){
+	        	var model = document.getElementById("model");
+	        	alert(JSON.stringify(model))
+	        })
+	    }) */
+	$(function(){
+	    $("#sava-edit-btn").click(function(){
+	    	debugger;
+	        var adddata =$("#addForm").serialize();
+	        $.ajax({
+	                url:"/wj_question/modify?"+adddata,
+	                dataType: "json",
+	                type: "post",
+	                success: function (data){
+	                	alert(JSON.stringify(data))
+	                    if (data.status == "ok") {
+	                        $('#myModal').modal('hide');
+	                        $('#mytable').bootstrapTable('refresh');
+	                        alert("添加成功");
+	                    } else {
+	                        alert("添加失败");
+	                    }
+	                },
+	                error: function(data){
+	                	alert(JSON.stringify(data))
+	                        alert("错误");
+	                }
+	            });
+	    });
+	    })
+	     // 打开询问是否删除的模态框并设置需要删除的大修的ID
+	    function DeleteByIds(id) {
+	        $("#deleteHaulId").val(id);// 将模态框中需要删除的大修的ID设为需要删除的ID
+	        $("#delcfmOverhaul").modal({
+	            backdrop : 'static',
+	            keyboard : false
+	        });
+	    }
+		$(function(){
+			 // 删除大修模态框的确定按钮的点击事件
+	        $("#deleteHaulBtn").click(function() {
+	        // ajax异步删除
+	        var id = document.getElementById("deleteHaulId").value;
+	        	$.ajax({
+	                url:"/wj_question/delete",
+	                dataType: "json",
+	                type: "post",
+	                data:{
+	                	"id":id
+	                },
+	                success: function (data){
+	                	alert(JSON.stringify(data))
+	                    if (data.status == "ok") {
+	                        $('#myModal').modal('hide');
+	                        $('#mytable').bootstrapTable('refresh');
+	                        alert("删除成功");
+	                    } else {
+	                        alert("删除失败");
+	                    }
+	                },
+	                error: function(data){
+	                	alert(JSON.stringify(data))
+	                        alert("错误");
+	                }
+	            });
+	        });
+		})
 
 	function filter(treeId, parentNode, childNodes) {
 		return childNodes;
 	}
 	//初始化树
-	function initZTree() {
+	/* function initZTree() {
 		$.ajax({
 			url : "/wj_question/getTreeList",
 			type : "post",
@@ -106,7 +343,7 @@
 
 			}
 		});
-	}
+	} */
 	function onCheck(e, treeId, treeNode) {
 		var treeObj = $.fn.zTree.getZTreeObj("zTree"), nodes = treeObj
 				.getCheckedNodes(true), v = "";
@@ -115,83 +352,173 @@
 			alert(nodes[i].id); //获取选中节点的值
 		}
 	}
-	function addParent(){
-		
-	}
 </script>
+
+<style type="text/css">
+.list-group {
+	margin-left: -10mm;
+}
+</style>
+
 </head>
 <body>
-	<div class="content">
-		<div class="container">
-
-			<p style="font-family: inherit; margin: 2mm 5mm; font-size: 12pt;">您现在的位置:
-				题库管理 >> 试题分类</p>
-			<div class="divider"></div>
-			<div class="panel panel-primary"
-				style="margin-left: 5mm; margin-top: 5mm; border: 1px solid #61777559; overflow-y: scroll; height:930px; float: left; width: 20%; display: inline-table">
-				<div class="panel-heading"
-					style="background-color: #317eeb; height: 10mm;">
-					<h3 class="panel-title"></h3>
-				</div>
-				<div class="panel-body">
-					<ul id="zTree" class="ztree"></ul>
-				</div>
-			</div>
-			
-			<div class="panel panel-primary"
-				style="margin-right: 5mm; margin-top: 5mm; border: 1px solid #61777559; overflow-y: scroll; height: 930px; float: right; width: 76.5%; display: inline-table">
-				<div class="panel-heading"
-					style="background-color: #317eeb; height: 10mm;">
-					<h3 class="panel-title"></h3>
-				</div>
-				<div class="panel-body">
-				<div class="form-group">
-				<!-- <select multiple class="form-control">
+	<p style="font-family: inherit; margin: 2mm 5mm; font-size: 12pt;">您现在的位置:
+		题库管理 >> 试题分类</p>
+	<div class="divider"></div>
+	<div class="panel panel-primary"
+		style="margin-left: 5mm; margin-top: 5mm; border: 1px solid #61777559; overflow-y: scroll; height: 930px; float: left; width: 20%; display: inline-table">
+		<div class="panel-heading"
+			style="background-color: #317eeb; height: 10mm;">
+			<h3 class="panel-title"></h3>
+		</div>
+		<div class="panel-body">
+			<ul id="left-tree" class="left-tree"></ul>
+		</div>
+	</div>
+	<div class="panel panel-primary"
+		style="margin-right: 5mm; margin-top: 5mm; border: 1px solid #61777559; overflow-y: scroll; height: 930px; float: right; width: 76.5%; display: inline-table">
+		<div class="panel-heading"
+			style="background-color: #317eeb; height: 10mm;">
+			<h3 class="panel-title"></h3>
+		</div>
+		<div class="panel-body">
+			<!-- <select multiple class="form-control">
       <option>江苏</option>
       <option>浙江</option>
       <option>山西</option>
       <option>云南</option>
       <option>河南</option>
     </select> -->
-    		
-				    <label for="name" style="margin-left: 160mm;font-family: inherit;font-size: 12pt;float: left;margin-top: 2mm; margin-right: 4mm;">题库名称 :</label>
-				    <input type="text" class="form-control" placeholder="请输入文本" style="width:20%; float:left;margin-right:2mm;">
-				    <button type="button" onclick="openWin();"
-						class="btn btn-primary btn-rounded waves-effect waves-light m-b-15">
-						<span class="glyphicon glyphicon-search"></span>点我查询
+
+			<table id="mytable">
+				<button type="button" onclick="addParent();"
+					class="btn btn-primary btn-rounded waves-effect waves-light m-b-15">
+					<span class="glyphicon glyphicon-plus"></span> 新增分类
+				</button>
+			</table>
+
+			<div>
+				<!--弹出框 新增权限 start-->
+				<div class="modal fade" id="addOperation-dialog" tabindex="-1"
+					role="dialog" aria-labelledby="myModalLabel">
+					<div class="modal-dialog" role="document">
+
+						<div class="modal-content radius_5">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal"
+									aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+								<h4 class="modal-title" id="myModalLabel">新增</h4>
+							</div>
+							<div class="modal-body">
+								<div group="" item="add">
+									<div>
+										<div class="input-group margin-t-5">
+											<span class="input-group-addon">名称:</span> <input
+												id="addName" type="text" class="form-control" />
+										</div>
+
+									</div>
+								</div>
+
+							</div>
+							<div class="modal-footer">
+								<button id="Save" type="button" class="btn btn-primary">保存</button>
+								<button type="button" class="btn btn-default"
+									data-dismiss="modal">取消</button>
+
+							</div>
+						</div>
+
+
+					</div>
+				</div>
+				<!--弹出框 新增权限 end-->
+
+			</div>
+		</div>
+	</div>
+
+
+	<!-- 模态框   信息删除确认 -->
+	<div class="modal fade" id="delcfmOverhaul">
+		<div class="modal-dialog">
+			<div class="modal-content message_align">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">×</span>
 					</button>
-				    <button type="button" onclick="addParent();"
-						class="btn btn-primary btn-rounded waves-effect waves-light m-b-15">
-						<span class="glyphicon glyphicon-plus"></span> 新增分类	
+					<h4 class="modal-title">提示</h4>
+				</div>
+				<div class="modal-body">
+					<input type="hidden" id="deleteHaulId" />
+					<p>您确认要删除该条信息吗？</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+					<button type="button" class="btn btn-primary" id="deleteHaulBtn">确认</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--修改模态框 -->
+	<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog"
+		aria-labelledby="myLargeModalLabel" id="myModal">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
 					</button>
-				  </div>
-					<table class="table table-bordered table-striped">
-						<tr>
-							<td style="text-align: center; width: auto;">序号</td>
-							<td style="text-align: center; width: auto;">题库名称</td>
-							<td style="text-align: center; width: auto;">创建时间</td>
-							<td style="text-align: center; width: auto;" width="100px">操作</td>
-						</tr>
-						<tr th:each="data,dataStatus:${pageModel.data }">
-										<td style="text-align: center;">[[${(pageModel.curpage-1) * pageModel.pagecount+ dataStatus.count }]]</td>
-										<td style="text-align: center;" >[[${data.name }]]</a></td>
-										<td style="text-align: center;" >[[${#dates.format(data.creattime, 'yyyy-MM-dd')}]]</td>
-										
-										<td style="text-align: center;">
-											<div class="btn-group" style="justify-content:center;">
-											    <a class="btn btn-success btn-xs  waves-effect"  th:href="|javascript:addChild('${data.id}')|"><span class="glyphicon glyphicon-plus"></span>添加子分类</a>
-												<a class="btn btn-primary btn-xs  waves-effect"  th:href="|javascript:modify('${data.id}')|"><span class="glyphicon glyphicon-pencil"></span>编辑分类</a>
-	        								 	<a class="btn btn-danger waves-effect waves-light btn-xs"  th:href="|javascript:del('${data.id}')|"><span class="glyphicon glyphicon-remove"></span>删除</a>
-											</div>
-										</td>
-									</tr>
-									 <tr th:if="${pageModel.data == null }">
-										  <td style="text-align: center;" colspan="5">
-										  	无查询记录
-										  </td>
-									 </tr> 
-					</table>
-					<div th:replace="public/splitpage::#splitpageform(formAction='/wj_question/list')"></div>
+					<h4 class="modal-title" id="myModalLabel">编辑题库</h4>
+				</div>
+				<div class="modal-body">
+					<form action="" method="post" class="form-horizontal" id="addForm">
+						<div class="form-group">
+							<input type="hidden" class="form-control" readonly="readonly"
+								id="modal_id"> <label for=""
+								class="col-sm-2 control-label">id</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" readonly="readonly"
+									id="id" name="id">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="" class="col-sm-2 control-label">题库名称</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" id="text" name="text">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="" class="col-sm-2 control-label">题库类型</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" id="type" name="type">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="" class="col-sm-2 control-label">创建时间</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" id="createtime"
+									name="createtime">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="" class="col-sm-2 control-label">父级题库</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" id="pid" name="pid">
+							</div>
+						</div>
+
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+					<button type="button" class="btn btn-primary" id="sava-edit-btn">保存</button>
 				</div>
 			</div>
 		</div>

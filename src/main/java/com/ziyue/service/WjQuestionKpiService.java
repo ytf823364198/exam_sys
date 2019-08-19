@@ -76,11 +76,34 @@ public class WjQuestionKpiService {
 		return wjQuestionKpiDao.findBaseSplitPage(pageModel);
 	}
 
-	public List<MenuTree> getTreeList() {
+	public ArrayList<QuestionBank> getTreeList() {
 		// TODO Auto-generated method stub
 		return wjQuestionKpiDao.getTreeList();
 	}
-	
+	public List<QuestionBank> getAllQuestionList() {
+		// TODO Auto-generated method stub
+		return wjQuestionKpiDao.getAllQuestionList();
+	}
+
+	public QuestionBank findQuestionById(String id) {
+		// TODO Auto-generated method stub
+		return wjQuestionKpiDao.findQuestionById(id);
+	}
+
+	public int modify(QuestionBank questionBank) {
+		// TODO Auto-generated method stub
+		return wjQuestionKpiDao.modify(questionBank);
+	}
+
+	public int delete(String id) {
+		// TODO Auto-generated method stub
+		return wjQuestionKpiDao.delete(id);
+	}
+
+	public List<QuestionBank> findChildTypeById(String id) {
+		// TODO Auto-generated method stub
+		return wjQuestionKpiDao.findChildTypeById(id);
+	}
 	
 	
 }
