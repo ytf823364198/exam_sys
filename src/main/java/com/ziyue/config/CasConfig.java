@@ -31,7 +31,7 @@ public class DataSourceConfig {
     public DataSource dataSource(){
        return  new DruidDataSource();
     }
-
+	
     @Primary 
     @Order(0)
 	@Bean(name = "jdbcTemplate")
@@ -45,7 +45,10 @@ public class DataSourceConfig {
     public PlatformTransactionManager transactionManager(@Qualifier("dataSource") DataSource dataSource) {
         return new DataSourceTransactionManager(dataSource);
     }
-
+	
+public void mains(){
+	System.out.println("ssss");
+}
     
     @ConfigurationProperties(prefix = "spring.minor.datasource")
     @Bean(name = "minorDataSource")
